@@ -1,0 +1,29 @@
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import { useRef } from 'react';
+import catAnimationData from '../../lotties/cat.json';
+import { motion } from 'motion/react';
+
+export default function Logo() {
+  const logoRef = useRef<LottieRefCurrentProps>(null);
+
+  return (
+    <motion.div className="group flex cursor-default items-baseline items-center gap-2">
+      <div className="relative h-20 w-20 overflow-hidden">
+        <Lottie
+          lottieRef={logoRef}
+          animationData={catAnimationData}
+          className="absolute left-0 h-fit w-fit scale-150 transform"
+          autoplay
+          loop
+        />
+      </div>
+      <motion.p className="hidden text-2xl font-bold tracking-wider text-blue-500 transition-all duration-300 ease-in-out group-hover:tracking-widest sm:flex">
+        Hello
+        <span className="w-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:w-[7.5rem]">
+          ooooooo
+        </span>
+        !
+      </motion.p>
+    </motion.div>
+  );
+}
