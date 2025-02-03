@@ -8,6 +8,9 @@
   "arrowParens": "always",
   "bracketSpacing": true,
   "endOfLine": "lf",
+  "tailwindFunctions": [
+    "clsx"
+  ],
   "overrides": [
     {
       "files": "*.ts",
@@ -22,9 +25,15 @@
       }
     },
     {
-      "files": ["*.html", "*.tsx", "*.jsx"],
+      "files": [
+        "*.html",
+        "*.tsx",
+        "*.jsx"
+      ],
       "options": {
-        "plugins": ["prettier-plugin-tailwindcss"]
+        "plugins": [
+          "prettier-plugin-tailwindcss"
+        ]
       }
     }
   ]

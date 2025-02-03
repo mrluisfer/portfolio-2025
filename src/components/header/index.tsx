@@ -2,12 +2,14 @@ import HeaderLink from './header-link';
 import HEADER_LINKS from './header-link/links';
 import Logo from './logo';
 import CurrentTime from './current-time';
+import CurrentPlaying from './current-playing';
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between max-w-5xl mx-auto">
+    <header className="mx-auto flex max-w-5xl items-center justify-between">
       <Logo />
-      <nav className="flex items-center gap-8">
+      <nav className="flex items-center gap-6">
+        <CurrentPlaying />
         {HEADER_LINKS.map((link, id) => {
           const Icon = link.Icon;
           return (

@@ -12,7 +12,3 @@ export const monthNames = [
   { id: 11, name: 'November' },
   { id: 12, name: 'December' },
 ];
-
-export const getMonthById = (id: number) => monthNames.find((month) => month.id === id)?.name;
-
-export const getMonthByName = (name: string) => monthNames.find((month) => month.name === name)?.id;

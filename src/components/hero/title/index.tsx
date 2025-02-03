@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, type MouseEvent } from 'react';
+import FirstName from './first-name.tsx';
+import LastName from './last-name.tsx';
 
 type Rotate = {
   x: number;
@@ -12,8 +14,9 @@ export default function Title() {
   const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = event;
     const { innerWidth, innerHeight } = window;
-    const x = (innerWidth / 2 - clientX) / 3;
-    const y = (innerHeight / 2 - clientY) / 3;
+    const rotateSensitive = 10;
+    const x = (innerWidth / 2 - clientX) / rotateSensitive;
+    const y = (innerHeight / 2 - clientY) / rotateSensitive;
 
     setRotate({
       x,
@@ -30,23 +33,22 @@ export default function Title() {
 
   return (
     <div className="flex items-center justify-center pt-[64px]">
-      <motion.p
+      <motion.div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleResetCoordinates}
-        className="flex items-center gap-4 text-9xl font-bold tracking-wide uppercase will-change-transform select-none"
+        className="flex flex-col items-center px-5 font-bold tracking-wide uppercase transition will-change-transform select-none"
         initial={{ rotateX: 0, rotateY: 0, scale: 1 }}
         animate={{ rotateX: rotate.x, rotateY: rotate.y }}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.1, gap: '2.2rem' }}
         transition={{ duration: 0.3 }}
         style={{
           perspective: '1000px',
+          gap: '2rem',
         }}
       >
-        <motion.span className="hover:text-blue-500">L</motion.span>
-        <motion.span>U</motion.span>
-        <motion.span>I</motion.span>
-        <motion.span>S</motion.span>
-      </motion.p>
+        <FirstName />
+        <LastName />
+      </motion.div>
     </div>
   );
 }
