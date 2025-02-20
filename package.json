@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -22,8 +22,10 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
     "react-lottie": "^1.2.10",
+    "react-type-animation": "^3.2.0",
     "remixicon": "^4.6.0",
     "sass": "^1.83.4",
+    "spotify-api-kit": "^0.1.3",
     "tailwindcss": "^4.0.3"
   },
   "devDependencies": {
@@ -36,6 +38,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "eslint-plugin-simple-import-sort": "12.1.1",
     "globals": "^15.14.0",
     "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",

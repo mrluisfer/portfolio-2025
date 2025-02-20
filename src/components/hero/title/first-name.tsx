@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
 import { RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
 import { RiGameLine } from 'react-icons/ri';
 import PixelPerfect from '../../../assets/icons/pixel-perfect.tsx';
 import { RxSpeakerLoud } from 'react-icons/rx';
+import firstName from '@/assets/first-name.mp3';
 
 function Letter({
   children,
@@ -35,9 +36,14 @@ function Letter({
 }
 
 function SpeakerName() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const play = async () => {
+    await audioRef.current?.play();
+  };
+
   return (
     <motion.div
-      className="absolute top-12 -right-5 -rotate-12 transition cursor-pointer"
+      className="absolute top-12 -right-5 -rotate-12 cursor-pointer transition"
       style={{
         opacity: 0.3,
         scale: 1,
@@ -50,7 +56,8 @@ function SpeakerName() {
         duration: 0.3,
       }}
     >
-      <RxSpeakerLoud size={20} />
+      <audio src={firstName} ref={audioRef} />
+      <RxSpeakerLoud size={20} onClick={play} />
     </motion.div>
   );
 }
