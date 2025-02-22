@@ -1,41 +1,66 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { getCurrentFormattedDate } from '@/utils/get-current-date';
 
+function BlueText({ children }: { children: ReactNode | string }) {
+  return <span className="font-medium text-blue-500">{children}</span>;
+}
+function GreenText({ children }: { children: ReactNode | string }) {
+  return <span className="font-medium text-green-500">{children}</span>;
+}
+function GrayText({ children }: { children: ReactNode | string }) {
+  return (
+    <span className="text-gray-400 opacity-100 transition hover:text-gray-500">{children}</span>
+  );
+}
+
 const terminalLogs = [
-  `mrluisfeer@ ~ ${getCurrentFormattedDate()}`,
-  `mrluisfeer@ ~ $ echo "Hello, World!"`,
-  `Hello, World!`,
-  `mrluisfeer@ ~ $ cat POEM.md`,
-  `A ship in harbor is safe, but that is not what ships are built for.`,
+  <span></span>,
+  <span key={0}>
+    <GrayText>Last Session: {getCurrentFormattedDate()}</GrayText>
+  </span>,
+  <span key={1}>
+    <BlueText>mrluisfeer@</BlueText> <GreenText>~ $</GreenText>{' '}
+    <GrayText>echo "Hello, World!"</GrayText>
+  </span>,
+  <span key={2}>
+    <GrayText>Hello, World!</GrayText>
+  </span>,
+  <span key={3}>
+    <BlueText>mrluisfeer@</BlueText> <GreenText>~ $</GreenText> <GrayText>cat POEM.md</GrayText>
+  </span>,
+  <span key={4}>
+    <GrayText>A ship in harbor is safe, but that is not what ships are built for.</GrayText>
+  </span>,
 ];
 
 export default function Content() {
-  const [lines, setLines] = useState<string[]>([]);
-  const [currentLine, setCurrentLine] = useState('');
+  const [lines, setLines] = useState<JSX.Element[]>([]);
+  const [currentLine, setCurrentLine] = useState<ReactNode | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
     if (currentIndex < terminalLogs.length) {
-      if (charIndex < terminalLogs[currentIndex].length) {
-        const timeout = setTimeout(() => {
-          setCurrentLine((prev) => prev + terminalLogs[currentIndex][charIndex]);
-          setCharIndex((prev) => prev + 1);
-        }, 50);
+      const textContent = terminalLogs[currentIndex].props.children;
 
-        return () => clearTimeout(timeout);
+      if (typeof textContent === 'string') {
+        if (charIndex < textContent.length) {
+          const timeout = setTimeout(() => {
+            setCurrentLine(<span>{textContent.slice(0, charIndex + 1)}</span>);
+            setCharIndex((prev) => prev + 1);
+          }, 50);
+          return () => clearTimeout(timeout);
+        }
       } else {
-        setTimeout(() => {
-          setLines((prev) => [...prev, currentLine]);
-          setCurrentLine('');
-          setCurrentIndex((prev) => prev + 1);
-          setCharIndex(0);
-        }, 500);
+        setLines((prev) => [...prev, terminalLogs[currentIndex]]);
+        setCurrentLine(null);
+        setCurrentIndex((prev) => prev + 1);
+        setCharIndex(0);
       }
     }
-  }, [charIndex, currentIndex, currentLine]);
+  }, [charIndex, currentIndex]);
 
   return (
     <div className="font-mono text-sm leading-relaxed text-gray-800">

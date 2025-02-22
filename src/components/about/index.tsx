@@ -1,9 +1,10 @@
 import { motion } from 'motion/react';
+
 import FocusedOn from '@/components/about/focused-on.tsx';
 
 export default function About() {
   return (
-    <div className="px-10">
+    <div className="px-10 py-24">
       <span className="text-2xl opacity-60">👋 Hey, I'm Luis Alvarez</span>
       <motion.div
         className="my-4 text-5xl font-semibold"
