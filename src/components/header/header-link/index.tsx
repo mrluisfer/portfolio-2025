@@ -1,6 +1,8 @@
+'use client';
+
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { motion } from 'motion/react';
-import { type ReactNode,useRef, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 
 import arrowAnimationData from '../../../lotties/arrow.json';
 

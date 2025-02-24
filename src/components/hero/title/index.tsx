@@ -1,7 +1,9 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { useState, useEffect, type MouseEvent } from 'react';
-import FirstName from './first-name.tsx';
-import LastName from './last-name.tsx';
+import FirstName from './first-name';
+import LastName from './last-name';
 
 type Rotate = {
   x: number;

@@ -1,10 +1,12 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { ReactNode, useRef } from 'react';
 import { RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
 import { RiGameLine } from 'react-icons/ri';
-import PixelPerfect from '../../../assets/icons/pixel-perfect.tsx';
+import PixelPerfect from '../../../assets/icons/pixel-perfect';
 import { RxSpeakerLoud } from 'react-icons/rx';
-import firstName from '@/assets/first-name.mp3';
+// import firstName from '@/assets/first-name.mp3';
 
 function Letter({
   children,
@@ -56,7 +58,7 @@ function SpeakerName() {
         duration: 0.3,
       }}
     >
-      <audio src={firstName} ref={audioRef} />
+      {/* <audio src={firstName} ref={audioRef} /> */}
       <RxSpeakerLoud size={20} onClick={play} />
     </motion.div>
   );

@@ -1,7 +1,9 @@
+'use client';
+
 import { motion } from 'motion/react';
 
-import { useCurrentTime } from '../../../hooks/use-current-time.ts';
-import { getMonthById } from '../../../utils/get-month.ts';
+import { useCurrentTime } from '../../../hooks/use-current-time';
+import { getMonthById } from '../../../utils/get-month';
 
 export default function CurrentTime() {
   const { time, hour, minutes, meridiem } = useCurrentTime();

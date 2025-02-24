@@ -1,3 +1,5 @@
+'use client';
+
 import * as motion from 'motion/react-client';
 import { TbMusicPause } from 'react-icons/tb';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';

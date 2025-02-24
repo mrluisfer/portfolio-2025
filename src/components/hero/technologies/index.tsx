@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import technologies from '../../../constants/technologies.ts';
+import technologies from '../../../constants/technologies';
 
 const MarqueeAnimation = () => {
   return (

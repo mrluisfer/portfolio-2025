@@ -1,3 +1,5 @@
+'use client';
+
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { useRef } from 'react';
 import catAnimationData from '../../lotties/cat.json';
@@ -7,7 +9,7 @@ export default function Logo() {
   const logoRef = useRef<LottieRefCurrentProps>(null);
 
   return (
-    <motion.div className="group flex cursor-default items-baseline items-center gap-2">
+    <motion.div className="group flex cursor-default items-center gap-2">
       <div className="relative h-20 w-20 overflow-hidden">
         <Lottie
           lottieRef={logoRef}

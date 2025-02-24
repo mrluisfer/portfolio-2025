@@ -2,8 +2,10 @@ import { FiMaximize2 } from 'react-icons/fi';
 import { GoDash } from 'react-icons/go';
 import { IoClose } from 'react-icons/io5';
 import { IconType } from 'react-icons/lib';
+import { motion } from 'motion/react';
 
 import Content from './content';
+import 'src/styles/general-pattern.scss';
 
 function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
   const IconComponent = Icon || (() => null);
@@ -18,9 +20,9 @@ function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
 
 export default function Terminal() {
   return (
-    <div className="terminal-pattern relative bg-gradient-to-br py-[200px]">
-      <div className="mx-auto w-[600px]">
-        <div className="relative flex items-center rounded-t-lg bg-gray-200 px-4 py-2 transition hover:bg-gray-300">
+    <div className="general-pattern relative bg-gradient-to-br py-[200px]">
+      <motion.div className="mx-auto w-[600px] rounded-lg shadow-2xl shadow-neutral-200">
+        <div className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:bg-neutral-300">
           <div className="absolute flex items-center gap-2">
             <TerminalDot color="bg-red-400" Icon={IoClose} />
             <TerminalDot color="bg-yellow-400" Icon={GoDash} />
@@ -28,10 +30,10 @@ export default function Terminal() {
           </div>
           <p className="mx-auto font-mono opacity-50">Terminal</p>
         </div>
-        <div className="rounded-b-lg bg-gray-100 px-4 py-4">
+        <div className="rounded-b-lg bg-neutral-100 px-4 py-4">
           <Content />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

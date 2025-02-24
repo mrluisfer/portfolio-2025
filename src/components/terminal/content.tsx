@@ -10,9 +10,7 @@ function GreenText({ children }: { children: ReactNode | string }) {
   return <span className="font-medium text-green-500">{children}</span>;
 }
 function GrayText({ children }: { children: ReactNode | string }) {
-  return (
-    <span className="text-gray-400 opacity-100 transition hover:text-gray-500">{children}</span>
-  );
+  return <span className="text-gray-500 transition hover:text-gray-600">{children}</span>;
 }
 
 const terminalLogs = [

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 
-import FocusedOn from '@/components/about/focused-on.tsx';
+import FocusedOn from '@/components/about/focused-on';
 
 export default function About() {
   return (

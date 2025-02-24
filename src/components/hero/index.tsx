@@ -1,6 +1,7 @@
 import Header from '../header';
 import Technologies from './technologies';
 import Title from './title';
+import 'src/styles/hero-pattern.scss';
 
 export default function Hero() {
   return (
