@@ -1,8 +1,12 @@
+'use client';
+
+import dynamic from 'next/dynamic';
 import CurrentPlaying from './current-playing';
 import CurrentTime from './current-time';
 import HeaderLink from './header-link';
 import HEADER_LINKS from './header-link/links';
-import Logo from './logo';
+// import Logo from './logo';
+const Logo = dynamic(() => import('./logo'), { ssr: false });
 
 export default function Header() {
   return (
