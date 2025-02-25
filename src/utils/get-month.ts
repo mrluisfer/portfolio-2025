@@ -1,4 +1,4 @@
-import { monthNames } from '../constants/months.ts';
+import { monthNames } from '../constants/months';
 
 export const getMonthById = (id: number) => monthNames.find((month) => month.id === id)?.name ?? '';
 

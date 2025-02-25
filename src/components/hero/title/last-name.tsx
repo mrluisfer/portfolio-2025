@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 const variants = ['alvarez', 'アルヴァレス', '艾尔瓦雷斯', 'Альварез', 'आल्वारेस'];
 

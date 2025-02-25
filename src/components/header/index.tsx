@@ -1,8 +1,8 @@
+import CurrentPlaying from './current-playing';
+import CurrentTime from './current-time';
 import HeaderLink from './header-link';
 import HEADER_LINKS from './header-link/links';
 import Logo from './logo';
-import CurrentTime from './current-time';
-import CurrentPlaying from './current-playing';
 
 export default function Header() {
   return (

@@ -1,8 +1,8 @@
+import { motion } from 'motion/react';
 import { FiMaximize2 } from 'react-icons/fi';
 import { GoDash } from 'react-icons/go';
 import { IoClose } from 'react-icons/io5';
 import { IconType } from 'react-icons/lib';
-import { motion } from 'motion/react';
 
 import Content from './content';
 import 'src/styles/general-pattern.scss';

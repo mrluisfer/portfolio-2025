@@ -1,11 +1,11 @@
 'use client';
 
-import * as motion from 'motion/react-client';
-import { TbMusicPause } from 'react-icons/tb';
-import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import spotifyAnimationData from '@/lotties/spotify.json';
-import { useRef, useState } from 'react';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { AnimatePresence } from 'motion/react';
+import * as motion from 'motion/react-client';
+import { useRef, useState } from 'react';
+import { TbMusicPause } from 'react-icons/tb';
 
 export default function CurrentPlaying() {
   const [showPopover, setShowPopover] = useState(false);

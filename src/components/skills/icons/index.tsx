@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 import {
-  React,
+  Deno,
   Expressjs,
   Git,
   JavaScript,
@@ -8,9 +8,12 @@ import {
   Motion,
   NestJS,
   Nodejs,
+  PostgreSQL,
   Prisma,
   Python,
+  React,
   Redux,
+  Sass,
   Socketio,
   StyledComponents,
   TailwindCSS,
@@ -18,9 +21,6 @@ import {
   Vercel,
   Vite,
   Vitest,
-  Sass,
-  Deno,
-  PostgreSQL,
 } from './allIcons';
 
 export type SvglIcon = (props: SVGProps<SVGSVGElement>) => JSX.Element;

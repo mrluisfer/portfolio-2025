@@ -27,6 +27,6 @@ const technologies = [
   'Sass',
   'Vercel',
   'Styled Components',
-]
+];
 
-export default technologies
+export default technologies;

@@ -1,4 +1,4 @@
-import { motion, MotionStyle, TargetAndTransition } from 'motion/react';
+import { MotionStyle, TargetAndTransition, motion } from 'motion/react';
 import { JSX } from 'react';
 import { CgDesignmodo } from 'react-icons/cg';
 import { FaRocket } from 'react-icons/fa6';
@@ -75,7 +75,7 @@ function Speciality({ specialty }: { specialty: TSpecialty }) {
    * @example { rotate: 0, top: 0, left: 0 }
    */
   const initialStylesValues = Object.fromEntries(
-    Object.keys(specialty.whileInView as MotionStyle).map((key) => [key, 0]),
+    Object.keys(specialty.whileInView as MotionStyle).map((key) => [key, 0])
   );
 
   return (

@@ -5,4 +5,4 @@ enum SocialMediaLinks {
   DEVTO = 'https://dev.to/mrluisfer',
 }
 
-export default SocialMediaLinks
+export default SocialMediaLinks;

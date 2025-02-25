@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import SocialMediaLinks from '../../../constants/social-media-links';
-import { FiGithub } from 'react-icons/fi';
 import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FiGithub } from 'react-icons/fi';
 import { PiDevToLogo } from 'react-icons/pi';
+import SocialMediaLinks from '../../../constants/social-media-links';
 
 type HeaderLink = {
   href: string;

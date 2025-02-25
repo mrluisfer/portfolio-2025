@@ -1,7 +1,9 @@
-import { motion } from 'motion/react';
-import Technologies from './technologies';
 import 'src/styles/general-pattern.scss';
 import 'src/styles/technologies-shadow.scss';
+
+import { motion } from 'motion/react';
+
+import Technologies from './technologies';
 
 export default function Skills() {
   return (

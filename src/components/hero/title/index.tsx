@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect, type MouseEvent } from 'react';
+import { type MouseEvent, useEffect, useState } from 'react';
 import FirstName from './first-name';
 import LastName from './last-name';
 

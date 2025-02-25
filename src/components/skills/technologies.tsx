@@ -1,6 +1,8 @@
-import { divideArray } from '@/utils/divideArray';
-import { technologies, Technology } from './icons';
 import { type ReactNode } from 'react';
+
+import { divideArray } from '@/utils/divideArray';
+
+import { Technology, technologies } from './icons';
 import TechnologyCard from './technology-card';
 
 function Row({ children }: { children: ReactNode }) {
