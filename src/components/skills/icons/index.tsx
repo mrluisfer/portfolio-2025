@@ -21,7 +21,7 @@ import {
   Vercel,
   Vite,
   Vitest,
-} from './allIcons';
+} from '../../../assets/icons/allIcons';
 
 export type SvglIcon = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export type Technology = {

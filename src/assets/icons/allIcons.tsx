@@ -502,3 +502,90 @@ export const PostgreSQL = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
+export const Devto = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="0 0 256 256"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M87.3749 147.217C87.3749 157.436 81.0804 172.918 61.1561 172.886H36V83H61.6874C80.9015 83 87.3641 98.4608 87.3695 108.685L87.3749 147.217ZM62.582 99.8189C64.6856 99.8189 66.7946 100.607 68.8982 102.182C70.9963 103.757 72.0535 106.126 72.0589 109.277V147.114C72.0589 150.27 71.0071 152.633 68.9036 154.209C66.8 155.784 64.691 156.572 62.5874 156.572H53.1268V99.8189H62.582Z"
+      fill="black"
+    />
+    <path
+      d="M141.959 99.0529H113.073V119.924H130.731V135.988H113.073V156.854H141.965V172.918H108.253C102.203 173.076 97.1717 168.284 97.0199 162.222V94.2561C96.8735 88.1989 101.661 83.1684 107.706 83.0163H141.965L141.959 99.0529Z"
+      fill="black"
+    />
+    <path
+      d="M198.149 161.684C190.992 178.389 178.17 175.064 172.429 161.684L151.539 83.0217H169.197L185.305 144.8L201.336 83.0217H219L198.149 161.684Z"
+      fill="black"
+    />
+  </svg>
+);
+
+export function GitHub() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  );
+}
+
+export function PixelPerfect({
+  size = 32,
+  color = '#598DF6',
+}: {
+  size: number;
+  color?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M16 16V31L3 23.5V8.5L16 16Z" fill={color} fillOpacity="0.8" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M29 8.5L16 1L3 8.5V23.5L16 31L29 23.5V8.5ZM16 2.15449L4 9.07756V22.9224L16 29.8455V16L27.9994 9.07724L16 2.15449ZM28 22.9224L17 29.2686V22.9614L23 19.49V13.116L28 10.2314V22.9224ZM17 21.8061L22 18.9132V13.6996L22.0106 13.6868L17 16.5776V21.8061Z"
+        fill="#D7E1F5"
+      />
+    </svg>
+  );
+}
+
+export const XformerlyTwitter = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewBox="0 0 1200 1227"
+    {...props}
+  >
+    <path
+      fill="#000"
+      d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+    />
+  </svg>
+);
