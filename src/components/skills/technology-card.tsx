@@ -3,14 +3,17 @@ import { MotionStyle, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { SvglIcon } from './icons';
 
-export default function TechnologyCard({ Icon }: { Icon?: SvglIcon }) {
+export default function TechnologyCard({
+  Icon,
+  customGlowColor,
+}: { Icon?: SvglIcon; customGlowColor?: string }) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [glowColor, setGlowColor] = useState<string | undefined>(undefined);
   const hasIcon = Boolean(Icon);
   const IconElement = Icon || (() => null);
+  const [glowColor, setGlowColor] = useState<string | undefined>(customGlowColor);
 
   useEffect(() => {
-    if (svgRef.current) {
+    if (svgRef.current && !glowColor) {
       const glowColor = getGlowColor(svgRef);
       setGlowColor(glowColor);
     }

@@ -14,7 +14,7 @@ function TimelineItem({ experience }: { experience: TExperience }) {
           </span>
         </p>
         <span className="text-sm text-neutral-500">{experience.date}</span>
-        <span className="text-sm text-neutral-500">
+        <span className="text-xs text-neutral-500">
           {experience.time} - {experience.type}
         </span>
       </div>

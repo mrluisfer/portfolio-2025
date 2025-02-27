@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { FiMaximize2 } from 'react-icons/fi';
 import { GoDash } from 'react-icons/go';

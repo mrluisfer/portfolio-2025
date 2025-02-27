@@ -3,7 +3,7 @@ import technologies from '../../../constants/technologies';
 
 const MarqueeAnimation = () => {
   return (
-    <div className="absolute top-20 bottom-0 h-[100vh] w-[100vw] overflow-x-hidden select-none sm:w-full">
+    <div className="absolute top-20 bottom-0 overflow-hidden select-none sm:w-full h-full w-full">
       <svg
         className="scale-150 rotate-45 sm:scale-100 sm:rotate-0"
         xmlns="http://www.w3.org/2000/svg"

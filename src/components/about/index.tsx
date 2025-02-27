@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 
 import FocusedOn from '@/components/about/focused-on';
@@ -5,8 +7,8 @@ import Container from '../container';
 
 export default function About() {
   return (
-    <Container>
-      <div className="py-24">
+    <Container asChild>
+      <div className="py-[200px]">
         <span className="text-2xl opacity-60">👋 Hey, I'm Luis Alvarez</span>
         <motion.div
           className="my-4 text-5xl font-semibold"

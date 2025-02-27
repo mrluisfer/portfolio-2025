@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 import Container from '../container';
 import Experience from './experience';

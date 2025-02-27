@@ -38,7 +38,7 @@ export default function Title() {
   };
 
   return (
-    <div className="flex items-center justify-center pt-[64px]">
+    <div className="flex items-center justify-center pt-[85px]">
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}

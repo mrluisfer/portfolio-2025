@@ -27,6 +27,7 @@ export type SvglIcon = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export type Technology = {
   Icon: SvglIcon;
   name: string;
+  customGlowColor?: string;
 };
 
 export const technologies: Technology[] = [
@@ -73,22 +74,27 @@ export const technologies: Technology[] = [
   {
     Icon: Motion,
     name: 'Framer Motion',
+    customGlowColor: '#fff42b',
   },
   {
     Icon: Prisma,
     name: 'Prisma',
+    customGlowColor: '#0A0B16',
   },
   {
     Icon: StyledComponents,
     name: 'Styled Components',
+    customGlowColor: '#FAA0E6',
   },
   {
     Icon: PostgreSQL,
     name: 'PostgreSQL',
+    customGlowColor: '#0064a5',
   },
   {
     Icon: Vite,
     name: 'Vite',
+    customGlowColor: '#857BFF',
   },
   {
     Icon: Vitest,
@@ -105,6 +111,7 @@ export const technologies: Technology[] = [
   {
     Icon: Python,
     name: 'Python',
+    customGlowColor: '#4B8BBE',
   },
   {
     Icon: Sass,
@@ -113,5 +120,6 @@ export const technologies: Technology[] = [
   {
     Icon: Deno,
     name: 'Deno',
+    customGlowColor: '#70FFAF',
   },
 ];

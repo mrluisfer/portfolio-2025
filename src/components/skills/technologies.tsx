@@ -23,8 +23,8 @@ export default function Technologies() {
       {technologiesDivided.map((row, i) => (
         <Row key={i}>
           <TechnologyCard />
-          {row.map(({ name, Icon }) => (
-            <TechnologyCard key={name} Icon={Icon} />
+          {row.map(({ name, Icon, customGlowColor }) => (
+            <TechnologyCard key={name} Icon={Icon} customGlowColor={customGlowColor} />
           ))}
           <TechnologyCard />
         </Row>
