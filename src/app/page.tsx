@@ -1,6 +1,6 @@
 import About from '@/components/about';
+import Grid from '@/components/grid';
 import Hero from '@/components/hero';
-import Principles from '@/components/principles';
 import Skills from '@/components/skills';
 import Terminal from '@/components/terminal';
 
@@ -11,7 +11,7 @@ export default function AppPage() {
       <About />
       <Terminal />
       <Skills />
-      <Principles />
+      <Grid />
     </div>
   );
 }

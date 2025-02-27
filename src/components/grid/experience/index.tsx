@@ -1,11 +1,21 @@
 import React from 'react';
 import { type TExperience, timelineExperience } from './timeline-experience';
 
+export default function Experience() {
+  return (
+    <ul className="flex flex-col px-4 bg-neutral-50 rounded-[inherit] flex-1 justify-center">
+      {timelineExperience.map((experience, index) => (
+        <TimelineItem key={index} experience={experience} />
+      ))}
+    </ul>
+  );
+}
+
 function TimelineItem({ experience }: { experience: TExperience }) {
   return (
     <li className="flex justify-start items-center gap-2 relative py-3 pl-2 flex-1">
       <div className="bg-neutral-900 h-full w-0.5 absolute left-[11px] grow"></div>
-      <div className="bg-neutral-800 w-2 h-2 rounded-full"></div>
+      <div className="bg-neutral-800 w-2 h-2 rounded-full animate-pulse z-20 relative block"></div>
       <div className="flex flex-col">
         <p className="font-semibold">
           {experience.title}{' '}
@@ -19,15 +29,5 @@ function TimelineItem({ experience }: { experience: TExperience }) {
         </span>
       </div>
     </li>
-  );
-}
-
-export default function Experience() {
-  return (
-    <ul className="flex flex-col px-4 bg-neutral-50 rounded-[inherit] w-full h-full justify-center">
-      {timelineExperience.map((experience, index) => (
-        <TimelineItem key={index} experience={experience} />
-      ))}
-    </ul>
   );
 }
