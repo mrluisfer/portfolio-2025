@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { type TExperience, timelineExperience } from './timeline-experience';
 
 export default function Experience() {
   return (
-    <ul className="flex flex-col px-4 bg-neutral-50 rounded-[inherit] flex-1 justify-center">
+    <ul className="flex w-full flex-1 flex-col justify-center rounded-[inherit] bg-neutral-50 px-4 group-hover:bg-neutral-100">
       {timelineExperience.map((experience, index) => (
         <TimelineItem key={index} experience={experience} />
       ))}
@@ -11,22 +11,39 @@ export default function Experience() {
   );
 }
 
+function LightText({
+  children,
+  size = 'sm',
+}: {
+  children: ReactNode | string;
+  size?: 'sm' | 'xs';
+}) {
+  const sizeClassName = {
+    sm: 'text-sm',
+    xs: 'text-xs',
+  };
+  return (
+    <span
+      className={`text-neutral-500 transition-colors hover:text-neutral-600 ${sizeClassName[size]}`}
+    >
+      {children}
+    </span>
+  );
+}
+
 function TimelineItem({ experience }: { experience: TExperience }) {
   return (
-    <li className="flex justify-start items-center gap-2 relative py-3 pl-2 flex-1">
-      <div className="bg-neutral-900 h-full w-0.5 absolute left-[11px] grow"></div>
-      <div className="bg-neutral-800 w-2 h-2 rounded-full animate-pulse z-20 relative block"></div>
+    <li className="relative flex flex-1 items-center justify-start gap-2 py-3 pl-2">
+      <div className="absolute left-[11px] h-full w-0.5 grow bg-neutral-900"></div>
+      <div className="relative z-20 block h-2 w-2 animate-pulse rounded-full bg-neutral-800"></div>
       <div className="flex flex-col">
         <p className="font-semibold">
-          {experience.title}{' '}
-          <span className="text-neutral-500 hover:text-neutral-600 text-sm">
-            - {experience.company}
-          </span>
+          {experience.title} <LightText>- {experience.company}</LightText>
         </p>
-        <span className="text-sm text-neutral-500">{experience.date}</span>
-        <span className="text-xs text-neutral-500">
+        <LightText size="xs">{experience.date}</LightText>
+        <LightText size="sm">
           {experience.time} - {experience.type}
-        </span>
+        </LightText>
       </div>
     </li>
   );
