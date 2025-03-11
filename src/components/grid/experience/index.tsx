@@ -3,7 +3,7 @@ import { type TExperience, timelineExperience } from './timeline-experience';
 
 export default function Experience() {
   return (
-    <ul className="flex w-full flex-1 flex-col justify-center rounded-[inherit] bg-neutral-50 px-4 group-hover:bg-neutral-100">
+    <ul className="flex w-full flex-1 flex-col justify-center rounded-[inherit] bg-gradient-to-tr from-neutral-50 to-neutral-100 px-4 group-hover:bg-neutral-100">
       {timelineExperience.map((experience, index) => (
         <TimelineItem key={index} experience={experience} />
       ))}
