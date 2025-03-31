@@ -46,17 +46,6 @@ export default function Grid() {
           >
             <Sharing />
           </Card>
-          <Card
-            className="col-span-2 col-start-2 row-span-2 row-start-5"
-            initial={{
-              translateX: 50,
-            }}
-            animate={{
-              translateX: 0,
-            }}
-          >
-            8
-          </Card>
           <Card className="col-start-2 row-start-4">
             <Phrase />
           </Card>

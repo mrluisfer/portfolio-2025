@@ -2,15 +2,15 @@ import { ReactNode } from 'react';
 import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import { FiGithub } from 'react-icons/fi';
 import { PiDevToLogo } from 'react-icons/pi';
-import SocialMediaLinks from '../../../constants/social-media-links';
+import SocialMediaLinks from '../../constants/social-media-links';
 
-type HeaderLink = {
+type SocialLink = {
   href: string;
   alt: string;
   Icon: ReactNode;
 };
 
-const HEADER_LINKS: Array<HeaderLink> = [
+const SOCIAL_LINKS: Array<SocialLink> = [
   {
     href: SocialMediaLinks.TWITTER,
     alt: 'Twitter: @mrLuisFer',
@@ -33,4 +33,4 @@ const HEADER_LINKS: Array<HeaderLink> = [
   },
 ];
 
-export default HEADER_LINKS;
+export default SOCIAL_LINKS;

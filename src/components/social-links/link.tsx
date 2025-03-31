@@ -4,15 +4,15 @@ import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { motion } from 'motion/react';
 import { type ReactNode, useRef, useState } from 'react';
 
-import arrowAnimationData from '../../../lotties/arrow.json';
+import arrowAnimationData from '../../lotties/arrow.json';
 
-type HeaderLinkProps = {
+type SocialLinkProps = {
   href: string;
   alt?: string;
   children: ReactNode;
 };
 
-export default function HeaderLink({ href, alt, children }: HeaderLinkProps) {
+export default function SocialLink({ href, alt, children }: SocialLinkProps) {
   const arrowAnimationRef = useRef<LottieRefCurrentProps>(null);
   const [showAnimation, setShowAnimation] = useState(false);
 

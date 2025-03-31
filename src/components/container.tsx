@@ -5,7 +5,13 @@ export default function Container({
   children,
   asChild = false,
   align = 'center',
-}: { children: ReactNode; asChild?: boolean; align?: 'center' | 'left' | 'right' }) {
+  className = '',
+}: {
+  children: ReactNode;
+  asChild?: boolean;
+  align?: 'center' | 'left' | 'right';
+  className?: string;
+}) {
   const Component = asChild ? Slot : 'div';
   const aligns = {
     center: 'mx-auto',
@@ -14,5 +20,5 @@ export default function Container({
   };
   const alignClassName = aligns[align];
 
-  return <Component className={`max-w-5xl ${alignClassName}`}>{children}</Component>;
+  return <Component className={`max-w-5xl ${alignClassName} ${className}`}>{children}</Component>;
 }
