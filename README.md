@@ -1,8 +1,26 @@
 # Portfolio 2025
 
+[![Github Repository](https://github.com/codespaces/badge.svg)](https://github.com/mrluisfer/portfolio-2025)
+
 > [!WARNING]
 > This project is still in development and is not ready for production use.
 >
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
 Made with: React + TypeScript + Vite
 
@@ -54,3 +72,16 @@ export default tseslint.config({
   },
 });
 ```
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
