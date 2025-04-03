@@ -1,6 +1,6 @@
-import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 import { motion } from 'motion/react';
-import { ReactNode, useRef } from 'react';
+import { type ReactNode, useRef } from 'react';
 import { TbBrandGithubFilled } from 'react-icons/tb';
 import linkAnimationData from '../../../lotties/link.json';
 

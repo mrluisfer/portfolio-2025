@@ -130,3 +130,33 @@
     @apply bg-background text-foreground;
   }
 }
+
+.mask-fade-top {
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+}
+
+.mask-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, transparent 100%);
+}
+
+.mask-fade-left {
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, transparent 100%);
+}
+
+.mask-fade-right {
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, transparent 100%);
+}
+
+ .mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 50%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 50%, transparent 100%);
+}
+
+.mask-fade-y {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 50%, transparent 100%);
+}

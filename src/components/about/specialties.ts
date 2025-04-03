@@ -1,8 +1,8 @@
-import { MotionStyle, TargetAndTransition } from 'motion/react';
+import { type MotionStyle, type TargetAndTransition } from 'motion/react';
 import { CgDesignmodo } from 'react-icons/cg';
 import { FaRocket } from 'react-icons/fa6';
 import { IoAccessibility } from 'react-icons/io5';
-import { IconType } from 'react-icons/lib';
+import { type IconType } from 'react-icons/lib';
 import { SiFireship } from 'react-icons/si';
 
 export type TSpecialty = {

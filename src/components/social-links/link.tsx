@@ -1,6 +1,4 @@
-'use client';
-
-import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 import { motion } from 'motion/react';
 import { type ReactNode, useRef, useState } from 'react';
 

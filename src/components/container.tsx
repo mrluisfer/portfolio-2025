@@ -1,5 +1,5 @@
 import { Slot } from '@radix-ui/react-slot';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 export default function Container({
   children,

@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 
 import { divideArray } from '@/utils/divideArray';
 
-import { Technology, technologies } from './icons';
+import { type Technology, technologies } from './icons';
 import TechnologyCard from './technology-card';
 
 function Row({ children }: { children: ReactNode }) {
@@ -14,7 +14,7 @@ const technologiesDivided = divideArray<Technology>(technologies, 7);
 
 export default function Technologies() {
   return (
-    <div className="technologies-shadow-x justify-center">
+    <div className="mask-fade-x justify-center">
       <Row>
         {cardPlaceholderLength.map((_, i) => (
           <TechnologyCard key={i} />

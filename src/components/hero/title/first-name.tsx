@@ -1,9 +1,7 @@
-'use client';
-
 import { PixelPerfect } from '@/assets/icons/allIcons';
-import { RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
-import { motion } from 'framer-motion';
-import { ReactNode, useRef } from 'react';
+import { type RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
+import { motion } from 'motion/react';
+import { type ReactNode, useRef } from 'react';
 import { RiGameLine } from 'react-icons/ri';
 import { RxSpeakerLoud } from 'react-icons/rx';
 // import firstName from '@/assets/first-name.mp3';

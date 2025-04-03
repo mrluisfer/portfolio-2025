@@ -1,4 +1,3 @@
-'use client';
 import Header from '../header';
 import Technologies from './technologies';
 import Title from './title';

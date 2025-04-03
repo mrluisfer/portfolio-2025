@@ -1,7 +1,5 @@
-'use client';
-
 import spotifyAnimationData from '@/lotties/spotify.json';
-import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 import { AnimatePresence } from 'motion/react';
 import * as motion from 'motion/react-client';
 import { useRef, useState } from 'react';

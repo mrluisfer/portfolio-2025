@@ -1,5 +1,3 @@
-'use client';
-
 import 'src/styles/general-pattern.scss';
 import 'src/styles/technologies-shadow.scss';
 

@@ -1,7 +1,5 @@
-'use client';
-
-import { HTMLMotionProps, motion } from 'motion/react';
-import { ReactNode } from 'react';
+import { type HTMLMotionProps, motion } from 'motion/react';
+import { type ReactNode } from 'react';
 import Container from '../container';
 import Experience from './experience';
 import Phrase from './phrase';

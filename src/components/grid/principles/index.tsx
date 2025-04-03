@@ -1,8 +1,7 @@
 import { useHover } from '@/hooks/use-hover';
 import Lottie from 'lottie-react';
 import { motion } from 'motion/react';
-import { useState } from 'react';
-import { Principle as TPrinciple, principles } from './principles-list';
+import { type Principle as TPrinciple, principles } from './principles-list';
 
 export default function Principles() {
   const [ref, isHover] = useHover<HTMLDivElement>();

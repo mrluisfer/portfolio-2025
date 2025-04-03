@@ -1,9 +1,6 @@
-'use client';
-
 import dynamic from 'next/dynamic';
 import Container from '../container';
 import SocialLinks from '../social-links';
-import SocialLink from '../social-links/link';
 import CurrentPlaying from './current-playing';
 import CurrentTime from './current-time';
 // import Logo from './logo';

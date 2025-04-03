@@ -1,7 +1,7 @@
 import { getGlowColor } from '@/utils/get-glow-color';
-import { MotionStyle, motion } from 'framer-motion';
+import { type MotionStyle, motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
-import { SvglIcon } from './icons';
+import { type SvglIcon } from './icons';
 
 export default function TechnologyCard({
   Icon,

@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { motion } from 'motion/react';
 import { GrLinkUp } from 'react-icons/gr';
 import { CONTENT_TEXT_COLOR } from '..';
 

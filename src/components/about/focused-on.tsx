@@ -1,7 +1,7 @@
-import { MotionStyle, motion } from 'motion/react';
-import { TSpecialty, specialties } from './specialties';
+import { type MotionStyle, motion } from 'motion/react';
+import { type TSpecialty, specialties } from './specialties';
 
-function Speciality({ specialty }: { specialty: TSpecialty }) {
+function Specialty({ specialty }: { specialty: TSpecialty }) {
   const Icon = specialty.icon;
 
   /**
@@ -40,7 +40,7 @@ export default function FocusedOn() {
   return (
     <div className="relative inline-block items-center pl-5">
       {specialties.map((specialty, index) => (
-        <Speciality specialty={specialty} key={index} />
+        <Specialty specialty={specialty} key={index} />
       ))}
     </div>
   );

@@ -1,5 +1,3 @@
-'use client';
-
 import { FaCheck } from 'react-icons/fa';
 import Container from '../container';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';

@@ -1,10 +1,8 @@
-'use client';
-
 import { motion } from 'motion/react';
 import { FiMaximize2 } from 'react-icons/fi';
 import { GoDash } from 'react-icons/go';
 import { IoClose } from 'react-icons/io5';
-import { IconType } from 'react-icons/lib';
+import { type IconType } from 'react-icons/lib';
 
 import Content from './content';
 import 'src/styles/general-pattern.scss';
