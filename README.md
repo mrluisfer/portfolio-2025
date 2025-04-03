@@ -1,7 +1,5 @@
 # Portfolio 2025
 
-[![Github Repository](https://github.com/codespaces/badge.svg)](https://github.com/mrluisfer/portfolio-2025)
-
 > [!WARNING]
 > This project is still in development and is not ready for production use.
 >
