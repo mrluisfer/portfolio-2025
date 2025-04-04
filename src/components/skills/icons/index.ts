@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import { type SVGProps } from 'react';
 import {
   Deno,
   Expressjs,
@@ -32,16 +32,16 @@ export type Technology = {
 
 export const technologies: Technology[] = [
   {
+    Icon: Expressjs,
+    name: 'Express.js',
+  },
+  {
     Icon: React,
     name: 'React',
   },
   {
     Icon: Nodejs,
     name: 'Node.js',
-  },
-  {
-    Icon: Expressjs,
-    name: 'Express.js',
   },
   {
     Icon: TailwindCSS,
@@ -56,18 +56,6 @@ export const technologies: Technology[] = [
     name: 'TypeScript',
   },
   {
-    Icon: JavaScript,
-    name: 'JavaScript',
-  },
-  {
-    Icon: NestJS,
-    name: 'NestJS',
-  },
-  {
-    Icon: Vercel,
-    name: 'Vercel',
-  },
-  {
     Icon: Socketio,
     name: 'Socket.io',
   },
@@ -77,14 +65,16 @@ export const technologies: Technology[] = [
     customGlowColor: '#fff42b',
   },
   {
-    Icon: Prisma,
-    name: 'Prisma',
-    customGlowColor: '#0A0B16',
+    Icon: Vercel,
+    name: 'Vercel',
   },
   {
-    Icon: StyledComponents,
-    name: 'Styled Components',
-    customGlowColor: '#FAA0E6',
+    Icon: NestJS,
+    name: 'NestJS',
+  },
+  {
+    Icon: JavaScript,
+    name: 'JavaScript',
   },
   {
     Icon: PostgreSQL,
@@ -92,13 +82,23 @@ export const technologies: Technology[] = [
     customGlowColor: '#0064a5',
   },
   {
-    Icon: Vite,
-    name: 'Vite',
-    customGlowColor: '#857BFF',
+    Icon: StyledComponents,
+    name: 'Styled Components',
+    customGlowColor: '#FAA0E6',
+  },
+  {
+    Icon: Prisma,
+    name: 'Prisma',
+    customGlowColor: '#0A0B16',
   },
   {
     Icon: Vitest,
     name: 'Vitest',
+  },
+  {
+    Icon: Vite,
+    name: 'Vite',
+    customGlowColor: '#857BFF',
   },
   {
     Icon: Jest,

@@ -15,18 +15,20 @@ export default function SocialLink({ href, alt, children }: SocialLinkProps) {
   const [showAnimation, setShowAnimation] = useState(false);
 
   return (
-    <motion.div
+    <motion.a
       onMouseOver={() => setShowAnimation(true)}
       onMouseLeave={() => setShowAnimation(false)}
       className="group relative"
+      href={href}
+      aria-description={alt}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
-      <a
-        href={href}
-        aria-description={alt}
-        className="text-2xl text-neutral-700 transition group-hover:text-blue-500"
-      >
+      <span className="text-2xl text-neutral-700 transition group-hover:text-blue-500">
         {children}
-      </a>
+      </span>
       {showAnimation && (
         <motion.div
           animate={{ opacity: 1 }}
@@ -45,6 +47,6 @@ export default function SocialLink({ href, alt, children }: SocialLinkProps) {
           />
         </motion.div>
       )}
-    </motion.div>
+    </motion.a>
   );
 }
