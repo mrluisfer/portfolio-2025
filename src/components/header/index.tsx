@@ -1,10 +1,8 @@
-import dynamic from 'next/dynamic';
 import Container from '../container';
 import SocialLinks from '../social-links';
 import CurrentPlaying from './current-playing';
 import CurrentTime from './current-time';
-// import Logo from './logo';
-const Logo = dynamic(() => import('./logo'), { ssr: false });
+import Logo from './logo';
 
 export default function Header() {
   return (
