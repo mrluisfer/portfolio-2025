@@ -9,20 +9,34 @@ const detailsKeys = {
   email: 'email',
 };
 
-type DetailsProps = {
-  location: string;
-  website: string;
-  github: string;
-  email: string;
-};
+//      email = 'mrluisfeer@gmai.com';
+// location = 'Mexico';
+// github = 'mrluisfer';
+// website = 'https://mrluisfer.vercel.app';
 
-export default function Details({ location, website, github, email }: DetailsProps) {
+export default function Details() {
   return (
     <div className="grid gap-2 grid-cols-2 grid-rows-2">
-      <DetailItem title={detailsKeys.location} description={location} />
-      <DetailItem title={detailsKeys.website} description={website} />
-      <DetailItem title={detailsKeys.github} description={github} />
-      <DetailItem title={detailsKeys.email} description={email} />
+      <DetailItem
+        title={detailsKeys.location}
+        description={'Mexico'}
+        href="https://www.google.com/search?q=mexico"
+      />
+      <DetailItem
+        title={detailsKeys.website}
+        description={'mrluisfer.vercel.app'}
+        href="https://mrluisfer.vercel.app"
+      />
+      <DetailItem
+        title={detailsKeys.github}
+        description={'mrluisfer'}
+        href="https://github.com/mrluisfer"
+      />
+      <DetailItem
+        title={detailsKeys.email}
+        description={'mrluisfeer@gmail.com'}
+        href="mailto:mrluisfeer@gmail.com"
+      />
     </div>
   );
 }
@@ -30,39 +44,35 @@ export default function Details({ location, website, github, email }: DetailsPro
 function DetailItem({
   title,
   description,
+  href = '',
 }: {
   title: string;
   description: string;
+  href: string;
 }) {
   return (
     <div className="flex flex-col gap-1">
       <strong className="capitalize text-sm">{title}</strong>
-      <div className={`${CONTENT_TEXT_COLOR}`}>
-        {title === detailsKeys.location ? (
-          <div className="flex items-center gap-2">
-            <Avatar className="h-5 w-5">
-              <AvatarImage
-                src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg"
-                alt="Mexico Flag"
-                className="object-cover bg-cover"
-              />
-              <AvatarFallback>MX</AvatarFallback>
-            </Avatar>
-            <span>{description}</span>
-          </div>
-        ) : (
-          <a
-            href={description}
-            className="border-b border-transparent hover:border-neutral-700 transition-colors flex items-center gap-1 w-fit"
-          >
-            {title === detailsKeys.github && '@'}
-            {description}
-            <span className="ml-1 rotate-45">
-              <GrLinkUp />
-            </span>
-          </a>
+      <a
+        href={href}
+        className={`border-b border-transparent hover:border-neutral-700 transition-colors flex items-center gap-1 w-fit group ${CONTENT_TEXT_COLOR}`}
+      >
+        {title === detailsKeys.github && '@'}
+        {title === detailsKeys.location && (
+          <Avatar className="h-5 w-5">
+            <AvatarImage
+              src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg"
+              alt="Mexico Flag"
+              className="object-cover bg-cover"
+            />
+            <AvatarFallback>MX</AvatarFallback>
+          </Avatar>
         )}
-      </div>
+        {description}
+        <span className="ml-1 rotate-45 opacity-0 group-hover:opacity-100 transition">
+          <GrLinkUp />
+        </span>
+      </a>
     </div>
   );
 }
