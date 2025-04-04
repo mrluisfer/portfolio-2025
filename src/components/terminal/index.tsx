@@ -6,6 +6,7 @@ import { type IconType } from 'react-icons/lib';
 
 import Content from './content';
 import 'src/styles/general-pattern.scss';
+import ShadowBox from '../shadow-box';
 
 function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
   const IconComponent = Icon || (() => null);
@@ -22,17 +23,19 @@ export default function Terminal() {
   return (
     <div className="general-pattern relative bg-gradient-to-br py-[200px]">
       <motion.div className="mx-auto w-[600px] rounded-lg shadow-2xl shadow-neutral-200">
-        <div className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:bg-neutral-300">
-          <div className="absolute flex items-center gap-2">
-            <TerminalDot color="bg-red-400" Icon={IoClose} />
-            <TerminalDot color="bg-yellow-400" Icon={GoDash} />
-            <TerminalDot color="bg-green-400" Icon={FiMaximize2} />
+        <ShadowBox>
+          <header className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:brightness-95">
+            <div className="absolute flex items-center gap-2">
+              <TerminalDot color="bg-red-400" Icon={IoClose} />
+              <TerminalDot color="bg-yellow-400" Icon={GoDash} />
+              <TerminalDot color="bg-green-400" Icon={FiMaximize2} />
+            </div>
+            <p className="mx-auto font-mono opacity-50">Terminal</p>
+          </header>
+          <div className="rounded-b-lg bg-neutral-100 px-4 py-4">
+            <Content />
           </div>
-          <p className="mx-auto font-mono opacity-50">Terminal</p>
-        </div>
-        <div className="rounded-b-lg bg-neutral-100 px-4 py-4">
-          <Content />
-        </div>
+        </ShadowBox>
       </motion.div>
     </div>
   );
