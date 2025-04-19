@@ -9,8 +9,8 @@ import Sharing from './sharing';
 export default function Grid() {
   return (
     <Container asChild>
-      <div className="mx-auto h-[700px] py-20 mt-[150px]">
-        <div className="grid h-full grid-cols-3 grid-rows-6 gap-4">
+      <div className="mx-auto h-auto lg:h-[700px] py-20 mt-[150px] p-6 lg:p-0">
+        <div className="flex lg:grid flex-row flex-wrap h-full grid-cols-3 grid-rows-6 lg:gap-4 gap-1">
           <Card
             className="col-span-2 row-span-3"
             initial={{
@@ -59,7 +59,7 @@ function Card({ children, className = '', ...props }: CardProps) {
     <motion.div
       initial={{ scale: 1, ...(typeof props.initial === 'object' ? props.initial : {}) }}
       whileHover={{ scale: 1.03 }}
-      className={`group flex flex-col items-center justify-center rounded-xl border-2 border-neutral-200 transition hover:border-neutral-300 hover:shadow-sm ${className}`}
+      className={`group flex flex-col w-fit lg:w-auto items-center justify-center rounded-xl border-2 border-neutral-200 transition hover:border-neutral-300 hover:shadow-sm ${className}`}
       {...props}
     >
       {children}

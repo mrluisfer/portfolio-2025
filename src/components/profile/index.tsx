@@ -9,7 +9,7 @@ export const CONTENT_TEXT_COLOR =
 export default function Profile() {
   return (
     <>
-      <Container className="pt-24 pb-24">
+      <Container className="pt-24 pb-24 px-[30px] lg:px-0">
         <Header />
         <Experience />
         <hr />

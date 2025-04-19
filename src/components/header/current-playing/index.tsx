@@ -24,7 +24,7 @@ export default function CurrentPlaying() {
               loop={false}
             />
           </div>
-          <p className="text-xs text-white font-semibold">My favorites</p>
+          <p className="text-xs text-white font-semibold">My favorite</p>
         </div>
         <img src={colorVioletCover.src} alt="The Color Violet" className="rounded-xl" />
         <motion.div
@@ -42,7 +42,7 @@ export default function CurrentPlaying() {
 }
 
 function Popover({ children }: { children: ReactNode }) {
-  const [showPopover, setShowPopover] = useState(true);
+  const [showPopover, setShowPopover] = useState(false);
 
   return (
     <motion.div>

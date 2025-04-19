@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function Phrase() {
   return (
-    <div className="grid place-content-center flex-1 gap-1 flex-col bg-gradient-to-br from-orange-100 to-orange-300 p-2 rounded-[inherit] w-full h-full">
+    <div className="grid place-content-center flex-1 gap-1 flex-col bg-gradient-to-br from-orange-100 to-orange-300 p-2 rounded-[inherit] lg:w-full h-full">
       <p className="text-center font-mono text-sm italic">"Talk is cheap. Show me the code."</p>
       <div className="flex items-center justify-end gap-2">
         <Avatar>

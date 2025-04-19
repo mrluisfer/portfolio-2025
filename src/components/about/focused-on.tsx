@@ -1,6 +1,16 @@
 import { type MotionStyle, motion } from 'motion/react';
 import { type TSpecialty, specialties } from './specialties';
 
+export default function FocusedOn() {
+  return (
+    <div className="relative inline-block items-center pl-5">
+      {specialties.map((specialty, index) => (
+        <Specialty specialty={specialty} key={index} />
+      ))}
+    </div>
+  );
+}
+
 function Specialty({ specialty }: { specialty: TSpecialty }) {
   const Icon = specialty.icon;
 
@@ -33,15 +43,5 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
       <span>{<Icon />}</span>
       <span className="">{specialty.text}</span>
     </motion.div>
-  );
-}
-
-export default function FocusedOn() {
-  return (
-    <div className="relative inline-block items-center pl-5">
-      {specialties.map((specialty, index) => (
-        <Specialty specialty={specialty} key={index} />
-      ))}
-    </div>
   );
 }

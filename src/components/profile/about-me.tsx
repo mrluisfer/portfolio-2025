@@ -3,7 +3,7 @@ import Details from './details';
 
 const AboutMe = () => {
   return (
-    <div className="pt-5 flex items-center justify-between gap-5">
+    <div className="pt-5 flex lg:items-center justify-between gap-5 flex-col lg:flex-row">
       <div className="max-w-[550px]">
         <h3 className="text-xl font-bold pb-2">About me</h3>
         <p className={`${CONTENT_TEXT_COLOR}`}>

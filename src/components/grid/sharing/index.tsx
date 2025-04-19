@@ -13,7 +13,7 @@ export default function Sharing() {
 
   return (
     <div
-      className={`bg-gradient-to-br from-green-100 to-green-300 from-20% rounded-[inherit] flex-1 flex flex-col p-3`}
+      className={`bg-gradient-to-br from-green-100 to-green-300 from-20% rounded-[inherit] flex-1 flex flex-col p-3 max-w-[350px] lg:max-w-auto`}
     >
       <div className="bg-[#24292f] text-2xl active:scale-95 p-2 rounded-xl w-fit h-fit text-white hover:shadow-xl shadow-lg transition">
         <TbBrandGithubFilled />
