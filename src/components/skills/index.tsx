@@ -5,11 +5,12 @@ import { motion } from 'motion/react';
 
 import Container from '../container';
 import Technologies from './technologies';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 
 export default function Skills() {
   return (
     <Container>
-      <div className="general-pattern technologies-shadow-y my-6 p-10">
+      <div className="general-pattern technologies-shadow-y my-6 p-10" id={NAVIGATION_NAMES.SKILLS}>
         <div className="relative mx-auto flex max-w-[700px] justify-center text-center text-3xl">
           <motion.h1
             className="absolute -top-[30px] z-20 font-semibold drop-shadow-2xl"

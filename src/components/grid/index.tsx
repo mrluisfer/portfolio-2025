@@ -5,11 +5,15 @@ import Experience from './experience';
 import Phrase from './phrase';
 import Principles from './principles';
 import Sharing from './sharing';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 
 export default function Grid() {
   return (
     <Container asChild>
-      <div className="mx-auto h-auto lg:h-[700px] py-20 mt-[150px] p-6 lg:p-0">
+      <div
+        className="mx-auto h-auto lg:h-[700px] py-20 mt-[150px] p-6 lg:p-0"
+        id={NAVIGATION_NAMES.PRINCIPLES}
+      >
         <div className="flex lg:grid flex-row flex-wrap h-full grid-cols-3 grid-rows-6 lg:gap-4 gap-1">
           <Card
             className="col-span-2 row-span-3"

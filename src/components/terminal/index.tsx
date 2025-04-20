@@ -7,6 +7,7 @@ import { type IconType } from 'react-icons/lib';
 import Content from './content';
 import 'src/styles/general-pattern.scss';
 import ShadowBox from '../shadow-box';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 
 function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
   const IconComponent = Icon || (() => null);
@@ -21,7 +22,10 @@ function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
 
 export default function Terminal() {
   return (
-    <div className="general-pattern relative bg-gradient-to-br py-[200px]">
+    <div
+      className="general-pattern relative bg-gradient-to-br py-[200px]"
+      id={NAVIGATION_NAMES.TERMINAL}
+    >
       <motion.div className="mx-auto w-[600px] rounded-lg shadow-2xl shadow-neutral-200">
         <ShadowBox>
           <header className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:brightness-95">

@@ -2,11 +2,12 @@ import { motion } from 'motion/react';
 
 import FocusedOn from '@/components/about/focused-on';
 import Container from '../container';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 
 export default function About() {
   return (
     <Container asChild>
-      <div className="md:py-[200px] sm:py-[100px] text-center">
+      <div className="md:py-[200px] sm:py-[100px] text-center" id={NAVIGATION_NAMES.ABOUT}>
         <span className="text-2xl opacity-60">👋 Hey, I'm Luis Alvarez</span>
         <motion.div
           className="my-4 text-5xl font-semibold"
