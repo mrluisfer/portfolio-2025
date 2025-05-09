@@ -19,7 +19,7 @@ export default function LastName() {
       <AnimatePresence mode="wait">
         <motion.p
           key={variantIndex}
-          className="absolute flex items-center will-change-[opacity]"
+          className="absolute flex items-center will-change-[opacity] text-6xl sm:text-9xl"
           style={{ gap: 0 }}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}

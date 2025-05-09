@@ -9,7 +9,7 @@ import firstName from '@/assets/first-name.mp3';
 export default function FirstName() {
   return (
     <motion.div
-      className="relative flex items-center text-9xl"
+      className="relative flex items-center text-8xl sm:text-9xl"
       style={{
         gap: '1rem',
       }}

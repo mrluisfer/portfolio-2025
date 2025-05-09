@@ -3,7 +3,7 @@ import { type TSpecialty, specialties } from './specialties';
 
 export default function FocusedOn() {
   return (
-    <div className="relative inline-block items-center pl-5">
+    <div className="relative inline-block items-center pr-40 sm:pr-0 sm:pl-5">
       {specialties.map((specialty, index) => (
         <Specialty specialty={specialty} key={index} />
       ))}

@@ -12,11 +12,12 @@ function Row({ children }: { children: ReactNode }) {
 
 export default function Technologies() {
   const isLessThan768 = useMediaQuery('only screen and (max-width: 768px)');
+  const isLessThan450 = useMediaQuery('only screen and (max-width: 450px)');
 
-  const cardPlaceholderLength = Array.from({ length: isLessThan768 ? 5 : 9 });
+  const cardPlaceholderLength = Array.from({ length: isLessThan768 ? (isLessThan450 ? 0 : 5) : 9 });
   const technologiesDivided = divideArray<Technology>(technologies, isLessThan768 ? 5 : 7);
   return (
-    <div className="mask-fade-x justify-center">
+    <div className="mask-fade-x justify-center pt-[100px] sm:py-0">
       <Row>
         {cardPlaceholderLength.map((_, i) => (
           <TechnologyCard key={i} />

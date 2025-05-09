@@ -12,7 +12,7 @@ const goToTop = () => {
 
 export default function Navigation() {
   return (
-    <div className="fixed bottom-10 left-0 right-0 flex justify-center z-50 opacity-40 hover:opacity-100 transition-opacity">
+    <div className="hidden fixed bottom-10 left-0 right-0 sm:flex justify-center z-50 opacity-40 hover:opacity-100 transition-opacity">
       <div className="flex items-center bg-neutral-900/40 backdrop-blur-sm rounded-full w-fit h-[64px] px-4 gap-6">
         <button
           className="relative w-10 h-10 shrink-0 cursor-pointer"

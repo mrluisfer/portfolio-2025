@@ -21,7 +21,7 @@ export default function TechnologyCard({
 
   return (
     <motion.div
-      className="technology-card-glow relative grid h-24 w-24 place-items-center rounded-xl border bg-neutral-200 backdrop-blur-xl"
+      className="technology-card-glow relative grid h-24 w-24 place-items-center rounded-xl border-0 sm:border bg-transparent sm:bg-neutral-200 backdrop-blur-xl"
       style={
         {
           '--glow-color': glowColor,
@@ -31,7 +31,7 @@ export default function TechnologyCard({
       whileHover={hasIcon ? { scale: 1.1, borderColor: glowColor } : {}}
       whileTap={hasIcon ? { scale: 0.9, borderColor: glowColor } : {}}
     >
-      <motion.div className="relative z-10 flex h-full w-full items-center justify-center rounded-xl bg-neutral-200 text-4xl">
+      <motion.div className="relative z-10 flex h-full w-full items-center justify-center rounded-xl bg-transparent sm:bg-neutral-200 text-4xl">
         {hasIcon && (<IconElement ref={svgRef} />)!}
       </motion.div>
     </motion.div>
