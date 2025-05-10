@@ -9,7 +9,7 @@ export default function Principles() {
   return (
     <motion.div
       ref={ref}
-      className="w-full bg-gradient-to-r from-blue-300/20 to-purple-300/20 flex-1 p-2 rounded-[inherit] relative"
+      className="w-full bg-gradient-to-r from-blue-300/20 to-purple-300/20 flex-1 p-2 lg:p-0 rounded-[inherit] relative"
     >
       <motion.div
         className="bg-neutral-900 hover:shadow-xl text-white rounded-2xl px-2 py-1 text-xs w-fit will-change-[box-shadow] absolute top-[2px] left-2 z-10"

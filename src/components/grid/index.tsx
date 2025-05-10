@@ -6,14 +6,18 @@ import Phrase from './phrase';
 import Principles from './principles';
 import Sharing from './sharing';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import Title from '../title';
 
 export default function Grid() {
   return (
     <Container asChild>
       <div
-        className="mx-auto h-auto lg:h-[700px] py-20 mt-0 sm:mt-[150px] p-6 lg:p-0"
+        className="mx-auto h-auto lg:h-[700px] py-20 mt-0 sm:my-[150px] p-6 lg:py-0"
         id={NAVIGATION_NAMES.PRINCIPLES}
       >
+        <div className="flex items-center justify-center mb-10">
+          <Title>My Principles</Title>
+        </div>
         <div className="flex lg:grid flex-row flex-wrap h-full grid-cols-3 grid-rows-6 lg:gap-4 gap-3 sm:gap-1">
           <Card
             className="col-span-2 row-span-3"
