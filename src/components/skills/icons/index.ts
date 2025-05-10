@@ -42,6 +42,7 @@ export const technologies: Technology[] = [
   {
     Icon: Nodejs,
     name: 'Node.js',
+    customGlowColor: '#8CC84B',
   },
   {
     Icon: TailwindCSS,

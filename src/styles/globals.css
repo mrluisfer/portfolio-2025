@@ -48,6 +48,13 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
