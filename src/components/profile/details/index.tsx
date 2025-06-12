@@ -56,6 +56,10 @@ function DetailItem({
       <a
         href={href}
         className={`border-b border-transparent hover:border-neutral-700 transition-colors flex items-center gap-1 w-fit group ${CONTENT_TEXT_COLOR}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={description}
+        aria-label={description}
       >
         {title === detailsKeys.github && '@'}
         {title === detailsKeys.location && (

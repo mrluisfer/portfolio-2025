@@ -1,12 +1,9 @@
 import { getGlowColor } from '@/utils/get-glow-color';
 import { type MotionStyle, motion } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { type SvglIcon } from './icons';
 
-export default function TechnologyCard({
-  Icon,
-  customGlowColor,
-}: { Icon?: SvglIcon; customGlowColor?: string }) {
+function TechnologyCard({ Icon, customGlowColor }: { Icon?: SvglIcon; customGlowColor?: string }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const hasIcon = Boolean(Icon);
   const IconElement = Icon || (() => null);
@@ -37,3 +34,5 @@ export default function TechnologyCard({
     </motion.div>
   );
 }
+
+export default memo(TechnologyCard);

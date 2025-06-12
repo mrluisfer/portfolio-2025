@@ -11,6 +11,16 @@ const goToTop = () => {
 };
 
 export default function Navigation() {
+  const handleNavigationClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const targetId = event.currentTarget.getAttribute('href')?.substring(1);
+    if (targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <div className="hidden fixed bottom-10 left-0 right-0 sm:flex justify-center z-50 opacity-40 hover:opacity-100 transition-opacity">
       <div className="flex items-center bg-neutral-900/40 backdrop-blur-sm rounded-full w-fit h-[64px] px-4 gap-6">
@@ -27,8 +37,9 @@ export default function Navigation() {
             {navigationItems.map((item) => (
               <li key={item}>
                 <motion.a
+                  onClick={handleNavigationClick}
                   href={`#${item}`}
-                  className="capitalize hover:bg-black p-4 rounded-full w-[95px] text-center transition hover:scale-105 active:scale-95"
+                  className="capitalize block hover:bg-black p-4 rounded-full w-[90px] text-center transition hover:scale-105 active:scale-95"
                 >
                   {item}
                 </motion.a>
