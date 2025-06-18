@@ -23,9 +23,9 @@ export default function Navigation() {
 
   return (
     <div className="hidden fixed bottom-10 left-0 right-0 sm:flex justify-center z-50 opacity-40 hover:opacity-100 transition-opacity">
-      <div className="flex items-center bg-neutral-900/40 backdrop-blur-sm rounded-full w-fit h-[64px] px-4 gap-6">
+      <div className="flex items-center bg-neutral-900/40 backdrop-blur-lg rounded-full w-fit h-[64px] px-4 gap-6">
         <button
-          className="relative w-10 h-10 shrink-0 cursor-pointer"
+          className="relative w-8 h-8 shrink-0 cursor-pointer"
           onClick={goToTop}
           title="Go to top"
           aria-label="Go to top"
@@ -39,7 +39,7 @@ export default function Navigation() {
                 <motion.a
                   onClick={handleNavigationClick}
                   href={`#${item}`}
-                  className="capitalize block hover:bg-black p-4 rounded-full w-[90px] text-center transition hover:scale-105 active:scale-95"
+                  className="capitalize block hover:bg-black p-2 rounded-full w-[90px] text-center transition hover:scale-105 active:scale-95"
                 >
                   {item}
                 </motion.a>
@@ -49,10 +49,10 @@ export default function Navigation() {
         </div>
         <div>
           <div
-            className="text-white text-xl bg-neutral-300/50 cursor-not-allowed rounded-full p-2"
+            className="text-white text-xl bg-neutral-300/50 cursor-not-allowed rounded-full p-1 flex items-center justify-center hover:bg-neutral-300/70 transition"
             title="Coming soon..."
           >
-            <IoSettingsOutline />
+            <IoSettingsOutline width={32} height={32} />
           </div>
         </div>
       </div>
