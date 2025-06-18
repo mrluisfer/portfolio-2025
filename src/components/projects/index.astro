@@ -1,0 +1,90 @@
+---
+import Container from '../container';
+import Title from '../title';
+import { GET } from '../../pages/api/github-user-repos';
+import type { components } from '@octokit/openapi-types';
+import ShadowBox from '../shadow-box';
+import clsx from 'clsx';
+import { Project } from './project';
+import { NAVIGATION_NAMES } from '../../constants/navigation-names';
+
+let response = await GET(Astro);
+const data = await response.json();
+
+const gridStylesLayout = [
+  // 1
+  'w-[200px]',
+  // 2
+  'w-[300px]',
+  // 3
+  'w-[200px]',
+  // 4
+  'w-[400px]',
+  // 5
+  'w-[250px]',
+  // 6
+  'w-[300px]',
+  // 7
+  'w-[400px]',
+  // 8
+  'w-[250px]',
+];
+
+export type GitHubRepo = components['schemas']['repository'];
+
+const mainProject: GitHubRepo = data[0] || {};
+---
+
+<Container>
+  <div id={NAVIGATION_NAMES.PROJECTS} class="mt-36">
+    <Title>
+      <h1>Projects I'm currently working on</h1>
+    </Title>
+    <div class="max-w-lg mx-auto mt-10">
+      <Project client:only="react" project={mainProject} />
+    </div>
+
+    <div class="gap-x-4 gap-y-2 pt-20 flex flex-wrap justify-center items-start">
+      {
+        gridStylesLayout.map((className, id) => {
+          const project: GitHubRepo = data[id + 1] || {};
+          const pastelGradients = [
+            // 1
+            'bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100',
+            // 2
+            'bg-gradient-to-tl from-pink-100 via-pink-50 to-yellow-100',
+            // 3
+            'bg-gradient-to-b from-lime-100 via-green-50 to-green-100',
+            // 4
+            'bg-gradient-to-tr from-purple-100 via-indigo-50 to-violet-100',
+            // 5
+            'bg-gradient-to-r from-orange-100 via-yellow-50 to-amber-100',
+            // 6
+            'bg-gradient-to-t from-teal-100 via-sky-50 to-blue-100',
+            // 7
+            'bg-gradient-to-l from-fuchsia-100 via-pink-50 to-rose-100',
+            // 8
+            'bg-gradient-to-b from-gray-50 via-orange-50 to-orange-100',
+          ];
+
+          if (!project || Object.keys(project).length === 0) {
+            return (
+              <div aria-label={`${className}-${id}`} class={className}>
+                <div class="h-full w-full bg-gray-200 animate-pulse rounded-lg" />
+              </div>
+            );
+          }
+
+          return (
+            <Project
+              client:only="react"
+              className={className}
+              project={project}
+              gradient={pastelGradients[id]}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</Container>

@@ -1,4 +1,5 @@
 import { Slot } from '@radix-ui/react-slot';
+import clsx from 'clsx';
 import { type ReactNode } from 'react';
 
 export default function Container({
@@ -20,5 +21,5 @@ export default function Container({
   };
   const alignClassName = aligns[align];
 
-  return <Component className={`max-w-5xl ${alignClassName} ${className}`}>{children}</Component>;
+  return <Component className={clsx('max-w-5xl', alignClassName, className)}>{children}</Component>;
 }

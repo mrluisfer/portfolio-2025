@@ -19,10 +19,10 @@ export default function Grid() {
           <Card
             className="col-span-2 row-span-3"
             initial={{
-              translateX: -50,
+              x: -50,
             }}
             animate={{
-              translateX: 0,
+              x: 0,
             }}
           >
             <Principles />
@@ -30,10 +30,10 @@ export default function Grid() {
           <Card
             className="col-start-3 row-span-4 w-full sm:w-auto"
             initial={{
-              translateY: -50,
+              y: -50,
             }}
             animate={{
-              translateY: 0,
+              y: 0,
             }}
           >
             <Experience />
@@ -41,10 +41,10 @@ export default function Grid() {
           <Card
             className="row-span-3 row-start-4"
             initial={{
-              translateY: 50,
+              y: 50,
             }}
             animate={{
-              translateY: 0,
+              y: 0,
             }}
           >
             <Sharing />

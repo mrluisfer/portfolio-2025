@@ -9,6 +9,7 @@ import Grid from '@/components/grid';
 import Hero from '@/components/hero';
 import Navigation from '@/components/navigation';
 import Profile from '@/components/profile';
+import Projects from '@/components/projects/index.astro';
 import Skills from '@/components/skills';
 import Terminal from '@/components/terminal';
 ---
@@ -19,6 +20,7 @@ import Terminal from '@/components/terminal';
     <About client:only="react" />
     <Terminal client:only="react" />
     <Skills client:only="react" />
+    <Projects />
     <Grid client:only="react" />
     <Profile client:only="react" />
     <Connect client:only="react" />
