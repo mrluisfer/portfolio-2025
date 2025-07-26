@@ -7,8 +7,6 @@
     "format": "prettier --write .",
     "check": "prettier --check .",
     "lint": "next lint",
-    "preview": "astro preview",
-    "astro": "astro",
     "biome:format": "npx @biomejs/biome format --write .",
     "biome:check": "yarn biome check --write .",
     "preinstall": "npx only-allow pnpm",
@@ -17,9 +15,6 @@
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/ts-plugin": "^1.10.4",
-    "@astrojs/vercel": "^8.1.4",
     "@octokit/core": "^7.0.2",
     "@octokit/openapi-types": "^25.1.0",
     "@octokit/plugin-rest-endpoint-methods": "^16.0.0",
@@ -30,7 +25,6 @@
     "@tanstack/react-router": "^1.129.8",
     "@tanstack/react-start": "^1.129.8",
     "animejs": "^4.1.1",
-    "astro": "^5.9.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lottie-react": "^2.4.1",

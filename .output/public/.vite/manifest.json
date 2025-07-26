@@ -1,0 +1,43 @@
+{
+  "../../../../~start/default-client-entry.tsx": {
+    "file": "assets/main-Bc0QxjAB.js",
+    "name": "main",
+    "src": "../../../../~start/default-client-entry.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/app/index.tsx?tsr-split=component"
+    ],
+    "css": [
+      "assets/main-B9q0CMb_.css"
+    ]
+  },
+  "src/app/index.tsx?tsr-split=component": {
+    "file": "assets/index-Cx83c3VK.js",
+    "name": "index",
+    "src": "src/app/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../~start/default-client-entry.tsx"
+    ],
+    "css": [
+      "assets/index-BtP46cJ0.css"
+    ],
+    "assets": [
+      "assets/color-violet-BNbuaX1r.webp",
+      "assets/first-name-Mz-ftwQU.mp3",
+      "assets/white-pattern-CxDXy31k.avif"
+    ]
+  },
+  "src/assets/albums/color-violet.webp": {
+    "file": "assets/color-violet-BNbuaX1r.webp",
+    "src": "src/assets/albums/color-violet.webp"
+  },
+  "src/assets/first-name.mp3": {
+    "file": "assets/first-name-Mz-ftwQU.mp3",
+    "src": "src/assets/first-name.mp3"
+  },
+  "src/assets/white-pattern.avif": {
+    "file": "assets/white-pattern-CxDXy31k.avif",
+    "src": "src/assets/white-pattern.avif"
+  }
+}
