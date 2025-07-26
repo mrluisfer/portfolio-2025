@@ -3,7 +3,6 @@ import { AnimatePresence } from 'motion/react';
 import * as motion from 'motion/react-client';
 import { useRef, useState, type ReactNode } from 'react';
 import { TbMusicPause } from 'react-icons/tb';
-import colorVioletCover from '@/assets/albums/color-violet.webp';
 import spotifyAnimationData from '@/lotties/spotify.json';
 
 export default function CurrentPlaying() {
@@ -12,9 +11,9 @@ export default function CurrentPlaying() {
   return (
     <Popover>
       <div
-        className={`flex relative items-center justify-center gap-2 w-[300px] h-[300px] rounded-xl flex-col`}
+        className={`relative flex h-[300px] w-[300px] flex-col items-center justify-center gap-2 rounded-xl`}
       >
-        <div className="flex items-center absolute top-3 gap-2 left-3">
+        <div className="absolute top-3 left-3 flex items-center gap-2">
           <div className="relative h-5 w-5 overflow-hidden">
             <Lottie
               lottieRef={spotifyRefAnimationData}
@@ -24,16 +23,16 @@ export default function CurrentPlaying() {
               loop={false}
             />
           </div>
-          <p className="text-xs text-white font-semibold">My favorite</p>
+          <p className="text-xs font-semibold text-white">My favorite</p>
         </div>
-        <img src={colorVioletCover.src} alt="The Color Violet" className="rounded-xl" />
+        <img src={'/color-violet.webp'} alt="The Color Violet" className="rounded-xl" />
         <motion.div
-          className="absolute bottom-5 w-[280px] bg-yellow-500/10 backdrop-blur-md text-white px-4 py-3 rounded-xl"
+          className="absolute bottom-5 w-[280px] rounded-xl bg-yellow-500/10 px-4 py-3 text-white backdrop-blur-md"
           whileHover={{
             scale: 0.95,
           }}
         >
-          <p className="font-bold text-lg">The Color Violet</p>
+          <p className="text-lg font-bold">The Color Violet</p>
           <p className="text-sm">Tory Lanez</p>
         </motion.div>
       </div>

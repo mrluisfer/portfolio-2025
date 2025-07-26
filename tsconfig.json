@@ -1,13 +1,15 @@
 {
-  "include": ["**/*"],
-  "exclude": ["dist"],
   "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "verbatimModuleSyntax": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
     },
     "baseUrl": "."
-  }
+  },
+  "include": ["src", ".tanstack/*"],
+  "exclude": ["dist", "node_modules"]
 }
