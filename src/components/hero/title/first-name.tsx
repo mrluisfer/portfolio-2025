@@ -4,7 +4,6 @@ import { motion } from 'motion/react';
 import { type ReactNode, useRef } from 'react';
 import { RiGameLine } from 'react-icons/ri';
 import { RxSpeakerLoud } from 'react-icons/rx';
-import firstName from '@/assets/first-name.mp3';
 
 export default function FirstName() {
   return (
@@ -82,7 +81,7 @@ function SpeakerName() {
         duration: 0.3,
       }}
     >
-      <audio src={firstName} ref={audioRef} />
+      <audio src={'/first-name.mp3'} ref={audioRef} />
       <RxSpeakerLoud size={20} onClick={play} />
     </motion.div>
   );

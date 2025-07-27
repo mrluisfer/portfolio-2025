@@ -1,3 +1,4 @@
+'use client';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import Container from '../container';
 import AboutMe from './about-me';

@@ -3,21 +3,14 @@ import { motion } from 'motion/react';
 import type { ProjectType } from './projects-list';
 import { cn } from '@/lib/utils';
 import { MoveDownRight } from 'lucide-react';
+import Image from 'next/image';
 
 export function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
   return text.length > maxLength ? text.slice(0, maxLength).trimEnd() + '…' : text;
 }
 
-export const Project = ({
-  className,
-  project,
-  gradient,
-}: {
-  className?: string;
-  project: ProjectType;
-  gradient?: string;
-}) => {
+export const Project = ({ className, project }: { className?: string; project: ProjectType }) => {
   const projectDescription = truncateText(project.description, 70);
 
   return (
@@ -29,7 +22,7 @@ export const Project = ({
       )}
     >
       {project.imageCover ? (
-        <img
+        <Image
           src={project.imageCover}
           alt={project.name}
           loading="lazy"

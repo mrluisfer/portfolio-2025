@@ -1,5 +1,7 @@
-import 'src/styles/general-pattern.scss';
-import 'src/styles/technologies-shadow.scss';
+'use client';
+
+import '@/styles/general-pattern.scss';
+import '@/styles/technologies-shadow.scss';
 
 import { motion } from 'motion/react';
 

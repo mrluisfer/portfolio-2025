@@ -4,6 +4,8 @@ import * as motion from 'motion/react-client';
 import { useRef, useState, type ReactNode } from 'react';
 import { TbMusicPause } from 'react-icons/tb';
 import spotifyAnimationData from '@/lotties/spotify.json';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 export default function CurrentPlaying() {
   const spotifyRefAnimationData = useRef<LottieRefCurrentProps>(null);
@@ -11,7 +13,10 @@ export default function CurrentPlaying() {
   return (
     <Popover>
       <div
-        className={`relative flex h-[300px] w-[300px] flex-col items-center justify-center gap-2 rounded-xl`}
+        className={cn(
+          `relative flex h-[300px] w-[300px] flex-col items-center justify-center gap-2 rounded-xl`,
+          'bg-[url("/color-violet.webp")] bg-cover bg-center'
+        )}
       >
         <div className="absolute top-3 left-3 flex items-center gap-2">
           <div className="relative h-5 w-5 overflow-hidden">
@@ -25,7 +30,6 @@ export default function CurrentPlaying() {
           </div>
           <p className="text-xs font-semibold text-white">My favorite</p>
         </div>
-        <img src={'/color-violet.webp'} alt="The Color Violet" className="rounded-xl" />
         <motion.div
           className="absolute bottom-5 w-[280px] rounded-xl bg-yellow-500/10 px-4 py-3 text-white backdrop-blur-md"
           whileHover={{

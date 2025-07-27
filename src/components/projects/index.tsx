@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
+'use client';
 import { Project } from './project';
 import Container from '../container';
 import Title from '../title';
-import ShadowBox from '../shadow-box';
 import clsx from 'clsx';
 
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import { useQuery } from '@tanstack/react-query';
 import { projects } from './projects-list';
 import { motion } from 'motion/react';
 

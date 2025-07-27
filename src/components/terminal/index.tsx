@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 import { FiMaximize2 } from 'react-icons/fi';
 import { GoDash } from 'react-icons/go';
@@ -26,7 +27,7 @@ export default function Terminal() {
       className="general-pattern relative bg-gradient-to-br py-[200px]"
       id={NAVIGATION_NAMES.TERMINAL}
     >
-      <motion.div className="mx-auto md:w-[600px] rounded-lg shadow-2xl shadow-neutral-200">
+      <motion.div className="mx-auto rounded-lg shadow-2xl shadow-neutral-200 md:w-[600px]">
         <ShadowBox>
           <header className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:brightness-95">
             <div className="absolute flex items-center gap-2">

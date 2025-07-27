@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'motion/react';
 
 import FocusedOn from '@/components/about/focused-on';
@@ -8,7 +9,7 @@ export default function About() {
   return (
     <Container asChild>
       <div
-        className="md:py-[200px] sm:py-[100px] text-center h-[450px] sm:h-auto"
+        className="h-[450px] text-center sm:h-auto sm:py-[100px] md:py-[200px]"
         id={NAVIGATION_NAMES.ABOUT}
       >
         <span className="text-2xl opacity-60">👋 Hey, I'm Luis Alvarez</span>
@@ -29,7 +30,7 @@ export default function About() {
         >
           Front-end focused Software Developer
         </motion.div>
-        <span className="text-lg lg:text-3xl font-medium opacity-70 block w-[350px] sm:w-[400px] lg:w-[800px] mx-auto">
+        <span className="mx-auto block w-[350px] text-lg font-medium opacity-70 sm:w-[400px] lg:w-[800px] lg:text-3xl">
           specialized in designing and building scalable, maintainable, user-centric web apps
           focused on
         </span>

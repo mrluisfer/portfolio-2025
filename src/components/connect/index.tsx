@@ -1,3 +1,4 @@
+'use client';
 import SocialLinks from '../social-links';
 import ChangingText from './changing-text';
 
