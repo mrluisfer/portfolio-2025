@@ -1,4 +1,0 @@
-const tsrStartManifest = () => ({ "routes": { "__root__": { "filePath": "/Users/mrluisfer/workspace/portfolio-2025/src/app/__root.tsx", "children": ["/"], "preloads": ["/assets/main-Bc0QxjAB.js"], "assets": [{ "tag": "link", "attrs": { "rel": "stylesheet", "href": "/assets/main-B9q0CMb_.css", "type": "text/css" } }] }, "/": { "filePath": "/Users/mrluisfer/workspace/portfolio-2025/src/app/index.tsx", "assets": [{ "tag": "link", "attrs": { "rel": "stylesheet", "href": "/assets/index-BtP46cJ0.css", "type": "text/css" } }, { "tag": "link", "attrs": { "rel": "stylesheet", "href": "/assets/main-B9q0CMb_.css", "type": "text/css" } }], "preloads": ["/assets/index-Cx83c3VK.js"] } }, "clientEntry": "/assets/main-Bc0QxjAB.js" });
-
-export { tsrStartManifest };
-//# sourceMappingURL=_tanstack-start-manifest_v-CRhnsZB0.mjs.map

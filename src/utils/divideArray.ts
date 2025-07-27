@@ -1,7 +1,7 @@
-export const divideArray = <T>(array: T[], size: number): T[][] => {
-  const dividedArray: T[][] = [];
-  for (let i = 0; i < array.length; i += size) {
-    dividedArray.push(array.slice(i, i + size));
+export function divideArray<T>(arr: T[], chunkSize: number): T[][] {
+  const res: T[][] = [];
+  for (let i = 0; i < arr.length; i += chunkSize) {
+    res.push(arr.slice(i, i + chunkSize));
   }
-  return dividedArray;
-};
+  return res;
+}

@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     'Professional portfolio of mrluisfer — frontend and fullstack developer specializing in React, Tailwind, TanStack, and modern technologies.',
   authors: [{ name: 'Luis Fernando Alvarez' }],
   robots: 'index, follow',
-  themeColor: '#ffffff',
   openGraph: {
     title: 'Portfolio 2025 - mrluisfer',
     description:
