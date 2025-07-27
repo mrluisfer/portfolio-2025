@@ -65,7 +65,7 @@ export const projects: ProjectType[] = [
       'Spotify Api',
       'Astro',
     ],
-    imageCover: '/projects/portfolio-preview.webp',
+    imageCover: '/projects/portfolio-preview.png',
     imgAuthor: 'Mohammad Rahmani',
   },
   {

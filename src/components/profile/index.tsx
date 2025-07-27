@@ -10,7 +10,7 @@ export const CONTENT_TEXT_COLOR =
 export default function Profile() {
   return (
     <>
-      <Container className="pt-24 pb-24 px-[30px] lg:px-0" asChild>
+      <Container className="px-[30px] pt-24 pb-24 lg:px-0" asChild>
         <div id={NAVIGATION_NAMES.PROFILE}>
           <Header />
           <Experience />

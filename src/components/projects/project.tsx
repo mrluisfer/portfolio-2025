@@ -24,19 +24,22 @@ export const Project = ({
     <div
       className={clsx(
         'group relative h-[400px] w-[300px] min-w-[300px] overflow-hidden rounded-3xl border',
+        !project.imageCover && 'bg-gradient-to-b from-gray-600 to-gray-800',
         className
       )}
     >
-      <img
-        src={project.imageCover}
-        alt={project.name}
-        loading="lazy"
-        width={300}
-        height={400}
-        className="pointer-events-none h-full w-full object-cover object-center select-none"
-        draggable={false}
-        decoding="async"
-      />
+      {project.imageCover ? (
+        <img
+          src={project.imageCover}
+          alt={project.name}
+          loading="lazy"
+          width={300}
+          height={400}
+          className="pointer-events-none h-full w-full object-cover object-center select-none"
+          draggable={false}
+          decoding="async"
+        />
+      ) : null}
 
       <div className="absolute top-0 left-0 flex h-full w-full flex-col justify-between rounded-3xl bg-black/60 p-6 transition-all">
         <div className="space-y-3 text-white">
