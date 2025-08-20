@@ -6,6 +6,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    globalNotFound: true
+  }
 };
 
 export default nextConfig;
