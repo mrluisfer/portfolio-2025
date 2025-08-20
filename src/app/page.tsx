@@ -8,6 +8,8 @@ import Profile from '@/components/profile';
 import { Projects } from '@/components/projects';
 import Skills from '@/components/skills';
 import Terminal from '@/components/terminal';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import { Quote } from '@/components/quote';
 
 export const metadata: Metadata = {
   title: 'Portfolio 2025 - mrluisfer',
@@ -53,6 +55,7 @@ export default function HomePage() {
       <Skills />
       <Projects />
       <Grid />
+      <Quote />
       <Profile />
       <Connect />
       <Navigation />

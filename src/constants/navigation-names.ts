@@ -5,6 +5,7 @@ export const NAVIGATION_NAMES = {
   PROJECTS: 'projects',
   PRINCIPLES: 'principles',
   PROFILE: 'profile',
+  CONNECT: 'connect',
   // Coming soon...
   // CONTACT: 'Contact',
   // RESUME: 'Resume',
