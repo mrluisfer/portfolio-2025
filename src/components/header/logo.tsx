@@ -17,7 +17,7 @@ export default function Logo() {
           loop
         />
       </div>
-      <motion.p className="hidden text-2xl font-bold tracking-wider text-blue-500 transition-all duration-300 ease-in-out group-hover:tracking-widest sm:flex">
+      <motion.p className="hidden text-2xl font-bold tracking-wider text-blue-500 transition-all duration-300 ease-in-out group-hover:tracking-widest sm:flex dark:text-blue-400">
         Hello
         <span className="w-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:w-[7.5rem]">
           ooooooo

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 const messages = [
   'Join me on my journey!',
@@ -22,7 +22,7 @@ const ChangingText = () => {
   }, []);
 
   return (
-    <div className="text-2xl font-bold text-gray-800 h-10 relative w-full overflow-hidden">
+    <div className="relative h-10 w-full overflow-hidden text-2xl font-bold text-neutral-800 dark:text-neutral-400">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}

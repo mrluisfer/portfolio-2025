@@ -1,11 +1,10 @@
+import { cn } from '@/lib/utils';
+import spotifyAnimationData from '@/lotties/spotify.json';
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 import { AnimatePresence } from 'motion/react';
 import * as motion from 'motion/react-client';
 import { useRef, useState, type ReactNode } from 'react';
 import { TbMusicPause } from 'react-icons/tb';
-import spotifyAnimationData from '@/lotties/spotify.json';
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
 
 export default function CurrentPlaying() {
   const spotifyRefAnimationData = useRef<LottieRefCurrentProps>(null);
@@ -54,7 +53,7 @@ function Popover({ children }: { children: ReactNode }) {
         onMouseOver={() => setShowPopover(true)}
         onMouseLeave={() => setShowPopover(false)}
       >
-        <TbMusicPause className="text-2xl text-neutral-700 hover:text-blue-500" />
+        <TbMusicPause className="text-2xl text-neutral-700 transition-all hover:text-blue-500 dark:text-neutral-100 dark:hover:text-blue-400" />
         <AnimatePresence mode="wait">
           {showPopover && (
             <motion.div
@@ -62,7 +61,7 @@ function Popover({ children }: { children: ReactNode }) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.15 }}
               key="box"
             >
               {children}

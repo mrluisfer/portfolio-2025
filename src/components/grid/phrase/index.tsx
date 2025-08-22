@@ -3,8 +3,10 @@ import { motion } from 'motion/react';
 
 export default function Phrase() {
   return (
-    <div className="grid place-content-center flex-1 gap-1 flex-col bg-gradient-to-br from-orange-100 to-orange-300 p-2 rounded-[inherit] w-full sm:w-auto lg:w-full h-full">
-      <p className="text-center font-mono text-sm italic">"Talk is cheap. Show me the code."</p>
+    <div className="grid h-full w-full flex-1 flex-col place-content-center gap-1 rounded-[inherit] bg-gradient-to-br from-orange-100 to-orange-300 p-2 sm:w-auto lg:w-full">
+      <p className="text-center font-mono text-sm italic dark:text-orange-950">
+        "Talk is cheap. Show me the code."
+      </p>
       <div className="flex items-center justify-end gap-2">
         <Avatar>
           <AvatarImage
@@ -18,7 +20,7 @@ export default function Phrase() {
           href="https://en.wikipedia.org/wiki/Linus_Torvalds"
           target="_blank"
           rel="noreferrer noopener"
-          className="text-right text-xs hover:cursor-pointer border-b-2 border-transparent hover:border-orange-400 transition"
+          className="border-b-2 border-transparent text-right text-xs transition-all hover:cursor-pointer hover:border-orange-400 dark:text-orange-900 dark:hover:text-orange-800"
         >
           Linus Torvalds
         </motion.a>

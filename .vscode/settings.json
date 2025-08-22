@@ -6,5 +6,8 @@
   },
   "typescript.inlayHints.parameterNames.enabled": "all",
   "cSpell.words": ["bambu", "Bambú", "Canlas", "Monfly"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  }
 }

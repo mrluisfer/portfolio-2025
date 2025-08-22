@@ -1,8 +1,12 @@
+'use client';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import { Button } from './ui/button';
+import { useTheme } from 'next-themes';
 import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 
 export const Quote = () => {
+  const { theme } = useTheme();
+
   return (
     <section
       aria-labelledby="portfolio-headline"
@@ -42,7 +46,7 @@ export const Quote = () => {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button variant={'default'} asChild size={'lg'}>
+          <Button variant={'default'} asChild size={'lg'} className="dark:text-white">
             <a href={`#${NAVIGATION_NAMES.PROJECTS}`}>See projects</a>
           </Button>
           <Button variant={'outline'} asChild size={'lg'}>
@@ -52,10 +56,10 @@ export const Quote = () => {
 
         {/* Tags */}
         <div className="mx-auto mt-8 flex flex-wrap justify-center gap-2">
-          <Badge variant={'secondary'}>Iterate</Badge>
-          <Badge variant={'secondary'}>Measure</Badge>
-          <Badge variant={'secondary'}>Optimize</Badge>
-          <Badge variant={'secondary'}>Ship</Badge>
+          <Badge variant={theme === 'light' ? 'secondary' : 'outline'}>Iterate</Badge>
+          <Badge variant={theme === 'light' ? 'secondary' : 'outline'}>Measure</Badge>
+          <Badge variant={theme === 'light' ? 'secondary' : 'outline'}>Optimize</Badge>
+          <Badge variant={theme === 'light' ? 'secondary' : 'outline'}>Ship</Badge>
         </div>
       </div>
 

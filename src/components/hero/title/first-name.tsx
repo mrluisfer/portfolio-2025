@@ -1,6 +1,10 @@
+'use client';
+
 import { PixelPerfect } from '@/assets/icons/allIcons';
+import { cn } from '@/lib/utils';
 import { type RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
 import { motion } from 'motion/react';
+import { useTheme } from 'next-themes';
 import { type ReactNode, useRef } from 'react';
 import { RiGameLine } from 'react-icons/ri';
 import { RxSpeakerLoud } from 'react-icons/rx';
@@ -42,11 +46,16 @@ function Letter({
   hoveredColor?: string;
   className?: string;
 }) {
+  const { theme } = useTheme();
+
   const Icon = icon;
   return (
     <motion.span
-      className={`group flex flex-col items-center justify-center uppercase ${className}`}
+      className={cn('group flex flex-col items-center justify-center uppercase', className)}
       whileHover={{ color: hoveredColor }}
+      style={{
+        color: theme === 'dark' ? 'white' : 'black',
+      }}
     >
       <motion.span
         className="opacity-0 transition group-hover:opacity-100"

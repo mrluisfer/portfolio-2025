@@ -1,8 +1,7 @@
 import { Button } from '@/components/ui/button';
+import { Timeline, TimelineContent, TimelineDate, TimelineItem } from '@/components/ui/timeline';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
-import { Timeline, TimelineContent, TimelineDate, TimelineItem } from '@/components/ui/timeline';
 
 const oldPosts = [
   {
@@ -39,14 +38,21 @@ export default function ProjectPosts() {
   return (
     <section className="px-6 pb-12 sm:px-10">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-base font-medium text-neutral-900">Writings & Posts</h2>
+        <h2 className="text-base font-medium text-neutral-900 dark:text-neutral-400">
+          Writings & Posts
+        </h2>
         <Button asChild size={'sm'}>
-          <Link href="https://dev.to/mrluisfer" rel="noopener noreferrer" target="_blank">
+          <Link
+            href="https://dev.to/mrluisfer"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="text-white"
+          >
             View all <ExternalLink size={14} />
           </Link>
         </Button>
       </div>
-      <div className="flex h-24 items-center justify-center rounded-lg border border-dashed bg-neutral-50/60 text-neutral-500 capitalize">
+      <div className="flex h-24 items-center justify-center rounded-lg border border-dashed bg-neutral-50/60 text-neutral-500 capitalize dark:bg-neutral-800/90">
         internal API in progress...
       </div>
       <div className="mt-2 flex items-center justify-center gap-1 text-sm text-neutral-500">
@@ -64,7 +70,7 @@ export default function ProjectPosts() {
               <TimelineItem
                 key={item.id}
                 step={item.id}
-                className="m-0! px-4! py-3! transition-all hover:bg-neutral-100"
+                className="m-0! px-4! py-3! transition-all hover:bg-neutral-100 dark:hover:bg-neutral-900"
               >
                 <TimelineContent className="text-foreground">
                   {item.description}

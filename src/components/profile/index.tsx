@@ -6,7 +6,7 @@ import Experience from './experience';
 import Header from './header';
 
 export const CONTENT_TEXT_COLOR =
-  'text-neutral-500 hover:text-neutral-700 transition-colors leading-[1.8]';
+  'text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors leading-[1.8]';
 
 export default function Profile() {
   return (

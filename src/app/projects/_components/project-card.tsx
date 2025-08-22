@@ -1,12 +1,12 @@
-import { Badge } from '@/components/ui/badge';
 import { GitHub } from '@/assets/icons/allIcons';
+import { ProjectType } from '@/components/projects/projects-list';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { ProjectType } from '@/components/projects/projects-list';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
   const maxChips = 4;
@@ -19,7 +19,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
       viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
-      <Card className="overflow-hidden border-neutral-200 pt-0">
+      <Card className="overflow-hidden border-neutral-200 pt-0 transition-all hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-700">
         {/* Cover */}
         <CardContent className="p-0">
           <motion.div whileHover={{ scale: 1.01 }}>
@@ -42,7 +42,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
             <Link
               href={project.previewUrl || project.repoUrl}
               target="_blank"
-              className="inline-flex items-center gap-2 text-neutral-900 decoration-neutral-300 underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-2 text-neutral-900 decoration-neutral-300 underline-offset-4 hover:underline dark:text-neutral-300"
             >
               {project.name} <ExternalLink size={16} className="text-neutral-500" />
             </Link>
@@ -54,7 +54,9 @@ export function ProjectCard({ project }: { project: ProjectType }) {
             </Button>
           </CardTitle>
 
-          <p className="line-clamp-3 text-sm text-neutral-600">{project.description}</p>
+          <p className="line-clamp-3 text-sm text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-400">
+            {project.description}
+          </p>
 
           <div className="mt-2 flex flex-wrap gap-1.5">
             {project.technologies?.slice(0, maxChips).map((t) => (

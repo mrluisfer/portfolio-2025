@@ -1,4 +1,5 @@
 'use client';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { type HTMLMotionProps, motion } from 'motion/react';
 import { type ReactNode } from 'react';
 import Container from '../container';
@@ -6,8 +7,6 @@ import Experience from './experience';
 import Phrase from './phrase';
 import Principles from './principles';
 import Sharing from './sharing';
-import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import Title from '../title';
 
 export default function Grid() {
   return (
@@ -40,7 +39,7 @@ export default function Grid() {
             <Experience />
           </Card>
           <Card
-            className="row-span-3 row-start-4"
+            className="row-span-3 row-start-4 items-start justify-start"
             initial={{
               y: 50,
             }}

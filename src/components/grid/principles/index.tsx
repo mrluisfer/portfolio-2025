@@ -9,10 +9,10 @@ export default function Principles() {
   return (
     <motion.div
       ref={ref}
-      className="w-full bg-gradient-to-r from-blue-300/20 to-purple-300/20 flex-1 p-2 lg:p-0 rounded-[inherit] relative"
+      className="relative w-full flex-1 rounded-[inherit] bg-gradient-to-r from-blue-300/20 to-purple-300/20 p-2 lg:p-0"
     >
       <motion.div
-        className="bg-neutral-900 hover:shadow-xl text-white rounded-2xl px-2 py-1 text-xs w-fit will-change-[box-shadow] absolute top-[2px] left-2 z-10"
+        className="absolute top-[2px] left-2 z-10 w-fit rounded-2xl bg-neutral-900 px-2 py-1 text-xs text-white will-change-[box-shadow] hover:shadow-xl"
         animate={{
           opacity: isHover ? 1 : 0,
           translateY: isHover ? 5 : 0,
@@ -20,7 +20,7 @@ export default function Principles() {
       >
         Principles
       </motion.div>
-      <ul className="flex flex-wrap gap-4 justify-start items-end pt-4">
+      <ul className="flex flex-wrap items-end justify-start gap-4 pt-4 lg:pt-8 lg:pl-2">
         {principles.map((principle, index) => (
           <Principle key={index} principle={principle} />
         ))}
@@ -38,7 +38,7 @@ function Principle({ principle }: { principle: TPrinciple }) {
 
   return (
     <motion.li
-      className={`w-[200px] rounded-xl content-center p-1 transition`}
+      className={`w-[200px] content-center rounded-xl p-1 transition`}
       ref={ref}
       animate={{
         background: isHover ? opacityColorFormatted : '#0000000',
@@ -46,19 +46,19 @@ function Principle({ principle }: { principle: TPrinciple }) {
       }}
     >
       <motion.span>
-        <div className="w-8 h-7">
+        <div className="h-7 w-8">
           <Lottie animationData={icon} />
         </div>
       </motion.span>
       <motion.h3
-        className="transition will-change-[font-weight] text-base"
+        className="text-base transition will-change-[font-weight]"
         animate={{
           letterSpacing: isHover ? '0.03em' : '0.01em',
         }}
       >
         {title}
       </motion.h3>
-      <p className="text-sm opacity-80 hover:opacity-100 transition-opacity">{description}</p>
+      <p className="text-sm opacity-80 transition-opacity hover:opacity-100">{description}</p>
     </motion.li>
   );
 }

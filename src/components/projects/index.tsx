@@ -1,14 +1,14 @@
 'use client';
-import { Project } from './project';
+import clsx from 'clsx';
 import Container from '../container';
 import Title from '../title';
-import clsx from 'clsx';
+import { Project } from './project';
 
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import { projects } from './projects-list';
 import { motion } from 'motion/react';
-import { Button } from '../ui/button';
 import Link from 'next/link';
+import { Button } from '../ui/button';
+import { projects } from './projects-list';
 
 export function Projects() {
   return (
@@ -27,9 +27,9 @@ export function Projects() {
             I'm currently working on
           </motion.span>
         </div>
-        <div className="relative overflow-hidden pt-20">
-          <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-10 bg-gradient-to-r from-white via-white/70 to-transparent" />
-          <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-10 bg-gradient-to-l from-white via-white/70 to-transparent" />
+        <div className="relative overflow-hidden rounded-2xl p-2 pt-20 dark:shadow-md">
+          <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-10 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-black dark:via-black/70" />
+          <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-10 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-black dark:via-black/70" />
 
           <motion.div
             className="flex gap-6 active:cursor-grabbing"
@@ -55,7 +55,7 @@ export function Projects() {
           </motion.div>
         </div>
         <div className="mt-8 flex items-center justify-center">
-          <Button asChild>
+          <Button asChild className="text-white">
             <Link href="/projects">View All Projects</Link>
           </Button>
         </div>

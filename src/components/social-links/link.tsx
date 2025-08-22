@@ -26,7 +26,7 @@ export default function SocialLink({ href, alt, children }: SocialLinkProps) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <span className="text-2xl text-neutral-700 transition group-hover:text-blue-500">
+      <span className="text-2xl text-neutral-700 transition group-hover:text-blue-500 dark:text-neutral-100 dark:group-hover:text-blue-400">
         {children}
       </span>
       {showAnimation && (

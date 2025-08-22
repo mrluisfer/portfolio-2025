@@ -5,10 +5,10 @@ import { GoDash } from 'react-icons/go';
 import { IoClose } from 'react-icons/io5';
 import { type IconType } from 'react-icons/lib';
 
-import Content from './content';
+import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import 'src/styles/general-pattern.scss';
 import ShadowBox from '../shadow-box';
-import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import Content from './content';
 
 function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
   const IconComponent = Icon || (() => null);
@@ -35,7 +35,7 @@ export default function Terminal() {
               <TerminalDot color="bg-yellow-400" Icon={GoDash} />
               <TerminalDot color="bg-green-400" Icon={FiMaximize2} />
             </div>
-            <p className="mx-auto font-mono opacity-50">Terminal</p>
+            <p className="mx-auto font-mono opacity-50 dark:text-neutral-700">Terminal</p>
           </header>
           <div className="rounded-b-lg bg-neutral-100 px-4 py-4">
             <Content />

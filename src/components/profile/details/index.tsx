@@ -1,4 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import { GrLinkUp } from 'react-icons/gr';
 import { CONTENT_TEXT_COLOR } from '..';
 
@@ -9,14 +11,9 @@ const detailsKeys = {
   email: 'email',
 };
 
-//      email = 'mrluisfeer@gmai.com';
-// location = 'Mexico';
-// github = 'mrluisfer';
-// website = 'https://mrluisfer.vercel.app';
-
 export default function Details() {
   return (
-    <div className="grid gap-2 grid-cols-2 grid-rows-2">
+    <div className="grid grid-cols-2 grid-rows-2 gap-2">
       <DetailItem
         title={detailsKeys.location}
         description={'Mexico'}
@@ -36,6 +33,7 @@ export default function Details() {
         title={detailsKeys.email}
         description={'mrluisfeer@gmail.com'}
         href="mailto:mrluisfeer@gmail.com"
+        hovered
       />
     </div>
   );
@@ -45,17 +43,23 @@ function DetailItem({
   title,
   description,
   href = '',
+  hovered = false,
 }: {
   title: string;
   description: string;
   href: string;
+  hovered?: boolean;
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <strong className="capitalize text-sm">{title}</strong>
-      <a
+      <strong className="text-sm capitalize">{title}</strong>
+      <Link
         href={href}
-        className={`border-b border-transparent hover:border-neutral-700 transition-colors flex items-center gap-1 w-fit group ${CONTENT_TEXT_COLOR}`}
+        className={cn(
+          'group flex w-fit items-center gap-1 border-b border-transparent transition-colors hover:border-neutral-700',
+          CONTENT_TEXT_COLOR,
+          hovered ? 'dark:text-neutral-300' : ''
+        )}
         target="_blank"
         rel="noopener noreferrer"
         title={description}
@@ -67,16 +71,20 @@ function DetailItem({
             <AvatarImage
               src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg"
               alt="Mexico Flag"
-              className="object-cover bg-cover"
+              className="bg-cover object-cover"
             />
             <AvatarFallback>MX</AvatarFallback>
           </Avatar>
         )}
         {description}
-        <span className="ml-1 rotate-45 opacity-0 group-hover:opacity-100 transition">
+        <span
+          className={`ml-1 rotate-45 transition ${
+            hovered ? 'opacity-100' : 'opacity-0'
+          } group-hover:opacity-100`}
+        >
           <GrLinkUp />
         </span>
-      </a>
+      </Link>
     </div>
   );
 }

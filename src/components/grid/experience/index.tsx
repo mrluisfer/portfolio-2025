@@ -3,7 +3,7 @@ import { type TExperience, timelineExperience } from './timeline-experience';
 
 export default function Experience() {
   return (
-    <ul className="flex w-full flex-1 flex-col justify-center rounded-[inherit] bg-gradient-to-tr from-blue-50 to-blue-100 px-4 group-hover:bg-neutral-100">
+    <ul className="flex w-full flex-1 flex-col justify-center rounded-[inherit] bg-gradient-to-tr from-blue-50 to-blue-100 px-4 group-hover:bg-neutral-100 dark:from-blue-900 dark:to-indigo-950">
       {timelineExperience.map((experience, index) => (
         <TimelineItem key={index} experience={experience} />
       ))}
@@ -24,7 +24,7 @@ function LightText({
   };
   return (
     <span
-      className={`text-neutral-500 transition-colors hover:text-neutral-600 ${sizeClassName[size]}`}
+      className={`text-neutral-500 transition-colors hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200 ${sizeClassName[size]}`}
     >
       {children}
     </span>
