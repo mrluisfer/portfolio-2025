@@ -65,7 +65,7 @@ function Card({ children, className = '', ...props }: CardProps) {
     <motion.div
       initial={{ scale: 1, ...(typeof props.initial === 'object' ? props.initial : {}) }}
       whileHover={{ scale: 1.03 }}
-      className={`group flex w-fit flex-col items-center justify-center rounded-xl border-2 border-neutral-200 transition hover:border-neutral-300 hover:shadow-sm lg:w-auto ${className}`}
+      className={`group flex w-fit flex-col items-center justify-center rounded-xl shadow-sm transition hover:shadow-md lg:w-auto ${className}`}
       {...props}
     >
       {children}

@@ -1,5 +1,6 @@
 import Container from '../container';
 import SocialLinks from '../social-links';
+import { ThemeToggle } from '../theme-toggle';
 import CurrentPlaying from './current-playing';
 import CurrentTime from './current-time';
 import Logo from './logo';
@@ -12,6 +13,7 @@ export default function Header() {
         <nav className="flex items-center gap-6">
           <CurrentPlaying />
           <SocialLinks />
+          <ThemeToggle />
           <CurrentTime />
         </nav>
       </header>

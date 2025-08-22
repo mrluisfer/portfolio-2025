@@ -33,7 +33,7 @@ export const projects: ProjectType[] = [
     description:
       'Landing page and demo app for a fictional “tech boutique”: focused on clean UX, internationalization (i18n), typed forms, and scalable content. Designed to showcase a modern end-to-end flow.',
     repoUrl: 'https://github.com/mrluisfer/bambu',
-    previewUrl: 'https://bambu-tech.vercel.app',
+    previewUrl: 'https://bambu-landing.vercel.app/en',
     technologies: [
       'Next.js',
       'TypeScript',

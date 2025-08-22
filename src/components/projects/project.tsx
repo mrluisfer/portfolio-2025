@@ -2,8 +2,11 @@ import clsx from 'clsx';
 import { motion } from 'motion/react';
 import type { ProjectType } from './projects-list';
 import { cn } from '@/lib/utils';
-import { MoveDownRight } from 'lucide-react';
+import { MoveDownRight, MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from '../ui/button';
+import Link from 'next/link';
+import { GitHub } from '@/assets/icons/allIcons';
 
 export function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
@@ -61,23 +64,17 @@ export const Project = ({ className, project }: { className?: string; project: P
             ))}
           </div>
           <div className="flex items-center justify-between">
-            <a
-              className="rounded-2xl bg-gray-400 px-2 py-1 text-xs text-gray-900 transition hover:bg-gray-100 hover:shadow-md"
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repository
-            </a>
+            <Button size={'icon'} asChild>
+              <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                <GitHub />
+              </Link>
+            </Button>
             {project.previewUrl && (
-              <a
-                href={project.previewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 transition hover:scale-110 hover:text-gray-100"
-              >
-                <MoveDownRight />
-              </a>
+              <Button asChild size={'icon'} variant={'secondary'}>
+                <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
+                  <MoveUpRight />
+                </Link>
+              </Button>
             )}
           </div>
         </div>

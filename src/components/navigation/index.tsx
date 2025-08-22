@@ -4,12 +4,13 @@ import homeAnimationData from '@/lotties/home.json';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { motion } from 'motion/react';
 import { IoSettingsOutline } from 'react-icons/io5';
+import Link from 'next/link';
 
 const navigationItems = Object.values(NAVIGATION_NAMES);
 
-const goToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+// const goToTop = () => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// };
 
 export default function Navigation() {
   const handleNavigationClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -25,14 +26,14 @@ export default function Navigation() {
   return (
     <div className="fixed right-0 bottom-10 left-0 z-50 hidden justify-center opacity-40 transition-opacity hover:opacity-100 sm:flex">
       <div className="flex h-[64px] w-fit items-center gap-6 rounded-full bg-neutral-900/40 px-4 backdrop-blur-lg">
-        <button
+        <Link
           className="relative h-8 w-8 shrink-0 cursor-pointer"
-          onClick={goToTop}
           title="Go to top"
           aria-label="Go to top"
+          href={'/'}
         >
           <Lottie animationData={homeAnimationData} loop={true} />
-        </button>
+        </Link>
         <div className="flex flex-1 items-center">
           <ul className="flex w-full justify-between gap-2 px-3 text-sm text-white">
             {navigationItems.map((item) => (
