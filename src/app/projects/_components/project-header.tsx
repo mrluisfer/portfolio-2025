@@ -9,7 +9,7 @@ export default function ProjectHeader() {
   return (
     <header className="flex items-center justify-between border-b px-6 py-5 sm:px-10">
       <nav className="flex items-center gap-4 text-sm text-neutral-600">
-        <Button variant="ghost">
+        <Button variant="ghost" asChild>
           <Link className="font-medium text-neutral-900 uppercase" href="/">
             / mrluisfer
           </Link>
