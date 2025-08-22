@@ -40,7 +40,7 @@ export default function ProjectPosts() {
     <section className="px-6 pb-12 sm:px-10">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-base font-medium text-neutral-900">Writings & Posts</h2>
-        <Button variant={'outline'} asChild size={'sm'}>
+        <Button asChild size={'sm'}>
           <Link href="https://dev.to/mrluisfer" rel="noopener noreferrer" target="_blank">
             View all <ExternalLink size={14} />
           </Link>
@@ -51,7 +51,7 @@ export default function ProjectPosts() {
       </div>
       <div className="mt-2 flex items-center justify-center gap-1 text-sm text-neutral-500">
         <p>You can read my old posts on</p>
-        <Button asChild variant={'outline'}>
+        <Button asChild variant={'link'}>
           <Link href={'https://dev.to/mrluisfer'} target="_blank" rel="noopener noreferrer">
             Dev.to
           </Link>

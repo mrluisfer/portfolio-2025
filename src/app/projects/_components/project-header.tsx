@@ -1,3 +1,4 @@
+import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { MoonIcon } from 'lucide-react';
@@ -14,23 +15,8 @@ export default function ProjectHeader() {
             / mrluisfer
           </Link>
         </Button>
-        {navigationItems.map((item) => (
-          <Button key={item} asChild variant={'outline'} size={'sm'}>
-            <Link href={`/#${item.toLowerCase()}`} className="capitalize hover:text-neutral-900">
-              {item}
-            </Link>
-          </Button>
-        ))}
       </nav>
-      <Button
-        className="rounded-full"
-        aria-label="Toggle theme (placeholder)"
-        title="Toggle theme (placeholder)"
-        size="icon"
-        disabled
-      >
-        <MoonIcon size={16} />
-      </Button>
+      <ThemeToggle />
     </header>
   );
 }

@@ -21,7 +21,7 @@ export default function ProjectTimeline() {
     <section className="px-6 pb-10 sm:px-10">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-base font-medium text-neutral-900">Experience</h2>
-        <Button asChild variant={'outline'} size={'sm'}>
+        <Button asChild size={'sm'}>
           <Link href="/luis-alvarez-resume.pdf" target="_blank" rel="noopener noreferrer">
             <FileIcon size={14} /> Download CV
           </Link>

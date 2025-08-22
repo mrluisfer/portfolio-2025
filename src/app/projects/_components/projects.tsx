@@ -10,7 +10,7 @@ export default function Projects() {
     <section className="px-6 pb-10 sm:px-10">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-base font-medium text-neutral-900">Principal Projects</h2>
-        <Button variant={'outline'} asChild size={'sm'}>
+        <Button asChild size={'sm'}>
           <Link href="https://github.com/mrluisfer" target="_blank" rel="noopener noreferrer">
             View all <ExternalLink size={14} />
           </Link>
