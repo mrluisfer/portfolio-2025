@@ -40,7 +40,7 @@ export default function Navigation() {
               <li key={item}>
                 <motion.a
                   onClick={handleNavigationClick}
-                  href={`#${item}`}
+                  href={`/#${item}`}
                   className="block w-[90px] rounded-full p-2 text-center capitalize transition hover:scale-105 hover:bg-black active:scale-95"
                 >
                   {item}
