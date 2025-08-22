@@ -7,6 +7,8 @@ import clsx from 'clsx';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { projects } from './projects-list';
 import { motion } from 'motion/react';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 export function Projects() {
   return (
@@ -51,6 +53,11 @@ export function Projects() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+        <div className="mt-8 flex items-center justify-center">
+          <Button asChild>
+            <Link href="/projects">View All Projects</Link>
+          </Button>
         </div>
       </div>
     </Container>
