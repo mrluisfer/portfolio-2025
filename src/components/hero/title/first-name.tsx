@@ -9,26 +9,56 @@ import { type ReactNode, useRef } from 'react';
 import { RiGameLine } from 'react-icons/ri';
 import { RxSpeakerLoud } from 'react-icons/rx';
 
+type ThemeName = 'light' | 'dark' | 'system';
+
+type ThemeHexMap = Partial<Record<ThemeName, `#${string}`>> & {
+  fallback: `#${string}`;
+};
+
+function resolveThemeHex(map: ThemeHexMap, resolved: 'light' | 'dark') {
+  return map[resolved] ?? map.fallback;
+}
+
+type IconComponent = React.ComponentType<{
+  size?: number;
+  color?: string;
+  className?: string;
+}>;
+
 export default function FirstName() {
   return (
     <motion.div
       className="relative flex items-center text-8xl sm:text-9xl"
-      style={{
-        gap: '1rem',
-      }}
+      style={{ gap: '1rem' }}
       whileHover={{ gap: '2rem' }}
     >
       <SpeakerName />
-      <Letter icon={RiCodeAiFill} hoveredColor="#074799">
+
+      <Letter
+        icon={RiCodeAiFill as unknown as IconComponent}
+        hoveredColors={{ light: '#074799', dark: '#7BB6FF', fallback: '#0A62D0' }}
+      >
         L
       </Letter>
-      <Letter icon={RiGameLine} hoveredColor="#FF7F3E">
+
+      <Letter
+        icon={RiGameLine as unknown as IconComponent}
+        hoveredColors={{ light: '#FF7F3E', dark: '#FFB38A', fallback: '#FF7F3E' }}
+      >
         U
       </Letter>
-      <Letter icon={RiMusicAiLine} hoveredColor="#8B5DFF">
+
+      <Letter
+        icon={RiMusicAiLine as unknown as IconComponent}
+        hoveredColors={{ light: '#8B5DFF', dark: '#B299FF', fallback: '#8B5DFF' }}
+      >
         I
       </Letter>
-      <Letter hoveredColor="#118B50" icon={PixelPerfect as RemixiconComponentType}>
+
+      <Letter
+        icon={PixelPerfect as unknown as RemixiconComponentType}
+        hoveredColors={{ light: '#118B50', dark: '#4BD399', fallback: '#118B50' }}
+      >
         S
       </Letter>
     </motion.div>
@@ -38,31 +68,37 @@ export default function FirstName() {
 function Letter({
   children,
   icon,
-  hoveredColor,
+  hoveredColors,
   className = '',
 }: {
   children: ReactNode;
-  icon: RemixiconComponentType;
-  hoveredColor?: string;
+  icon: IconComponent | RemixiconComponentType;
+  hoveredColors: ThemeHexMap;
   className?: string;
 }) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const Icon = icon;
+  const baseTextByTheme: Record<'light' | 'dark', string> = {
+    light: '#000000',
+    dark: '#FFFFFF',
+  };
+
+  const themeKey = (resolvedTheme === 'dark' ? 'dark' : 'light') as 'light' | 'dark';
+  const hoverHex = resolveThemeHex(hoveredColors, themeKey);
+
   return (
     <motion.span
       className={cn('group flex flex-col items-center justify-center uppercase', className)}
-      whileHover={{ color: hoveredColor }}
-      style={{
-        color: theme === 'dark' ? 'white' : 'black',
-      }}
+      whileHover={{ color: hoverHex }}
+      style={{ color: baseTextByTheme[themeKey] }}
     >
       <motion.span
         className="opacity-0 transition group-hover:opacity-100"
         initial={{ rotateX: '45deg' }}
         animate={{ rotateX: '0' }}
       >
-        {<Icon size={25} color={hoveredColor} />}
+        <Icon size={25} color={hoverHex} />
       </motion.span>
       {children}
     </motion.span>
@@ -78,20 +114,13 @@ function SpeakerName() {
   return (
     <motion.div
       className="absolute top-12 -right-5 -rotate-12 cursor-pointer transition"
-      style={{
-        opacity: 0.3,
-        scale: 1,
-      }}
-      whileHover={{
-        scale: 1.1,
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.3,
-      }}
+      style={{ opacity: 0.3, scale: 1 }}
+      whileHover={{ scale: 1.1, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      onClick={play}
     >
       <audio src={'/first-name.mp3'} ref={audioRef} />
-      <RxSpeakerLoud size={20} onClick={play} />
+      <RxSpeakerLoud size={20} />
     </motion.div>
   );
 }
