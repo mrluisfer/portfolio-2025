@@ -1,35 +1,63 @@
+import {
+  Bento,
+  Dailydev,
+  DailydevDark,
+  Devto,
+  DevtoDark,
+  GitHub,
+  GithubDark,
+  GitLab,
+  LinkedIn,
+  Twitter,
+} from '@/assets/icons/allIcons';
 import { type ReactNode } from 'react';
-import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
-import { FiGithub } from 'react-icons/fi';
-import { PiDevToLogo } from 'react-icons/pi';
 import SocialMediaLinks from '../../constants/social-media-links';
 
 type SocialLink = {
   href: string;
   alt: string;
-  Icon: ReactNode;
+  LightIcon: ReactNode;
+  DarkIcon?: ReactNode;
 };
 
 const SOCIAL_LINKS: Array<SocialLink> = [
   {
     href: SocialMediaLinks.TWITTER,
     alt: 'Twitter: @mrLuisFer',
-    Icon: <FaXTwitter />,
+    LightIcon: <Twitter />,
   },
   {
     href: SocialMediaLinks.GITHUB,
     alt: 'GitHub: mrLuisFer',
-    Icon: <FiGithub />,
+    LightIcon: <GitHub />,
+    DarkIcon: <GithubDark />,
   },
   {
     href: SocialMediaLinks.LINKEDIN,
     alt: 'LinkedIn: mrLuisFer',
-    Icon: <FaLinkedinIn />,
+    LightIcon: <LinkedIn />,
+  },
+  {
+    href: SocialMediaLinks.BENTO,
+    alt: 'Bento: mrLuisFer',
+    LightIcon: <Bento />,
   },
   {
     href: SocialMediaLinks.DEVTO,
     alt: 'Dev.to: mrLuisFer',
-    Icon: <PiDevToLogo />,
+    LightIcon: <Devto />,
+    DarkIcon: <DevtoDark />,
+  },
+  {
+    href: SocialMediaLinks.GITLAB,
+    alt: 'GitLab: mrLuisFer',
+    LightIcon: <GitLab />,
+  },
+  {
+    href: SocialMediaLinks.DAILYDEV,
+    alt: 'Daily.dev: mrLuisFer',
+    LightIcon: <Dailydev />,
+    DarkIcon: <DailydevDark />,
   },
 ];
 

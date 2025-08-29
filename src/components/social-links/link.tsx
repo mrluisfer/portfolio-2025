@@ -1,6 +1,8 @@
+'use client';
+
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
-import { motion } from 'motion/react';
-import { type ReactNode, useRef, useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
+import { type ReactNode, useCallback, useRef, useState } from 'react';
 
 import arrowAnimationData from '../../lotties/arrow.json';
 
@@ -13,37 +15,55 @@ type SocialLinkProps = {
 export default function SocialLink({ href, alt, children }: SocialLinkProps) {
   const arrowAnimationRef = useRef<LottieRefCurrentProps>(null);
   const [showAnimation, setShowAnimation] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+  const reduceMotion = useReducedMotion();
+
+  const startAnimation = useCallback(() => {
+    if (reduceMotion) return;
+    setAnimKey((k) => k + 1);
+    setShowAnimation(true);
+  }, [reduceMotion]);
+
+  const stopAnimation = useCallback(() => {
+    setShowAnimation(false);
+    arrowAnimationRef.current?.stop?.();
+  }, []);
 
   return (
     <motion.a
-      onMouseOver={() => setShowAnimation(true)}
-      onMouseLeave={() => setShowAnimation(false)}
+      onMouseEnter={startAnimation}
+      onMouseLeave={stopAnimation}
+      onFocus={startAnimation}
+      onBlur={stopAnimation}
       className="group relative"
       href={href}
-      aria-description={alt}
+      aria-label={alt}
+      title={alt}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
       <span className="text-2xl text-neutral-700 transition group-hover:text-blue-500 dark:text-neutral-100 dark:group-hover:text-blue-400">
         {children}
       </span>
-      {showAnimation && (
+
+      {showAnimation && !reduceMotion && (
         <motion.div
-          animate={{ opacity: 1 }}
+          key={animKey}
           initial={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          onAnimationComplete={() => setShowAnimation(false)}
-          className="absolute top-0 -right-4"
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="pointer-events-none absolute top-0 -right-4"
         >
           <Lottie
             lottieRef={arrowAnimationRef}
             animationData={arrowAnimationData}
-            className="z-20 h-[50px] w-[50px]"
-            autoplay={true}
+            className="h-[50px] w-[50px]"
+            autoplay
             loop={false}
-            onAnimationEnd={() => arrowAnimationRef?.current?.pause()}
+            onComplete={stopAnimation}
           />
         </motion.div>
       )}

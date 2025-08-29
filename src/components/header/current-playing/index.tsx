@@ -1,10 +1,13 @@
+import { Spotify, SpotifyDark } from '@/assets/icons/allIcons';
+import SocialMediaLinks from '@/constants/social-media-links';
 import { cn } from '@/lib/utils';
 import spotifyAnimationData from '@/lotties/spotify.json';
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 import { AnimatePresence } from 'motion/react';
 import * as motion from 'motion/react-client';
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import { useRef, useState, type ReactNode } from 'react';
-import { TbMusicPause } from 'react-icons/tb';
 
 export default function CurrentPlaying() {
   const spotifyRefAnimationData = useRef<LottieRefCurrentProps>(null);
@@ -45,6 +48,8 @@ export default function CurrentPlaying() {
 
 function Popover({ children }: { children: ReactNode }) {
   const [showPopover, setShowPopover] = useState(false);
+  const { theme } = useTheme();
+  const useDarkIcon = theme === 'dark' || theme === 'system';
 
   return (
     <motion.div>
@@ -53,7 +58,14 @@ function Popover({ children }: { children: ReactNode }) {
         onMouseOver={() => setShowPopover(true)}
         onMouseLeave={() => setShowPopover(false)}
       >
-        <TbMusicPause className="text-2xl text-neutral-700 transition-all hover:text-blue-500 dark:text-neutral-100 dark:hover:text-blue-400" />
+        <Link
+          href={SocialMediaLinks.SPOTIFY}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-2xl text-neutral-700 transition-all hover:text-blue-500 dark:text-neutral-100 dark:hover:text-blue-400"
+        >
+          {useDarkIcon ? <SpotifyDark /> : <Spotify />}
+        </Link>
         <AnimatePresence mode="wait">
           {showPopover && (
             <motion.div
