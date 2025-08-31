@@ -10,7 +10,7 @@ export const Quote = () => {
   return (
     <section
       aria-labelledby="portfolio-headline"
-      className="group relative isolate mx-4 overflow-hidden rounded-3xl border border-white/10 shadow-sm transition-all hover:shadow-md"
+      className="group relative isolate mx-4 max-w-5xl overflow-hidden rounded-3xl border border-white/10 shadow-sm transition-all hover:shadow-md md:mx-auto xl:max-w-6xl"
     >
       <div className="pointer-events-none absolute inset-0 -z-10"></div>
 
