@@ -1,5 +1,11 @@
 import { type SVGProps } from 'react';
 import {
+  DarkDeno,
+  DarkExpressjs,
+  DarkMotion,
+  DarkPrisma,
+  DarkSocketio,
+  DarkVercel,
   Deno,
   Expressjs,
   Git,
@@ -28,12 +34,14 @@ export type Technology = {
   Icon: SvglIcon;
   name: string;
   customGlowColor?: string;
+  DarkIcon?: SvglIcon;
 };
 
 export const technologies: Technology[] = [
   {
     Icon: Expressjs,
     name: 'Express.js',
+    DarkIcon: DarkExpressjs,
   },
   {
     Icon: React,
@@ -59,15 +67,18 @@ export const technologies: Technology[] = [
   {
     Icon: Socketio,
     name: 'Socket.io',
+    DarkIcon: DarkSocketio,
   },
   {
     Icon: Motion,
     name: 'Framer Motion',
     customGlowColor: '#fff42b',
+    DarkIcon: DarkMotion,
   },
   {
     Icon: Vercel,
     name: 'Vercel',
+    DarkIcon: DarkVercel,
   },
   {
     Icon: NestJS,
@@ -91,6 +102,7 @@ export const technologies: Technology[] = [
     Icon: Prisma,
     name: 'Prisma',
     customGlowColor: '#0A0B16',
+    DarkIcon: DarkPrisma,
   },
   {
     Icon: Vitest,
@@ -122,5 +134,6 @@ export const technologies: Technology[] = [
     Icon: Deno,
     name: 'Deno',
     customGlowColor: '#70FFAF',
+    DarkIcon: DarkDeno,
   },
 ];
