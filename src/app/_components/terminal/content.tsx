@@ -10,7 +10,7 @@ function GreenText({ children }: { children: ReactNode | string }) {
   return <span className="font-medium text-green-500">{children}</span>;
 }
 function GrayText({ children }: { children: ReactNode | string }) {
-  return <span className="text-gray-500 transition hover:text-gray-600">{children}</span>;
+  return <span>{children}</span>;
 }
 
 const terminalLogs = [
@@ -61,7 +61,7 @@ export default function Content() {
   }, [charIndex, currentIndex]);
 
   return (
-    <div className="font-mono text-sm leading-relaxed text-gray-800">
+    <div className="font-mono text-sm leading-relaxed text-gray-800 dark:text-gray-300">
       {lines.map((line, index) => (
         <motion.span
           key={index}

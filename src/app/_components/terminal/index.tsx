@@ -29,15 +29,15 @@ export default function Terminal() {
     >
       <motion.div className="mx-auto rounded-lg shadow-2xl shadow-neutral-200 md:w-[600px]">
         <ShadowBox>
-          <header className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:brightness-95">
+          <header className="relative flex items-center rounded-t-lg bg-neutral-200 px-4 py-2 transition hover:brightness-95 dark:bg-neutral-800">
             <div className="absolute flex items-center gap-2">
               <TerminalDot color="bg-red-400" Icon={IoClose} />
               <TerminalDot color="bg-yellow-400" Icon={GoDash} />
               <TerminalDot color="bg-green-400" Icon={FiMaximize2} />
             </div>
-            <p className="mx-auto font-mono opacity-50 dark:text-neutral-700">Terminal</p>
+            <p className="mx-auto font-mono opacity-50 dark:text-neutral-400">Terminal</p>
           </header>
-          <div className="rounded-b-lg bg-neutral-100 px-4 py-4">
+          <div className="rounded-b-lg bg-neutral-100 px-4 py-4 dark:bg-neutral-900">
             <Content />
           </div>
         </ShadowBox>
