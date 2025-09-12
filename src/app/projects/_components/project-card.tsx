@@ -18,7 +18,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
       viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
-      <Card className="overflow-hidden border-neutral-200 pt-0 transition-all hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-700">
+      <Card className="group overflow-hidden border-neutral-200 pt-0 transition-all hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-700">
         {/* Cover */}
         <CardContent className="p-0">
           <motion.div whileHover={{ scale: 1.01 }}>
@@ -49,7 +49,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
             <GithubIconButton url={project.repoUrl} />
           </CardTitle>
 
-          <p className="line-clamp-3 text-sm text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-400">
+          <p className="line-clamp-3 text-sm text-neutral-600 transition-all dark:text-neutral-500 dark:group-hover:text-neutral-400">
             {project.description}
           </p>
 
