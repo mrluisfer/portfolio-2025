@@ -1,221 +1,130 @@
-# Portfolio 2025 – Advanced Repository Overview
-![Portfolio 2025 Infrastructure](./public/infra.png)
+# Portfolio 2025
 
-## 📁 **Relevant Source Files**
+**Portfolio 2025** is a modern personal portfolio website built with **Astro** and **React**.  
+It showcases professional experience, skills, projects, and personal interests through an **interactive, animated user interface**.
 
-```text
-README.md
-package.json
-src/constants/navigation-names.ts
-src/layouts/Layout.astro
-src/pages/index.astro
+The project combines **static site generation** with **selective client-side hydration**, leveraging Astro’s **island architecture** for high performance and React for dynamic interactivity.
+
+---
+
+## 📌 Purpose & Scope
+
+This repository provides:
+
+- A performant and interactive portfolio platform.
+- A modular codebase for showcasing professional and personal work.
+- A foundation for integrating external APIs (GitHub, Spotify, etc.).
+- A modern developer workflow with strict tooling and formatting standards.
+
+---
+
+## 🏛 Technology Stack & Architecture
+
+Portfolio 2025 uses a **hybrid architecture**:
+
+- **Static content** → Delivered via Astro for speed and SEO.
+- **Hydrated components** → React powers interactivity where needed.
+
+### Core Technologies
+
+![Core Structure](/public/core-structure.png)
+
+| Category          | Technologies                                 | Purpose                                    |
+| ----------------- | -------------------------------------------- | ------------------------------------------ |
+| **Framework**     | `astro`, `@astrojs/react`, `@astrojs/vercel` | Core framework and deployment integrations |
+| **Frontend**      | `react`, `react-dom`, `typescript`           | Component development & type safety        |
+| **Styling**       | `tailwindcss`, `sass`, `motion`              | Styling system and animations              |
+| **External APIs** | `octokit`, `spotify-api-kit`                 | GitHub repositories & Spotify integration  |
+| **Build Tools**   | `vite`, `pnpm`, `prettier`, `@biomejs/biome` | Development workflow & tooling             |
+
+---
+
+## 📂 Application Structure
+
+The portfolio follows a **section-based architecture**:
+
+- **`Layout.astro`** → Provides base HTML structure, global CSS, and navigation transitions.
+- **`index.astro`** → Main orchestrator that imports and renders sections with selective hydration (`client:only="react"`).
+- **Section Components** → Each portfolio section is implemented as a dedicated React component.
+
+```bash
+src/
+├── layouts/
+│   └── Layout.astro
+├── pages/
+│   └── index.astro
+├── constants/
+│   └── navigation-names.ts
+├── components/
+│   ├── Hero/
+│   ├── Skills/
+│   ├── Projects/
+│   ├── Terminal/
+│   └── Navigation/
+└── assets/
+
 ```
 
 ---
 
-## 🎯 **Purpose and Scope**
+## 🧭 Navigation & Content Sections
 
-Portfolio 2025 is a modern, highly interactive personal portfolio leveraging **Astro** and **React**.
-The project aims to present professional experience, skills, projects, and personal branding via an animated, performant, and maintainable UI.
-
-This document delivers a comprehensive high-level technical overview covering:
-
-* Architectural philosophy and system organization
-* Technology stack rationale
-* Component structure and navigation
-* Development workflow and tooling
-* External service integrations
-* Optimization strategies
-
-For in-depth technical details on individual modules, refer to respective sections or code comments.
+- Navigation is driven by centralized constants in **`navigation-names.ts`**.
+- Each navigation item maps directly to a **React component** handling its section content and interactions.
+- This ensures **consistency** and **easy extensibility** when adding or modifying sections.
 
 ---
 
-## 🏗️ **Technology Stack & Architecture**
+## 🛠 Development Environment & Tooling
 
-Portfolio 2025 utilizes a **hybrid rendering model**, maximizing performance via Astro’s static site generation, while enabling advanced interactivity through **island architecture** and selective React hydration.
+The project enforces **strict tooling and workflows**:
 
-### **Core Technology Foundation**
+### Package Manager
 
-| Category      | Technologies                                 | Role/Notes                    |
-| ------------- | -------------------------------------------- | ----------------------------- |
-| Framework     | `astro`, `@astrojs/react`, `@astrojs/vercel` | Site structure & deployment   |
-| UI Layer      | `react`, `react-dom`, `typescript`           | Components & type safety      |
-| Styling       | `tailwindcss`, `sass`, `motion`              | CSS utilities & animation     |
-| External APIs | `octokit`, `spotify-api-kit`                 | GitHub & Spotify integrations |
-| Build Tooling | `vite`, `pnpm`, `prettier`, `@biomejs/biome` | DX & workflow                 |
+- Uses **pnpm** with a preinstall hook to enforce consistency.
 
-**Source highlights:**
+### Scripts
 
-```text
-package.json (dependencies & scripts)
-src/layouts/Layout.astro
-```
+| Script           | Command                               | Purpose                        |
+| ---------------- | ------------------------------------- | ------------------------------ |
+| **dev**          | `astro dev`                           | Start local development server |
+| **build**        | `astro build`                         | Build for production           |
+| **preview**      | `astro preview`                       | Preview local production build |
+| **format**       | `prettier --write .`                  | Format code with Prettier      |
+| **biome:format** | `npx @biomejs/biome format --write .` | Format code with Biome         |
 
 ---
 
-### **Architecture Summary**
+## 🚀 Performance & Optimization Strategy
 
-* **Astro Framework:**
-  Static site generation (SSG) with seamless integration of React components and "islands" for targeted interactivity.
-* **React UI Islands:**
-  High-fidelity, client-hydrated UI pieces where needed (e.g., Hero, Skills, Terminal).
-* **Vite + pnpm:**
-  Lightning-fast dev builds, HMR, and modern dependency management.
-* **API Integration:**
-  Encapsulated data fetching via GitHub (Octokit) and Spotify API Kit.
-* **TypeScript:**
-  Strict typing for reliability and future scalability.
+Portfolio 2025 maximizes performance with **Astro Islands**:
+
+- **Static Content** → Page structure, HTML scaffolding, CSS assets.
+- **Hydrated Components** → Interactive UI sections (`Hero`, `Skills`, `Terminal`, `Navigation`).
+- **Mixed Rendering** → Some components (e.g., `Projects`) remain server-rendered, others are selectively hydrated.
+
+This ensures **fast load times** while still providing **rich interactivity**.
 
 ---
 
-## 🗂️ **Application Structure & Component Organization**
+## 🌐 External Integrations
 
-Portfolio 2025 implements a **section-based layout**, orchestrated by Astro’s layout and page components.
+The portfolio connects to external services for real-time, dynamic data:
 
-### **Main Application Flow**
-
-```text
-src/layouts/Layout.astro    // App skeleton, navigation router, global CSS
-src/pages/index.astro       // Page-level orchestrator, imports/uses all sections
-
-src/components/
-  Hero.tsx
-  About.tsx
-  Terminal.tsx
-  Skills.tsx
-  Projects.tsx
-  Grid.tsx
-  Profile.tsx
-  Connect.tsx
-  Navigation.tsx
-```
-
-* **Layout.astro** defines HTML structure, navigation transitions, and global styles.
-* **index.astro** imports and renders all section components, applying client hydration where necessary:
-
-```astro
-// Example in index.astro
-import Hero from '../components/Hero'
-import Skills from '../components/Skills'
-import Projects from '../components/Projects'
-// ...
-------
-
-  <Hero client:only="react" />
-  <Skills client:only="react" />
-  <Projects client:only="react" />
-  ```
+- **GitHub Integration** → Powered by `@octokit/core` and related packages to display repositories and contributions.
+- **Spotify Integration** → Uses `spotify-api-kit` to display currently playing music.
+- **Deployment** → Configured for **Vercel** with `@astrojs/vercel` adapter.
 
 ---
 
-### **Navigation & Content Sections**
+## 📌 Conclusion
 
-* **Centralized Navigation System:**
-  Section keys are managed in `src/constants/navigation-names.ts`, promoting consistency and decoupling between navigation and component implementation.
-* **Section Mapping:**
-  Each entry in `NAVIGATION_NAMES` is directly mapped to a component.
+Portfolio 2025 establishes a **high-performance, interactive personal portfolio** with a clean architecture and modern development practices.
 
-```typescript
-// src/constants/navigation-names.ts
-export const NAVIGATION_NAMES = [
-  'ABOUT',
-  'TERMINAL',
-  'SKILLS',
-  'PROJECTS',
-  'PRINCIPLES',
-  'PROFILE',
-]
-```
+For deeper technical insights, refer to:
 
----
-
-## 💻 **Development Workflow & Tooling**
-
-* **Enforced package manager:**
-  `pnpm` is enforced via preinstall hook.
-* **Unified formatting:**
-  Both `prettier` and `@biomejs/biome` are available for code formatting and linting.
-
-### **Scripts Overview**
-
-| Script         | Command                               | Description                  |
-| -------------- | ------------------------------------- | ---------------------------- |
-| `dev`          | `astro dev`                           | Run dev server (HMR enabled) |
-| `build`        | `astro build`                         | Production SSG build         |
-| `preview`      | `astro preview`                       | Preview built site           |
-| `format`       | `prettier --write .`                  | Auto-format codebase         |
-| `biome:format` | `npx @biomejs/biome format --write .` | Alternative formatter        |
-
-```json
-// package.json (excerpt)
-"scripts": {
-  "dev": "astro dev",
-  "build": "astro build",
-  "preview": "astro preview",
-  "format": "prettier --write .",
-  "biome:format": "npx @biomejs/biome format --write ."
-}
-```
-
----
-
-## ⚡ **Performance and Optimization Strategy**
-
-* **Astro’s Islands:**
-  Selective hydration for interactive components only.
-  Static scaffolding for layout, navigation, and static content.
-* **Hydrated vs Static:**
-
-  * **Static:** Core structure, global CSS, non-interactive elements
-  * **Hydrated:** Components with user interaction, animation, or real-time updates
-  * **Mixed:** Projects section is primarily server-rendered with dynamic islands as needed
-
-```astro
-<Hero client:only="react" />
-<Skills client:only="react" />
-<Terminal client:only="react" />
-<Navigation client:only="react" />
-```
-
----
-
-## 🌐 **External Integrations**
-
-* **GitHub:**
-  Repository data is fetched using `@octokit/core` and exposed in the UI (Projects, Stats, etc.)
-* **Spotify:**
-  Uses `spotify-api-kit` to display the currently playing track in real-time.
-* **Deployment:**
-  Configured for Vercel via `@astrojs/vercel` for fast, global static delivery.
-
-```json
-// package.json (excerpt)
-"dependencies": {
-  "@octokit/core": "^5.0.0",
-  "spotify-api-kit": "^1.2.3",
-  "@astrojs/vercel": "^2.0.0"
-}
-```
-
----
-
-## 🚀 **Summary**
-
-Portfolio 2025 offers a robust foundation for a **future-proof, interactive, and performant portfolio**.
-The architecture leverages Astro’s SSG, React’s interactivity, and advanced tooling for a best-in-class developer and user experience.
-
----
-
-## 📚 **References**
-
-* `package.json`
-* `src/layouts/Layout.astro`
-* `src/pages/index.astro`
-* `src/constants/navigation-names.ts`
-
----
-
-**For additional technical detail, refer to in-code comments or open a discussion/issue in the repository.**
-
----
+- [Architecture & Setup]
+- [Core Application Framework]
+- [UI Component Systems]
+- [External Integrations]
+- [Styling & Assets]
