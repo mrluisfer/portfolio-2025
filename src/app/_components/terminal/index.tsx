@@ -7,7 +7,7 @@ import { type IconType } from 'react-icons/lib';
 
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import 'src/styles/general-pattern.scss';
-import ShadowBox from '../shadow-box';
+import ShadowBox from '../../../components/shadow-box';
 import Content from './content';
 
 function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {

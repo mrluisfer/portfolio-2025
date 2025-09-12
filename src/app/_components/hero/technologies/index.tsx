@@ -1,11 +1,11 @@
 import { motion } from 'motion/react';
-import technologies from '../../../constants/technologies';
+import technologies from '../../../../constants/technologies';
 
 const MarqueeAnimation = () => {
   return (
-    <div className="absolute top-20 bottom-0 overflow-hidden select-none sm:w-full h-full w-full lg:w-screen">
+    <div className="absolute top-20 bottom-0 h-full w-full overflow-hidden select-none sm:w-full lg:w-screen">
       <svg
-        className="scale-150 rotate-45 sm:scale-100 md:scale-110 lg:scale-125 sm:rotate-0 md:pl-[100px]"
+        className="scale-150 rotate-45 sm:scale-100 sm:rotate-0 md:scale-110 md:pl-[100px] lg:scale-125"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 2530.7 740.4"

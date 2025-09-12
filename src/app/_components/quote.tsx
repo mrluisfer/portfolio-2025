@@ -1,8 +1,8 @@
 'use client';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { useTheme } from 'next-themes';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
+import { Badge } from '../../components/ui/badge';
+import { Button } from '../../components/ui/button';
 
 export const Quote = () => {
   const { theme } = useTheme();

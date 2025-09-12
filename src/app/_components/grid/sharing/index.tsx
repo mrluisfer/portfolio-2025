@@ -2,7 +2,7 @@ import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 import { motion } from 'motion/react';
 import { type ReactNode, useRef } from 'react';
 import { TbBrandGithubFilled } from 'react-icons/tb';
-import linkAnimationData from '../../../lotties/link.json';
+import linkAnimationData from '../../../../lotties/link.json';
 
 const START_YEAR = 2021;
 

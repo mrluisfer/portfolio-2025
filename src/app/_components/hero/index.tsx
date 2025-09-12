@@ -1,9 +1,9 @@
 'use client';
 
-import Header from '../header';
+import '@/styles/hero-pattern.scss';
+import Header from '../../../components/header';
 import Technologies from './technologies';
 import Title from './title';
-import '@/styles/hero-pattern.scss';
 
 export default function Hero() {
   return (

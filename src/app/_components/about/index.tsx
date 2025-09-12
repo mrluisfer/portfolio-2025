@@ -1,9 +1,9 @@
 'use client';
 import { motion } from 'motion/react';
 
-import FocusedOn from '@/components/about/focused-on';
-import Container from '../container';
+import FocusedOn from '@/app/_components/about/focused-on';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import Container from '../../../components/container';
 
 export default function About() {
   return (

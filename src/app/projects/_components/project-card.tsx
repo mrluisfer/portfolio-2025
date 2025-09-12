@@ -1,5 +1,5 @@
+import { ProjectType } from '@/app/_components/projects/projects-list';
 import GithubIconButton from '@/components/github-icon-button';
-import { ProjectType } from '@/components/projects/projects-list';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';

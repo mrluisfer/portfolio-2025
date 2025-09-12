@@ -5,11 +5,11 @@ import '@/styles/technologies-shadow.scss';
 
 import { motion } from 'motion/react';
 
+import Container from '@/components/container';
+import Title from '@/components/title';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { useDeviceResources } from '@/hooks/use-device-resources';
 import { cn } from '@/lib/utils';
-import Container from '../container';
-import Title from '../title';
 import Technologies from './technologies';
 
 export default function Skills() {

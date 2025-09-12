@@ -1,4 +1,3 @@
-import { type SVGProps } from 'react';
 import {
   DarkDeno,
   DarkExpressjs,
@@ -27,7 +26,8 @@ import {
   Vercel,
   Vite,
   Vitest,
-} from '../../../assets/icons/allIcons';
+} from '@/assets/icons/allIcons';
+import { type SVGProps } from 'react';
 
 export type SvglIcon = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export type Technology = {

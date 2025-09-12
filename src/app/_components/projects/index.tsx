@@ -1,13 +1,13 @@
 'use client';
 import clsx from 'clsx';
-import Container from '../container';
-import Title from '../title';
+import Container from '../../../components/container';
+import Title from '../../../components/title';
 import { Project } from './project';
 
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { Button } from '../ui/button';
+import { Button } from '../../../components/ui/button';
 import { projects } from './projects-list';
 
 export function Projects() {
@@ -55,7 +55,7 @@ export function Projects() {
           </motion.div>
         </div>
         <div className="mt-8 flex items-center justify-center">
-          <Button asChild className="text-white">
+          <Button asChild className="text-white" size={'lg'}>
             <Link href="/projects">View All Projects</Link>
           </Button>
         </div>

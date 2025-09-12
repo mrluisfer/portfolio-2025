@@ -3,8 +3,8 @@ import { MoveUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import GithubIconButton from '../github-icon-button';
-import { Button } from '../ui/button';
+import GithubIconButton from '../../../components/github-icon-button';
+import { Button } from '../../../components/ui/button';
 import type { ProjectType } from './projects-list';
 
 export function truncateText(text: string, maxLength: number): string {

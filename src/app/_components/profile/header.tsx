@@ -1,7 +1,7 @@
 import '@/styles/white-pattern.scss';
 import { FaCheck } from 'react-icons/fa6';
 import { CONTENT_TEXT_COLOR } from '.';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '../../../components/ui/avatar';
 
 const GITHUB_PROFILE_IMG = 'https://avatars.githubusercontent.com/u/65029792?v=4';
 const Header = () => {

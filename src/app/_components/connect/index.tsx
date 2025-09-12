@@ -1,7 +1,7 @@
 'use client';
-import SocialLinks from '../social-links';
-import ChangingText from './changing-text';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import SocialLinks from '../../../components/social-links';
+import ChangingText from './changing-text';
 
 export default function Connect() {
   return (
