@@ -1,5 +1,5 @@
 'use client';
-import Navigation from '@/app/_components/navigation';
+import Navigation from '@/components/shared/navigation';
 import ProjectHeader from './_components/project-header';
 import ProjectHero from './_components/project-hero';
 import ProjectPosts from './_components/project-posts';

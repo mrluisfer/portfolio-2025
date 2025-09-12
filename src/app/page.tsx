@@ -2,11 +2,11 @@ import About from '@/app/_components/about';
 import Connect from '@/app/_components/connect';
 import Grid from '@/app/_components/grid';
 import Hero from '@/app/_components/hero';
-import Navigation from '@/app/_components/navigation';
 import Profile from '@/app/_components/profile';
 import { Projects } from '@/app/_components/projects';
 import { Quote } from '@/app/_components/quote';
 import Terminal from '@/app/_components/terminal';
+import Navigation from '@/components/shared/navigation';
 import type { Metadata } from 'next';
 import Skills from './_components/skills';
 
