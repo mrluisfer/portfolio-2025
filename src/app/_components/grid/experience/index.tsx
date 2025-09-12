@@ -1,13 +1,12 @@
+import ExperienceTimeline from '@/components/shared/experience-timeline';
 import { type ReactNode } from 'react';
-import { type TExperience, timelineExperience } from './timeline-experience';
+import { type TExperience } from './timeline-experience';
 
 export default function Experience() {
   return (
-    <ul className="flex w-full flex-1 flex-col justify-center rounded-[inherit] bg-gradient-to-tr from-blue-50 to-blue-100 px-4 group-hover:bg-neutral-100 dark:from-blue-900 dark:to-indigo-950">
-      {timelineExperience.map((experience, index) => (
-        <TimelineItem key={index} experience={experience} />
-      ))}
-    </ul>
+    <div className="flex w-full flex-1 flex-col justify-center overflow-y-scroll rounded-[inherit] bg-gradient-to-tr from-blue-50 to-blue-100 p-2 group-hover:bg-neutral-100 dark:from-blue-950 dark:to-zinc-900">
+      <ExperienceTimeline minimal className="h-full" />
+    </div>
   );
 }
 

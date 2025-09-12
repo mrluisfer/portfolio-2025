@@ -21,7 +21,7 @@ export default function Grid() {
             initial={{
               x: -50,
             }}
-            animate={{
+            whileInView={{
               x: 0,
             }}
           >
@@ -32,7 +32,7 @@ export default function Grid() {
             initial={{
               y: -50,
             }}
-            animate={{
+            whileInView={{
               y: 0,
             }}
           >
@@ -43,7 +43,7 @@ export default function Grid() {
             initial={{
               y: 50,
             }}
-            animate={{
+            whileInView={{
               y: 0,
             }}
           >
