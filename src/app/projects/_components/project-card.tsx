@@ -1,7 +1,6 @@
-import { GitHub } from '@/assets/icons/allIcons';
+import GithubIconButton from '@/components/github-icon-button';
 import { ProjectType } from '@/components/projects/projects-list';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -47,11 +46,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
               {project.name} <ExternalLink size={16} className="text-neutral-500" />
             </Link>
 
-            <Button variant={'default'}>
-              <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                <GitHub />
-              </Link>
-            </Button>
+            <GithubIconButton url={project.repoUrl} />
           </CardTitle>
 
           <p className="line-clamp-3 text-sm text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-400">

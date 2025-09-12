@@ -1,12 +1,11 @@
 import clsx from 'clsx';
+import { MoveUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import type { ProjectType } from './projects-list';
-import { cn } from '@/lib/utils';
-import { MoveDownRight, MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '../ui/button';
 import Link from 'next/link';
-import { GitHub } from '@/assets/icons/allIcons';
+import GithubIconButton from '../github-icon-button';
+import { Button } from '../ui/button';
+import type { ProjectType } from './projects-list';
 
 export function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
@@ -64,11 +63,7 @@ export const Project = ({ className, project }: { className?: string; project: P
             ))}
           </div>
           <div className="flex items-center justify-between">
-            <Button size={'icon'} asChild>
-              <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                <GitHub />
-              </Link>
-            </Button>
+            <GithubIconButton url={project.repoUrl} />
             {project.previewUrl && (
               <Button asChild size={'icon'} variant={'secondary'}>
                 <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
