@@ -2,6 +2,7 @@
 
 import { PixelPerfect } from '@/assets/icons/allIcons';
 import { cn } from '@/lib/utils';
+import { ThemeKey } from '@/types/theme-key';
 import { type RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
 import { motion } from 'motion/react';
 import { useTheme } from 'next-themes';
@@ -9,7 +10,7 @@ import { type ReactNode, useRef } from 'react';
 import { RiGameLine } from 'react-icons/ri';
 import { RxSpeakerLoud } from 'react-icons/rx';
 
-type ThemeName = 'light' | 'dark' | 'system';
+type ThemeName = 'light' | 'dark';
 
 type ThemeHexMap = Partial<Record<ThemeName, `#${string}`>> & {
   fallback: `#${string}`;
@@ -76,7 +77,7 @@ function Letter({
   hoveredColors: ThemeHexMap;
   className?: string;
 }) {
-  const { resolvedTheme } = useTheme();
+  const { theme } = useTheme();
 
   const Icon = icon;
   const baseTextByTheme: Record<'light' | 'dark', string> = {
@@ -84,14 +85,13 @@ function Letter({
     dark: '#FFFFFF',
   };
 
-  const themeKey = (resolvedTheme === 'dark' ? 'dark' : 'light') as 'light' | 'dark';
-  const hoverHex = resolveThemeHex(hoveredColors, themeKey);
+  const hoverHex = resolveThemeHex(hoveredColors, theme as ThemeKey);
 
   return (
     <motion.span
       className={cn('group flex flex-col items-center justify-center uppercase', className)}
       whileHover={{ color: hoverHex }}
-      style={{ color: baseTextByTheme[themeKey] }}
+      style={{ color: baseTextByTheme[theme as ThemeKey] }}
     >
       <motion.span
         className="opacity-0 transition group-hover:opacity-100"
