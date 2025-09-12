@@ -18,12 +18,7 @@ export default function Skills() {
   return (
     <Container>
       <div
-        className={cn(
-          'technologies-shadow-y my-6 p-10',
-          deviceResources?.deviceMemoryGB !== undefined && deviceResources.deviceMemoryGB > 8
-            ? 'general-pattern'
-            : ''
-        )}
+        className={cn('technologies-shadow-y general-pattern my-6 p-10')}
         id={NAVIGATION_NAMES.SKILLS}
       >
         <Title>
