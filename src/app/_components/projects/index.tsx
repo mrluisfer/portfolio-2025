@@ -5,6 +5,7 @@ import Title from '../../../components/title';
 import { Project } from './project';
 
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import { FolderRootIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { Button } from '../../../components/ui/button';
@@ -56,7 +57,10 @@ export function Projects() {
         </div>
         <div className="mt-8 flex items-center justify-center">
           <Button asChild className="text-white" size={'lg'}>
-            <Link href="/projects">View All Projects</Link>
+            <Link href="/projects">
+              <FolderRootIcon />
+              View All Projects
+            </Link>
           </Button>
         </div>
       </div>

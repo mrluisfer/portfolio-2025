@@ -1,6 +1,8 @@
+import { DevtoDark } from '@/assets/icons/allIcons';
 import { Button } from '@/components/ui/button';
 import { Timeline, TimelineContent, TimelineDate, TimelineItem } from '@/components/ui/timeline';
 import { ExternalLink } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 
 const oldPosts = [
@@ -35,6 +37,8 @@ const oldPosts = [
 ];
 
 export default function ProjectPosts() {
+  const { theme } = useTheme();
+
   return (
     <section className="px-6 pb-12 sm:px-10">
       <div className="mb-4 flex items-center justify-between">
@@ -57,8 +61,9 @@ export default function ProjectPosts() {
       </div>
       <div className="mt-2 flex items-center justify-center gap-1 text-sm text-neutral-500">
         <p>You can read my old posts on</p>
-        <Button asChild variant={'link'}>
+        <Button asChild variant={'outline'} size={'sm'}>
           <Link href={'https://dev.to/mrluisfer'} target="_blank" rel="noopener noreferrer">
+            {theme === 'light' ? <DevtoDark /> : <DevtoDark />}
             Dev.to
           </Link>
         </Button>

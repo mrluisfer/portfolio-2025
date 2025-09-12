@@ -1,4 +1,4 @@
-export const items = [
+export const defaultTimelineData = [
   {
     id: 1,
     date: 'Mar 2020 – Jul 2021',

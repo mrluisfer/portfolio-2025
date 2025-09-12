@@ -1,6 +1,8 @@
 'use client';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
+import { BookUserIcon, FolderRootIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
 
@@ -47,10 +49,16 @@ export const Quote = () => {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button variant={'default'} asChild size={'lg'} className="dark:text-white">
-            <a href={`#${NAVIGATION_NAMES.PROJECTS}`}>See projects</a>
+            <Link href={`#${NAVIGATION_NAMES.PROJECTS}`}>
+              <FolderRootIcon />
+              See projects
+            </Link>
           </Button>
           <Button variant={'outline'} asChild size={'lg'}>
-            <a href={`#${NAVIGATION_NAMES.CONNECT}`}>Contact</a>
+            <Link href={`#${NAVIGATION_NAMES.CONNECT}`}>
+              <BookUserIcon />
+              Contact
+            </Link>
           </Button>
         </div>
 

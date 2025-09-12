@@ -5,7 +5,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.inlayHints.parameterNames.enabled": "all",
-  "cSpell.words": ["bambu", "Bambú", "Canlas", "Monfly"],
+  "cSpell.words": ["bambu", "Bambú", "Canlas", "Monfly", "Nowports"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always"

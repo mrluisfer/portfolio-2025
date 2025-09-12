@@ -1,19 +1,8 @@
+import ExperienceTimeline from '@/components/shared/experience-timeline';
 import { Button } from '@/components/ui/button';
-import {
-  Timeline,
-  TimelineContent,
-  TimelineDate,
-  TimelineHeader,
-  TimelineIndicator,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineTitle,
-} from '@/components/ui/timeline';
+
 import { FileIcon } from 'lucide-react';
 import Link from 'next/link';
-import { items } from './timeline-data';
-
-const reverseItems = (array: any[]) => array.map(array.pop, [...array]);
 
 export default function ProjectTimeline() {
   return (
@@ -32,27 +21,7 @@ export default function ProjectTimeline() {
         </Button>
       </div>
       <div>
-        <Timeline defaultValue={items.length} orientation="vertical">
-          {reverseItems(items).map((item) => (
-            <TimelineItem
-              key={item.id}
-              step={item.id}
-              className="group-data-[orientation=vertical]/timeline:sm:ms-32"
-            >
-              <TimelineHeader>
-                <TimelineSeparator />
-                <TimelineDate className="group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:-left-32 group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:sm:text-right">
-                  {item.date}
-                </TimelineDate>
-                <TimelineTitle className="sm:-mt-0.5">{item.title}</TimelineTitle>
-                <TimelineIndicator />
-              </TimelineHeader>
-              <TimelineContent className="max-w-xl leading-relaxed">
-                {item.description}
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
+        <ExperienceTimeline />
       </div>
     </section>
   );
