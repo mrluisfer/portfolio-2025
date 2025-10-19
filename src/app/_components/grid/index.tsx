@@ -27,7 +27,7 @@ export default function Grid() {
           </Card>
 
           {/* Sharing */}
-          <Card className="w-full lg:row-span-3 lg:row-start-4">
+          <Card className="w-full lg:row-span-3 lg:row-start-4 md:justify-start">
             <Sharing />
           </Card>
 
