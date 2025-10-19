@@ -8,13 +8,11 @@ import { motion } from 'motion/react';
 import Container from '@/components/container';
 import Title from '@/components/title';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import { useDeviceResources } from '@/hooks/use-device-resources';
 import { cn } from '@/lib/utils';
 import Technologies from './technologies';
+import { CpuIcon, FlameIcon } from 'lucide-react';
 
 export default function Skills() {
-  const deviceResources = useDeviceResources();
-
   return (
     <Container>
       <div
@@ -27,7 +25,18 @@ export default function Skills() {
             initial={{ opacity: 0.8 }}
             whileInView={{ opacity: 1 }}
           >
-            Building projects with the most powerful and trending frontend and backend technologies.
+            Building projects with the most{' '}
+            <span className={'inline-flex items-center gap-1'}>
+              <CpuIcon className={'text-orange-400'} />
+              Powerful
+            </span>{' '}
+            and{' '}
+            <span className={'inline-flex items-center gap-1'}>
+              <FlameIcon className={'text-red-400'} />
+              Trending
+            </span>{' '}
+            <span className={'text-yellow-400'}>Frontend</span> and{' '}
+            <span className={'text-violet-400'}>Backend</span> technologies.
           </motion.h1>
         </Title>
         <Technologies />

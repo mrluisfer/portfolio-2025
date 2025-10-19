@@ -2,7 +2,7 @@
 
 import { divideArray } from '@/utils/divideArray';
 import { useTheme } from 'next-themes';
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, ReactNode, useEffect, useMemo, useState } from 'react';
 import { type Technology, technologies } from './icons';
 import TechnologyCard from './technology-card';
 
@@ -28,7 +28,7 @@ function useMaxWidth(breakpoint: number) {
   return matches;
 }
 
-const Row = memo(function Row({ children }: { children: React.ReactNode }) {
+const Row = memo(function Row({ children }: { children: ReactNode }) {
   return <div className="mb-6 flex grid-cols-9 justify-center gap-6 lg:grid">{children}</div>;
 });
 
