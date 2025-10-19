@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
-import { useCurrentTime } from '../../../hooks/use-current-time';
-import { getMonthById } from '../../../utils/get-month';
+import { useCurrentTime } from '@/hooks/use-current-time';
+import { getMonthById } from '@/utils/get-month';
 
 export default function CurrentTime() {
   const { time, hour, minutes, meridiem } = useCurrentTime();
@@ -9,7 +9,7 @@ export default function CurrentTime() {
   const day = time.getDate();
 
   return (
-    <motion.div className="flex items-center gap-1">
+    <motion.div className="sm:flex items-center gap-1 hidden">
       <motion.p className="flex items-center text-4xl font-bold tracking-wider text-blue-500 transition hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">
         {hour}:{minutes}
       </motion.p>
