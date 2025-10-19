@@ -1,11 +1,11 @@
+import { Button } from '@/components/ui/button';
+import { Kbd } from '@/components/ui/kbd';
+import socialMediaLinks from '@/constants/social-media-links';
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
-import { motion } from 'motion/react';
-import { type ReactNode, useRef } from 'react';
+import Link from 'next/link';
+import { useRef } from 'react';
 import { TbBrandGithubFilled } from 'react-icons/tb';
 import linkAnimationData from '../../../../lotties/link.json';
-import Link from 'next/link';
-import socialMediaLinks from '@/constants/social-media-links';
-import { Kbd } from '@/components/ui/kbd';
 
 const START_YEAR = 2021;
 
@@ -34,14 +34,18 @@ export default function Sharing() {
             &lt; building projects &#47;&gt;
           </Kbd>
         </h1>
-        <button
+        <Button
           className={`flex w-full flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-white p-2 text-sm font-semibold text-green-600 shadow-md transition hover:shadow-lg active:scale-95 md:w-auto md:flex-none`}
+          asChild
+          variant={'link'}
         >
+          <Link href="/projects">
           <div className="h-7 w-8">
             <Lottie lottieRef={logoRef} animationData={linkAnimationData} />
           </div>
           See my projects
-        </button>
+          </Link>
+        </Button>
       </div>
     </div>
   );
