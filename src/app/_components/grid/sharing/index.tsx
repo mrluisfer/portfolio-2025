@@ -16,7 +16,7 @@ export default function Sharing() {
 
   return (
     <div
-      className={`lg:max-w-auto flex w-full flex-1 flex-col rounded-[inherit] bg-gradient-to-br from-green-100 from-20% to-green-300 p-3 sm:max-w-[350px] lg:max-h-[250px]`}
+      className={`lg:max-w-auto flex w-full flex-1 flex-col rounded-[inherit] bg-gradient-to-br from-green-100 from-20% to-green-300 p-3 sm:max-w-[350px] lg:max-h-none`}
     >
       <Link
         href={socialMediaLinks.GITHUB}
@@ -29,7 +29,10 @@ export default function Sharing() {
       <div className="flex min-h-0 flex-1 flex-col items-start justify-end gap-4">
         <h1 className="group text-xl font-semibold text-[#2b3137]">
           Sharing more than <span className="font-bold text-black">{experience}+ years</span> of
-          expertise <Kbd className={'text-green-100'}>&lt; building projects &#47;&gt;</Kbd>
+          expertise{' '}
+          <Kbd className={'text-green-600 dark:text-green-100'}>
+            &lt; building projects &#47;&gt;
+          </Kbd>
         </h1>
         <button
           className={`flex w-full flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-white p-2 text-sm font-semibold text-green-600 shadow-md transition hover:shadow-lg active:scale-95 md:w-auto md:flex-none`}
