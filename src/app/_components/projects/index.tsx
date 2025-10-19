@@ -8,8 +8,15 @@ import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { FolderRootIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { Button } from '../../../components/ui/button';
+import { Button } from '@/components/ui/button';
 import { projects } from './projects-list';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export function Projects() {
   return (
@@ -28,33 +35,19 @@ export function Projects() {
             I'm currently working on
           </motion.span>
         </div>
-        <div className="relative overflow-hidden rounded-2xl p-2 pt-20 dark:shadow-md">
-          <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-10 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-black dark:via-black/70" />
-          <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-10 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-black dark:via-black/70" />
 
-          <motion.div
-            className="flex gap-6 active:cursor-grabbing"
-            drag="x"
-            dragConstraints={{ left: -1300, right: 0 }}
-            initial={{ x: 0 }}
-            animate={{ x: 0 }}
-            whileTap={{ cursor: 'grabbing' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          >
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.name}
-                className={clsx(
-                  'flex-shrink-0',
-                  index === 0 && 'ml-10',
-                  index === projects.length - 1 && 'mr-10'
-                )}
-              >
+        <Carousel className={'mx-auto mt-5 w-full md:max-w-4xl'}>
+          <CarouselContent>
+            {projects.map((project) => (
+              <CarouselItem key={project.name}>
                 <Project project={project} />
-              </motion.div>
+              </CarouselItem>
             ))}
-          </motion.div>
-        </div>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+
         <div className="mt-8 flex items-center justify-center">
           <Button asChild className="text-white" size={'lg'}>
             <Link href="/projects">
