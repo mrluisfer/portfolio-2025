@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 export default function Phrase() {
   return (
     <div className="grid h-full w-full flex-1 flex-col place-content-center gap-1 rounded-[inherit] bg-gradient-to-br from-orange-100 to-orange-300 p-2 sm:w-auto lg:w-full">
-      <p className="text-center font-mono text-sm italic dark:text-orange-950">
+      <p className="text-center font-mono text-sm italic dark:text-orange-950 font-semibold">
         "Talk is cheap. Show me the code."
       </p>
       <div className="flex items-center justify-end gap-2">

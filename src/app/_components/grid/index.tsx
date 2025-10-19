@@ -12,44 +12,27 @@ export default function Grid() {
   return (
     <Container asChild>
       <div
-        className="mx-auto mt-0 h-auto p-6 py-20 sm:my-[150px] lg:h-[700px] lg:py-0"
         id={NAVIGATION_NAMES.PRINCIPLES}
+        className="mx-auto mt-0 h-auto p-6 py-20 sm:my-[150px] lg:py-0"
       >
-        <div className="flex h-full grid-cols-3 grid-rows-6 flex-row flex-wrap gap-3 sm:gap-1 lg:grid lg:gap-4">
-          <Card
-            className="col-span-2 row-span-3"
-            initial={{
-              x: -50,
-            }}
-            whileInView={{
-              x: 0,
-            }}
-          >
+        <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-6">
+          {/* Principles */}
+          <Card className="w-full lg:col-span-2 lg:row-span-3">
             <Principles />
           </Card>
-          <Card
-            className="col-start-3 row-span-4 w-full sm:w-auto"
-            initial={{
-              y: -50,
-            }}
-            whileInView={{
-              y: 0,
-            }}
-          >
+
+          {/* Experience */}
+          <Card className="w-full lg:col-start-3 lg:row-span-4">
             <Experience />
           </Card>
-          <Card
-            className="row-span-3 row-start-4 items-start justify-start"
-            initial={{
-              y: 50,
-            }}
-            whileInView={{
-              y: 0,
-            }}
-          >
+
+          {/* Sharing */}
+          <Card className="w-full lg:row-span-3 lg:row-start-4">
             <Sharing />
           </Card>
-          <Card className="col-start-2 row-start-4 w-full sm:w-auto">
+
+          {/* Phrase */}
+          <Card className="w-full lg:col-start-2 lg:row-start-4">
             <Phrase />
           </Card>
         </div>
@@ -58,13 +41,14 @@ export default function Grid() {
   );
 }
 
-type CardProps = HTMLMotionProps<'div'> & { children: ReactNode; className: string };
+type CardProps = HTMLMotionProps<'div'> & { children: ReactNode; className?: string };
+
 function Card({ children, className = '', ...props }: CardProps) {
   return (
     <motion.div
       initial={{ scale: 1, ...(typeof props.initial === 'object' ? props.initial : {}) }}
       whileHover={{ scale: 1.03 }}
-      className={`group flex w-fit flex-col items-center justify-center rounded-xl shadow-sm transition hover:shadow-md lg:w-auto ${className}`}
+      className={`group flex w-full flex-col items-center justify-center rounded-xl shadow-sm transition hover:shadow-md lg:w-auto ${className}`}
       {...props}
     >
       {children}
