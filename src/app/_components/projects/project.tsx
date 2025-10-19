@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import GithubIconButton from '../../../components/github-icon-button';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -14,6 +13,7 @@ import {
 } from '@/components/ui/card';
 import type { ProjectType } from './projects-list';
 import { Badge } from '@/components/ui/badge';
+import { GithubDark } from '@/assets/icons/allIcons';
 
 export function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
@@ -66,7 +66,11 @@ export const Project = ({ className, project }: { className?: string; project: P
       {/* Footer */}
       <CardFooter className={'flex flex-col'}>
         <div className="flex w-full flex-1 items-center justify-between gap-2">
-          <GithubIconButton url={project.repoUrl} />
+          <Button size={'icon'} asChild>
+            <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+              <GithubDark />
+            </Link>
+          </Button>
           {project.previewUrl && (
             <Button asChild size="icon" variant="secondary">
               <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
