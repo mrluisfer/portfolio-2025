@@ -24,7 +24,7 @@ function TerminalDot({ color, Icon }: { color: string; Icon?: IconType }) {
 export default function Terminal() {
   return (
     <div
-      className="general-pattern relative bg-gradient-to-br py-[200px]"
+      className="general-pattern relative my-[100px] bg-gradient-to-br px-5 py-[200px] sm:px-0"
       id={NAVIGATION_NAMES.TERMINAL}
     >
       <motion.div className="mx-auto rounded-lg shadow-2xl shadow-neutral-200 md:w-[600px]">

@@ -14,23 +14,23 @@ function GrayText({ children }: { children: ReactNode | string }) {
 }
 
 const terminalLogs = [
-  <span></span>,
-  <span key={0}>
+  <pre></pre>,
+  <pre key={0}>
     <GrayText>Last Session: {getCurrentFormattedDate()}</GrayText>
-  </span>,
-  <span key={1}>
-    <BlueText>mrluisfeer@</BlueText> <GreenText>~ $</GreenText>{' '}
+  </pre>,
+  <pre key={1}>
+    <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText>{' '}
     <GrayText>echo "Hello, World!"</GrayText>
-  </span>,
-  <span key={2}>
+  </pre>,
+  <pre key={2}>
     <GrayText>Hello, World!</GrayText>
-  </span>,
-  <span key={3}>
-    <BlueText>mrluisfeer@</BlueText> <GreenText>~ $</GreenText> <GrayText>cat POEM.md</GrayText>
-  </span>,
-  <span key={4}>
+  </pre>,
+  <pre key={3}>
+    <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText> <GrayText>cat POEM.md</GrayText>
+  </pre>,
+  <pre key={4}>
     <GrayText>A ship in harbor is safe, but that is not what ships are built for.</GrayText>
-  </span>,
+  </pre>,
 ];
 
 export default function Content() {
