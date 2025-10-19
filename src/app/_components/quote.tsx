@@ -43,8 +43,8 @@ export const Quote = () => {
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-pretty sm:text-base">
-          Celebrate each version, measure, learn, and relaunch. Your work improves with each
-          iteration: design, performance, accessibility, and user experience.
+          A ship in harbor is safe, but that is not what ships are built for. Embrace the
+          challenges, learn from failures, and celebrate successes along the way.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -54,7 +54,7 @@ export const Quote = () => {
               See projects
             </Link>
           </Button>
-          <Button variant={'outline'} asChild size={'lg'}>
+          <Button variant={'secondary'} asChild size={'lg'}>
             <Link href={`#${NAVIGATION_NAMES.CONNECT}`}>
               <BookUserIcon />
               Contact
