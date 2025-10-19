@@ -15,7 +15,7 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
   const Icon = specialty.icon;
 
   /**
-   * this will reset the styles values to 0
+   * this will reset the style values to 0
    * @example { rotate: 0, top: 0, left: 0 }
    */
   const initialStylesValues = Object.fromEntries(
@@ -24,7 +24,7 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
 
   return (
     <motion.div
-      className="absolute z-10 flex items-center gap-1 rounded-lg border-2 px-2 font-semibold text-xl select-none"
+      className="absolute z-10 flex items-center gap-1 rounded-lg border-2 px-2 text-xl font-semibold select-none"
       initial={initialStylesValues}
       style={{ border: '2px solid', ...specialty.styles }}
       whileInView={{
