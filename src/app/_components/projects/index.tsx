@@ -1,5 +1,4 @@
 'use client';
-import clsx from 'clsx';
 import Container from '../../../components/container';
 import Title from '../../../components/title';
 import { Project } from './project';
