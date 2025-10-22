@@ -1,5 +1,5 @@
-import { type MotionStyle, motion } from 'motion/react';
-import { type TSpecialty, specialties } from './specialties';
+import { motion, type MotionStyle } from 'motion/react';
+import { specialties, type TSpecialty } from './specialties';
 
 export default function FocusedOn() {
   return (
@@ -39,6 +39,7 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
         scale: 1.05,
         filter: 'brightness(1.1)',
       }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
     >
       <span>{<Icon />}</span>
       <span className="">{specialty.text}</span>

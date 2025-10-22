@@ -23,7 +23,8 @@ export const specialties: TSpecialty[] = [
     },
     whileInView: {
       rotate: '-10deg',
-      top: '-95px',
+      top: '-115px',
+      left: '-80px',
     },
   },
   {
@@ -49,8 +50,8 @@ export const specialties: TSpecialty[] = [
     },
     whileInView: {
       rotate: '15deg',
-      top: '-30px',
-      left: '180px',
+      top: '-50px',
+      left: '190px',
     },
   },
   {
@@ -63,8 +64,8 @@ export const specialties: TSpecialty[] = [
     },
     whileInView: {
       rotate: '25deg',
-      left: '-30px',
-      bottom: '-45px',
+      left: '-50px',
+      bottom: '-55px',
     },
   },
 ];
