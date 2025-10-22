@@ -40,7 +40,7 @@ export default function Navigation() {
       role="navigation"
     >
       {/* Wrapper: móvil = full width; sm+ = pill centrado */}
-      <div className="flex w-full max-w-[720px] items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:gap-6 sm:rounded-full sm:px-4 sm:py-2">
+      <div className="flex w-full max-w-sm sm:max-w-[720px] md:max-w-[800px] lg:max-w-[1000px] items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:gap-6 sm:rounded-full sm:px-4 sm:py-2">
         {/* Home / top */}
         <div
           className="ring-offset-background relative h-9 w-9 shrink-0 cursor-pointer rounded-full transition focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none flex items-center justify-center"
