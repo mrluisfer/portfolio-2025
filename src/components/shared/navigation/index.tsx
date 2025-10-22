@@ -7,7 +7,6 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
 
 const navigationItems = Object.values(NAVIGATION_NAMES);
 
