@@ -9,38 +9,57 @@ export type Principle = {
   icon: Record<string, unknown>;
   description: string;
   color: string;
-  customWhileHover?: unknown;
+  gradient?: string;
+  accent?: string;
 };
 
 export const principles: Principle[] = [
   {
     title: 'Responsive Design',
     icon: responsiveData,
-    description: 'Build responsive designs that work on all devices.',
-    color: '#16C47F',
+    description: 'Seamless experiences across all devices, from mobile to desktop.',
+    color: '#10B981', // Emerald-500
+    gradient: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
+    accent: '#D1FAE5',
   },
   {
     title: 'Trending Technologies',
     icon: technologiesData,
-    description: 'Use the latest technologies to build your product.',
-    color: '#211C84',
+    description: 'Cutting-edge tools and frameworks for modern web development.',
+    color: '#6366F1', // Indigo-500
+    gradient: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+    accent: '#E0E7FF',
   },
   {
     title: 'Performance',
     icon: performanceData,
-    description: 'Build performant websites that load quickly.',
-    color: '#FFD95F',
+    description: 'Lightning-fast load times and optimized user experiences.',
+    color: '#F59E0B', // Amber-500
+    gradient: 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)',
+    accent: '#FEF3C7',
   },
   {
     title: 'Accessibility',
     icon: accessibilityData,
-    description: 'Build accessible websites that work for everyone.',
-    color: '#D91656',
+    description: 'Inclusive design that ensures everyone can use your product.',
+    color: '#EC4899', // Pink-500
+    gradient: 'linear-gradient(135deg, #EC4899 0%, #F472B6 100%)',
+    accent: '#FCE7F3',
   },
   {
     title: 'Beautiful Design',
     icon: designData,
-    description: 'Build beautiful designs that look great.',
-    color: '#2A004E',
+    description: 'Stunning visual experiences that captivate and engage users.',
+    color: '#8B5CF6', // Violet-500
+    gradient: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
+    accent: '#EDE9FE',
+  },
+  {
+    title: 'Security First',
+    icon: technologiesData, // Puedes reemplazar con un icono de seguridad
+    description: 'Built with security best practices and data protection in mind.',
+    color: '#0EA5E9', // Sky-500
+    gradient: 'linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%)',
+    accent: '#E0F2FE',
   },
 ];
