@@ -15,7 +15,7 @@ export default function Header() {
             <ThemeToggle />
           </div>
         </div>
-        <nav className="flex flex-wrap items-center justify-center gap-6 sm:justify-start lg:justify-end">
+        <nav className="flex flex-wrap items-center justify-center gap-6 sm:justify-start lg:justify-end mx-auto sm:mx-0">
           <CurrentPlaying />
           <SocialLinks />
           <div className={'hidden sm:block'}>
