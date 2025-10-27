@@ -101,7 +101,6 @@ export const technologies: Technology[] = [
   {
     Icon: Prisma,
     name: 'Prisma',
-    customGlowColor: '#0A0B16',
     DarkIcon: DarkPrisma,
   },
   {
