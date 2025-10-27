@@ -40,10 +40,10 @@ export default function Sharing() {
           variant={'link'}
         >
           <Link href="/projects">
-          <div className="h-7 w-8">
-            <Lottie lottieRef={logoRef} animationData={linkAnimationData} />
-          </div>
-          See my projects
+            <div className="h-7 w-8">
+              <Lottie lottieRef={logoRef} animationData={linkAnimationData} />
+            </div>
+            See my projects
           </Link>
         </Button>
       </div>

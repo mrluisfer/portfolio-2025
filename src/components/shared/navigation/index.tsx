@@ -34,21 +34,26 @@ export default function Navigation() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-[env(safe-area-inset-bottom,0px)] mb-4 z-50 flex items-center justify-center px-3 pb-[calc(env(safe-area-inset-bottom,0px)/2)]"
+      className="fixed inset-x-0 bottom-[env(safe-area-inset-bottom,0px)] z-50 mb-4 flex items-center justify-center px-3 pb-[calc(env(safe-area-inset-bottom,0px)/2)]"
       aria-label="Primary"
       role="navigation"
     >
       {/* Wrapper: móvil = full width; sm+ = pill centrado */}
-      <div className="flex w-full max-w-sm sm:max-w-[720px] md:max-w-[800px] lg:max-w-[1000px] items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:gap-6 sm:rounded-full sm:px-4 sm:py-2">
+      <div className="flex w-full max-w-sm items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:max-w-[720px] sm:gap-6 sm:rounded-full sm:px-4 sm:py-2 md:max-w-[800px] lg:max-w-[1000px]">
         {/* Home / top */}
         <div
-          className="ring-offset-background relative h-9 w-9 shrink-0 cursor-pointer rounded-full transition focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none flex items-center justify-center"
+          className="ring-offset-background relative flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full transition focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none"
           title="Go to top"
           aria-label="Go to top"
         >
           {pathname === '/' ? (
             <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-hidden="true">
-              <Lottie animationData={homeAnimationData} loop aria-hidden="true" className={'size-8'} />
+              <Lottie
+                animationData={homeAnimationData}
+                loop
+                aria-hidden="true"
+                className={'size-8'}
+              />
             </div>
           ) : (
             <Link href={'/'}>

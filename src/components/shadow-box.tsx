@@ -25,7 +25,7 @@ const ShadowBox = ({ children, className }: { children: ReactNode; className?: s
   return (
     <motion.div
       className={clsx(
-        'relative rounded-lg bg-white dark:bg-gray-900 transition-all duration-500 opacity-75)',
+        'opacity-75) relative rounded-lg bg-white transition-all duration-500 dark:bg-gray-900',
         className
       )}
       style={{

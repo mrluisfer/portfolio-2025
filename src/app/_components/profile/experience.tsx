@@ -3,7 +3,7 @@ import { CONTENT_TEXT_COLOR } from '.';
 const Experience = () => {
   return (
     <div className="pt-10 pb-5">
-      <h2 className="text-xl font-bold pb-2">Experience</h2>
+      <h2 className="pb-2 text-xl font-bold">Experience</h2>
       <p className={`${CONTENT_TEXT_COLOR}`}>
         I developed a unified platform to optimize products and accelerate delivery, improved
         performance by 60% through API migration, and enhanced web performance by implementing best

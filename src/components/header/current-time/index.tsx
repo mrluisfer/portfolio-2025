@@ -9,7 +9,7 @@ export default function CurrentTime() {
   const day = time.getDate();
 
   return (
-    <motion.div className="sm:flex items-center gap-1 hidden">
+    <motion.div className="hidden items-center gap-1 sm:flex">
       <motion.p className="flex items-center text-4xl font-bold tracking-wider text-blue-500 transition hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">
         {hour}:{minutes}
       </motion.p>

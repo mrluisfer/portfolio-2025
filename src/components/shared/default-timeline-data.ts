@@ -31,6 +31,7 @@ export const defaultTimelineData = [
     id: 5,
     date: 'Sep 2024 - Present',
     title: 'Full Stack Developer - Credix (In Office · Mexico City)',
-    description: 'Developed, maintained, and optimized internal financial applications for a credit and lending company using PHP, HTML, and vanilla JavaScript. Integrated APIs and external provider services, and refactored both codebase and database architecture to improve system stability, scalability, and performance.'
-  }
+    description:
+      'Developed, maintained, and optimized internal financial applications for a credit and lending company using PHP, HTML, and vanilla JavaScript. Integrated APIs and external provider services, and refactored both codebase and database architecture to improve system stability, scalability, and performance.',
+  },
 ];

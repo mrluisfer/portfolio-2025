@@ -7,8 +7,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   experimental: {
-    globalNotFound: true
-  }
+    globalNotFound: true,
+  },
 };
 
 export default nextConfig;

@@ -3,4 +3,4 @@ export type InternalApiResponse<T> = {
   error?: string;
   status: number;
   message?: string;
-}
+};

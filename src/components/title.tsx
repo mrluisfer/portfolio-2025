@@ -5,7 +5,7 @@ const Title = ({ children, asChild }: { children: ReactNode; asChild?: boolean }
   const Component = asChild ? Slot : 'div';
 
   return (
-    <Component className="relative mx-auto flex max-w-[700px] justify-center text-center text-2xl md:text-3xl font-semibold">
+    <Component className="relative mx-auto flex max-w-[700px] justify-center text-center text-2xl font-semibold md:text-3xl">
       {children}
     </Component>
   );
