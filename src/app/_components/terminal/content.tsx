@@ -28,7 +28,7 @@ const terminalLogs = [
   <pre key={3}>
     <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText> <GrayText>cat POEM.md</GrayText>
   </pre>,
-  <pre key={4}>
+  <pre key={4} className="text-wrap">
     <GrayText>A ship in harbor is safe, but that is not what ships are built for.</GrayText>
   </pre>,
 ];
