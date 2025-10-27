@@ -10,7 +10,7 @@ export default function Header() {
     <Container>
       <header className="mx-auto flex items-center justify-between sm:px-[20px] lg:px-0">
         <Logo />
-        <nav className="flex items-center gap-6">
+        <nav className="mx-auto flex items-center gap-6 sm:mx-0">
           <CurrentPlaying />
           <SocialLinks />
           <ThemeToggle />
