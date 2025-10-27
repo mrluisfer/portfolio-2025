@@ -22,7 +22,7 @@ export default function Grid() {
           </Card>
 
           {/* Experience */}
-          <Card className="w-full lg:col-start-3 lg:row-span-4">
+          <Card className="h-fit w-full lg:col-start-3 lg:row-span-4">
             <Experience />
           </Card>
 
@@ -47,7 +47,7 @@ function Card({ children, className = '', ...props }: CardProps) {
   return (
     <motion.div
       initial={{ scale: 1, ...(typeof props.initial === 'object' ? props.initial : {}) }}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.01 }}
       className={`group flex w-full flex-col items-center justify-center rounded-xl shadow-sm transition hover:shadow-md lg:w-auto ${className}`}
       {...props}
     >
