@@ -15,7 +15,6 @@ export default function Profile() {
         <div id={NAVIGATION_NAMES.PROFILE}>
           <Header />
           <Experience />
-          <hr />
           <AboutMe />
         </div>
       </Container>
