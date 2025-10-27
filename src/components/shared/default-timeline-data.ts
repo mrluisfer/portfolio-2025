@@ -27,4 +27,10 @@ export const defaultTimelineData = [
     description:
       'Built a unified component platform to align products and speed delivery. Contributed to an internal API migration that improved Time to Interactive by ~60% using NestJS, Prisma, and TypeScript. Integrated Sentry for monitoring and debugging, led code reviews, and refactored the main marketing site to boost maintainability and load performance.',
   },
+  {
+    id: 5,
+    date: 'Sep 2024 - Present',
+    title: 'Full Stack Developer - Credix (In Office · Mexico City)',
+    description: 'Developed, maintained, and optimized internal financial applications for a credit and lending company using PHP, HTML, and vanilla JavaScript. Integrated APIs and external provider services, and refactored both codebase and database architecture to improve system stability, scalability, and performance.'
+  }
 ];

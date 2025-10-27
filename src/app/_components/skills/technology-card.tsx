@@ -53,7 +53,7 @@ function TechnologyCardBase({ Icon, customGlowColor }: Props) {
       whileHover={hoverAnim}
       whileTap={tapAnim}
     >
-      <div className="relative z-10 flex h-full w-full items-center justify-center rounded-xl bg-transparent text-4xl sm:bg-neutral-200 dark:bg-neutral-950">
+      <div className="relative z-10 flex sm:size-fit md:size-full items-center justify-center rounded-xl bg-transparent text-4xl sm:bg-neutral-200 dark:bg-neutral-950">
         {Icon ? <Icon ref={svgRef} /> : null}
       </div>
     </motion.div>

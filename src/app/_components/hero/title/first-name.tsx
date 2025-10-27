@@ -6,7 +6,7 @@ import { ThemeKey } from '@/types/theme-key';
 import { type RemixiconComponentType, RiCodeAiFill, RiMusicAiLine } from '@remixicon/react';
 import { motion } from 'motion/react';
 import { useTheme } from 'next-themes';
-import { type ReactNode, useRef } from 'react';
+import { ComponentType, type ReactNode, useRef } from 'react';
 import { RiGameLine } from 'react-icons/ri';
 import { RxSpeakerLoud } from 'react-icons/rx';
 
@@ -20,7 +20,7 @@ function resolveThemeHex(map: ThemeHexMap, resolved: 'light' | 'dark') {
   return map[resolved] ?? map.fallback;
 }
 
-type IconComponent = React.ComponentType<{
+type IconComponent = ComponentType<{
   size?: number;
   color?: string;
   className?: string;
@@ -29,7 +29,7 @@ type IconComponent = React.ComponentType<{
 export default function FirstName() {
   return (
     <motion.div
-      className="relative flex items-center text-8xl sm:text-9xl"
+      className="relative flex items-center text-7xl sm:text-8xl md:text-9xl"
       style={{ gap: '1rem' }}
       whileHover={{ gap: '2rem' }}
     >

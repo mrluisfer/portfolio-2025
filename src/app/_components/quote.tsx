@@ -3,8 +3,8 @@ import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { BookUserIcon, FolderRootIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { Badge } from '../../components/ui/badge';
-import { Button } from '../../components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 export const Quote = () => {
   const { theme } = useTheme();
@@ -43,8 +43,7 @@ export const Quote = () => {
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-pretty sm:text-base">
-          Celebrate each version, measure, learn, and relaunch. Your work improves with each
-          iteration: design, performance, accessibility, and user experience.
+          Embrace the challenges, learn from failures, and celebrate successes along the way.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -54,7 +53,7 @@ export const Quote = () => {
               See projects
             </Link>
           </Button>
-          <Button variant={'outline'} asChild size={'lg'}>
+          <Button variant={'secondary'} asChild size={'lg'}>
             <Link href={`#${NAVIGATION_NAMES.CONNECT}`}>
               <BookUserIcon />
               Contact

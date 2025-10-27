@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold dark:text-black">Luis Alvarez</h1>
-        <p className={`${CONTENT_TEXT_COLOR}`}>I'm a Frontend Developer based in Mexico</p>
+        <p className={`${CONTENT_TEXT_COLOR}`}>I'm a Full Stack Developer based in Mexico</p>
       </div>
     </header>
   );

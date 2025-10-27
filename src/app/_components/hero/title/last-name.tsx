@@ -15,11 +15,11 @@ export default function LastName() {
   }, []);
 
   return (
-    <div className="relative flex h-20 items-center justify-center text-8xl opacity-50">
+    <div className="relative flex h-20 items-center justify-center opacity-50">
       <AnimatePresence mode="wait">
         <motion.p
           key={variantIndex}
-          className="absolute flex items-center will-change-[opacity] text-6xl sm:text-9xl"
+          className="absolute flex items-center will-change-[opacity] text-5xl sm:text-6xl md:text-9xl"
           style={{ gap: 0 }}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}

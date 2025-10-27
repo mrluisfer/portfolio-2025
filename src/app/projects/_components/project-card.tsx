@@ -1,11 +1,12 @@
 import { ProjectType } from '@/app/_components/projects/projects-list';
-import GithubIconButton from '@/components/github-icon-button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { GithubDark } from '@/assets/icons/allIcons';
 
 export function ProjectCard({ project }: { project: ProjectType }) {
   const maxChips = 4;
@@ -46,7 +47,11 @@ export function ProjectCard({ project }: { project: ProjectType }) {
               {project.name} <ExternalLink size={16} className="text-neutral-500" />
             </Link>
 
-            <GithubIconButton url={project.repoUrl} />
+            <Button size={'icon'} asChild>
+              <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                <GithubDark />
+              </Link>
+            </Button>
           </CardTitle>
 
           <p className="line-clamp-3 text-sm text-neutral-600 transition-all dark:text-neutral-500 dark:group-hover:text-neutral-400">

@@ -1,5 +1,5 @@
-import { type MotionStyle, motion } from 'motion/react';
-import { type TSpecialty, specialties } from './specialties';
+import { motion, type MotionStyle } from 'motion/react';
+import { specialties, type TSpecialty } from './specialties';
 
 export default function FocusedOn() {
   return (
@@ -15,7 +15,7 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
   const Icon = specialty.icon;
 
   /**
-   * this will reset the styles values to 0
+   * this will reset the style values to 0
    * @example { rotate: 0, top: 0, left: 0 }
    */
   const initialStylesValues = Object.fromEntries(
@@ -24,7 +24,7 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
 
   return (
     <motion.div
-      className="absolute z-10 flex items-center gap-1 rounded-lg border-2 px-2 font-semibold text-xl select-none"
+      className="absolute z-10 flex items-center gap-1 rounded-lg border-2 px-2 text-xl font-semibold select-none"
       initial={initialStylesValues}
       style={{ border: '2px solid', ...specialty.styles }}
       whileInView={{
@@ -39,6 +39,7 @@ function Specialty({ specialty }: { specialty: TSpecialty }) {
         scale: 1.05,
         filter: 'brightness(1.1)',
       }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
     >
       <span>{<Icon />}</span>
       <span className="">{specialty.text}</span>

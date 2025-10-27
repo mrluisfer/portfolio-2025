@@ -1,11 +1,19 @@
 import clsx from 'clsx';
 import { MoveUpRight } from 'lucide-react';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import GithubIconButton from '../../../components/github-icon-button';
-import { Button } from '../../../components/ui/button';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ui/card';
 import type { ProjectType } from './projects-list';
+import { Badge } from '@/components/ui/badge';
+import { GithubDark } from '@/assets/icons/allIcons';
 
 export function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
@@ -13,74 +21,70 @@ export function truncateText(text: string, maxLength: number): string {
 }
 
 export const Project = ({ className, project }: { className?: string; project: ProjectType }) => {
-  const projectDescription = truncateText(project.description, 70);
+  const projectDescription = truncateText(project.description, 200);
 
   return (
-    <div
-      className={clsx(
-        'group relative h-[400px] w-[300px] min-w-[300px] overflow-hidden rounded-3xl border',
-        !project.imageCover && 'bg-gradient-to-b from-gray-600 to-gray-800',
-        className
-      )}
+    <Card
+      className={clsx('mx-4 overflow-hidden rounded-3xl border md:mx-auto md:max-w-xl', className)}
     >
+      {/* Cover */}
       {project.imageCover ? (
-        <Image
-          src={project.imageCover}
-          alt={project.name}
-          loading="lazy"
-          width={300}
-          height={400}
-          className="pointer-events-none h-full w-full object-cover object-center select-none"
-          draggable={false}
-          decoding="async"
-        />
+        <div className={'w-full px-4'}>
+          <Image
+            src={project.imageCover}
+            alt={project.name}
+            width={200}
+            height={50}
+            className={'h-48 w-full rounded-2xl object-cover md:h-72'}
+          />
+        </div>
       ) : null}
 
-      <div className="absolute top-0 left-0 flex h-full w-full flex-col justify-between rounded-3xl bg-black/60 p-6 transition-all">
-        <div className="space-y-3 text-white">
-          <motion.h1 className="text-2xl font-bold">
-            <a
-              href={project.previewUrl || project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {project.name}
-            </a>
-          </motion.h1>
-          <div className="flex flex-col gap-2 opacity-0 transition group-hover:opacity-100">
-            <motion.p className="text-xs">{projectDescription}</motion.p>
-          </div>
-        </div>
-        <div className="space-y-4 opacity-0 transition group-hover:opacity-100">
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs">
-            {project.technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="font-semibold text-gray-300 opacity-70 transition hover:text-gray-100 hover:opacity-100"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center justify-between">
-            <GithubIconButton url={project.repoUrl} />
-            {project.previewUrl && (
-              <Button asChild size={'icon'} variant={'secondary'}>
-                <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
-                  <MoveUpRight />
-                </Link>
-              </Button>
-            )}
-          </div>
-        </div>
-      </div>
+      {/* Header */}
+      <CardHeader>
+        <CardTitle className="text-2xl">
+          <a href={project.previewUrl || project.repoUrl} target="_blank" rel="noopener noreferrer">
+            {project.name}
+          </a>
+        </CardTitle>
+        {projectDescription && (
+          <CardDescription className="text-xs">{projectDescription}</CardDescription>
+        )}
+      </CardHeader>
 
-      {project.imgAuthor && (
-        <motion.div className="sr-only text-xs opacity-0 transition group-hover:opacity-100">
-          <p className="text-gray-400 transition hover:text-gray-900">
-            Thanks! Shoutout to{' '}
+      {/* Content */}
+      <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+          {project.technologies.map((tech, index) => (
+            <Badge key={index} variant={'outline'}>
+              {tech}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+
+      {/* Footer */}
+      <CardFooter className={'flex flex-col'}>
+        <div className="flex w-full flex-1 items-center justify-between gap-2">
+          <Button size={'icon'} asChild>
+            <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+              <GithubDark />
+            </Link>
+          </Button>
+          {project.previewUrl && (
+            <Button asChild size="icon" variant="secondary">
+              <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
+                <MoveUpRight />
+              </Link>
+            </Button>
+          )}
+        </div>
+
+        {project.imgAuthor && (
+          <p className="text-muted-foreground mt-4 self-start text-xs">
+            Photo:{' '}
             <a
-              className="capitalize"
+              className="underline decoration-dotted underline-offset-2"
               href={`https://unsplash.com/@${project.imgAuthor.toLowerCase().split(' ').join('-')}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -88,8 +92,8 @@ export const Project = ({ className, project }: { className?: string; project: P
               @{project.imgAuthor}
             </a>
           </p>
-        </motion.div>
-      )}
-    </div>
+        )}
+      </CardFooter>
+    </Card>
   );
 };
