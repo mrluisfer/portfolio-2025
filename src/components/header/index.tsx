@@ -8,18 +8,18 @@ import Logo from './logo';
 export default function Header() {
   return (
     <Container>
-      <header className="mx-auto px-2 flex items-center justify-between sm:px-[20px] lg:px-0 flex-wrap">
-        <div className={'flex flex-1 justify-between items-center'}>
-        <Logo />
+      <header className="mx-auto flex flex-wrap items-center justify-between px-2 sm:px-[20px] lg:px-0">
+        <div className={'flex flex-1 items-center justify-between'}>
+          <Logo />
           <div className={'block sm:hidden'}>
-          <ThemeToggle />
+            <ThemeToggle />
           </div>
         </div>
-        <nav className="flex items-center justify-center sm:justify-start lg:justify-end gap-6 flex-wrap">
+        <nav className="flex flex-wrap items-center justify-center gap-6 sm:justify-start lg:justify-end">
           <CurrentPlaying />
           <SocialLinks />
           <div className={'hidden sm:block'}>
-          <ThemeToggle />
+            <ThemeToggle />
           </div>
           <CurrentTime />
         </nav>
