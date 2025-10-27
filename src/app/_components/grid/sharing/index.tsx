@@ -20,7 +20,7 @@ export default function Sharing() {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="lg:max-w-auto flex w-full flex-1 flex-col rounded-[inherit] bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 p-4 shadow-sm sm:max-w-[350px] sm:p-5 lg:max-h-none lg:p-6"
+      className="lg:max-w-auto flex h-fit w-full flex-col rounded-[inherit] bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 p-4 shadow-sm sm:max-w-[350px] sm:p-5 lg:max-h-none lg:p-6"
     >
       {/* GitHub Badge */}
       <motion.div
@@ -41,7 +41,7 @@ export default function Sharing() {
       </motion.div>
 
       {/* Content Area */}
-      <div className="mt-auto flex min-h-0 flex-1 flex-col items-start justify-end gap-4 pt-6 sm:gap-5 sm:pt-8">
+      <div className="mt-0 flex min-h-0 flex-col items-start justify-end gap-4 pt-6 sm:gap-5 sm:pt-8">
         {/* Title Section */}
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
@@ -80,7 +80,10 @@ export default function Sharing() {
             asChild
             variant="link"
           >
-            <Link href="/projects" className="flex items-center justify-center gap-2 sm:gap-3">
+            <Link
+              href="/projects"
+              className="flex items-center justify-center gap-2 no-underline sm:gap-3"
+            >
               {/* Animated background */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-emerald-50 to-green-50 opacity-0 group-hover:opacity-100"
