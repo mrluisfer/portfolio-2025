@@ -1,19 +1,19 @@
+import { GithubDark } from '@/assets/icons/allIcons';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import clsx from 'clsx';
 import { MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from '@/components/ui/card';
 import type { ProjectType } from './projects-list';
-import { Badge } from '@/components/ui/badge';
-import { GithubDark } from '@/assets/icons/allIcons';
 
 export function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
@@ -66,15 +66,21 @@ export const Project = ({ className, project }: { className?: string; project: P
       {/* Footer */}
       <CardFooter className={'flex flex-col'}>
         <div className="flex w-full flex-1 items-center justify-between gap-2">
-          <Button size={'icon'} asChild>
+          <Button asChild>
             <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
               <GithubDark />
+              <span className='text-white hidden sm:inline-block'>
+                View source code
+              </span>
             </Link>
           </Button>
           {project.previewUrl && (
-            <Button asChild size="icon" variant="secondary">
+            <Button asChild variant="secondary">
               <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
                 <MoveUpRight />
+                <span className='hidden sm:block'>
+                  Live preview
+                </span>
               </Link>
             </Button>
           )}

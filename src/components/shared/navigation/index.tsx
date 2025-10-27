@@ -5,8 +5,8 @@ import homeAnimationData from '@/lotties/home.json';
 import Lottie from 'lottie-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import React from 'react';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 
 const navigationItems = Object.values(NAVIGATION_NAMES);
 
@@ -34,7 +34,7 @@ export default function Navigation() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-[env(safe-area-inset-bottom,0px)] z-50 mb-4 flex items-center justify-center px-3 pb-[calc(env(safe-area-inset-bottom,0px)/2)]"
+      className="hidden fixed inset-x-0 bottom-[env(safe-area-inset-bottom,0px)] z-50 mb-4 sm:flex items-center justify-center px-3 pb-[calc(env(safe-area-inset-bottom,0px)/2)]"
       aria-label="Primary"
       role="navigation"
     >
@@ -42,7 +42,7 @@ export default function Navigation() {
       <div className="flex w-full max-w-sm items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:max-w-[720px] sm:gap-6 sm:rounded-full sm:px-4 sm:py-2 md:max-w-[800px] lg:max-w-[1000px]">
         {/* Home / top */}
         <div
-          className="ring-offset-background relative flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full transition focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none"
+          className="hidden ring-offset-background relative lg:flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full transition focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none"
           title="Go to top"
           aria-label="Go to top"
         >

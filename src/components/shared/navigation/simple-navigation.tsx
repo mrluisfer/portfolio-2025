@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { ArrowLeftIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ArrowLeftIcon } from 'lucide-react';
 import Link from 'next/link';
 
 export function SimpleNavigation({
@@ -14,7 +14,7 @@ export function SimpleNavigation({
     <Link href={backUrl}>
       <nav
         className={cn(
-          "'border-white/10 text-gray-100' fixed bottom-4 left-4 z-50 flex items-center justify-center rounded-full border border-white/20 bg-black/60 px-2 py-1 shadow-lg backdrop-blur-md backdrop-saturate-150 transition-all hover:scale-95 hover:bg-black/30 hover:shadow-xl hover:backdrop-blur-xl active:scale-90 md:right-8 md:left-auto",
+          "'border-white/10 text-gray-100' fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-full border border-white/20 bg-black/60 px-2 py-1 shadow-lg backdrop-blur-md backdrop-saturate-150 transition-all hover:scale-95 hover:bg-black/30 hover:shadow-xl hover:backdrop-blur-xl active:scale-90 md:right-8 md:left-auto",
           className
         )}
       >

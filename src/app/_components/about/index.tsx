@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 
 import FocusedOn from '@/app/_components/about/focused-on';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import Container from '../../../components/container';
-import Lottie from 'lottie-react';
 import craft from '@/lotties/craft.json';
+import Lottie from 'lottie-react';
 import { LayoutDashboardIcon, ServerIcon } from 'lucide-react';
+import Container from '../../../components/container';
 
 export default function About() {
   return (
@@ -33,7 +33,7 @@ export default function About() {
           }}
         >
           <p className="mb-3 font-bold">Full Stack Developer</p>
-          <p className="mt-2 flex flex-wrap items-start justify-center gap-3 text-lg leading-relaxed">
+          <div className="mt-2 flex flex-wrap items-start justify-center gap-3 text-lg leading-relaxed">
             <div className="flex items-center gap-1">
               <div className="h-7 w-8">
                 <Lottie animationData={craft} />
@@ -51,7 +51,7 @@ export default function About() {
               Back-end
             </span>{' '}
             solutions
-          </p>
+          </div>
         </motion.div>
 
         <span className="mx-auto mt-8 block w-full max-w-[800px] text-lg leading-relaxed font-medium opacity-70 sm:text-xl lg:text-2xl">
