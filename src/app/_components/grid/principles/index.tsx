@@ -22,7 +22,7 @@ export default function Principles() {
       >
         Principles
       </motion.div>
-      <ul className="grid grid-cols-1 gap-3 px-1 pt-10 sm:grid-cols-2 sm:gap-4 sm:px-2 sm:pt-12 lg:grid-cols-3 lg:pt-8 lg:pl-2 xl:grid-cols-4">
+      <ul className="grid [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-3 px-1 pt-10 sm:gap-4 sm:px-2 sm:pt-12 lg:pt-8 lg:pl-2">
         {principles.map((principle, index) => (
           <Principle key={principle.title} principle={principle} index={index} />
         ))}
