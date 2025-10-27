@@ -54,12 +54,4 @@ export const principles: Principle[] = [
     gradient: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
     accent: '#EDE9FE',
   },
-  {
-    title: 'Security First',
-    icon: technologiesData, // Puedes reemplazar con un icono de seguridad
-    description: 'Built with security best practices and data protection in mind.',
-    color: '#0EA5E9', // Sky-500
-    gradient: 'linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%)',
-    accent: '#E0F2FE',
-  },
 ];
