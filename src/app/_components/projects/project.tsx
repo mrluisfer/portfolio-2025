@@ -69,18 +69,14 @@ export const Project = ({ className, project }: { className?: string; project: P
           <Button asChild>
             <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
               <GithubDark />
-              <span className='text-white hidden sm:inline-block'>
-                View source code
-              </span>
+              <span className="hidden text-white sm:inline-block">View source code</span>
             </Link>
           </Button>
           {project.previewUrl && (
             <Button asChild variant="secondary">
               <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
                 <MoveUpRight />
-                <span className='hidden sm:block'>
-                  Live preview
-                </span>
+                <span className="hidden sm:block">Live preview</span>
               </Link>
             </Button>
           )}

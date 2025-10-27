@@ -1,9 +1,7 @@
 {
   "tailwindCSS.experimental.configFile": "src/styles/globals.css",
   "editor.formatOnSave": true,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "typescript.inlayHints.parameterNames.enabled": "all",
   "cSpell.words": ["bambu", "Bambú", "Canlas", "Monfly", "Nowports", "pinterest"],
   "typescript.tsdk": "node_modules/typescript/lib",

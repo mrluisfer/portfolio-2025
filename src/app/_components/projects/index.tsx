@@ -1,21 +1,13 @@
 'use client';
 import Container from '../../../components/container';
 import Title from '../../../components/title';
-import { Project } from './project';
 
+import { Button } from '@/components/ui/button';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { FolderRootIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { projects } from './projects-list';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+import { ProjectList } from './project-list';
 
 export function Projects() {
   return (
@@ -34,19 +26,7 @@ export function Projects() {
             I'm currently working on
           </motion.span>
         </div>
-
-        <Carousel className={'mx-auto mt-5 w-full md:max-w-4xl'}>
-          <CarouselContent>
-            {projects.map((project) => (
-              <CarouselItem key={project.name}>
-                <Project project={project} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-
+        <ProjectList />
         <div className="mt-8 flex items-center justify-center">
           <Button asChild className="text-white" size={'lg'}>
             <Link href="/projects">
