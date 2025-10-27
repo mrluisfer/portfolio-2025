@@ -43,7 +43,7 @@ function Principle({ principle, index }: { principle: TPrinciple; index: number 
 
   return (
     <motion.li
-      className="group relative min-h-[140px] w-full touch-manipulation rounded-2xl p-4 transition-all duration-300 will-change-transform sm:min-h-[160px] sm:p-5"
+      className="group relative min-h-[140px] w-full touch-manipulation rounded-2xl p-4 transition-all duration-200 will-change-transform sm:min-h-[160px] sm:p-5"
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={{
@@ -54,7 +54,7 @@ function Principle({ principle, index }: { principle: TPrinciple; index: number 
         boxShadow: isHover ? shadow : 'none',
       }}
       transition={{
-        duration: 0.3,
+        duration: 0.2,
         delay: index * 0.05,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
@@ -70,7 +70,7 @@ function Principle({ principle, index }: { principle: TPrinciple; index: number 
         animate={{
           opacity: isHover ? 0.15 : 0,
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
       />
 
       {/* Icon container */}
@@ -80,7 +80,7 @@ function Principle({ principle, index }: { principle: TPrinciple; index: number 
           scale: isHover ? 1.1 : 1,
           rotate: isHover ? 5 : 0,
         }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
       >
         <Lottie animationData={icon} loop={isHover} />
       </motion.div>
