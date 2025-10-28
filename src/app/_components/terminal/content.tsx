@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { type ReactNode, useEffect, useState } from 'react';
 
 import { getCurrentFormattedDate } from '@/utils/get-current-date';
+import Link from 'next/link';
 
 function BlueText({ children }: { children: ReactNode | string }) {
   return <span className="font-medium text-blue-500">{children}</span>;
@@ -19,14 +20,21 @@ const terminalLogs = [
     <GrayText>Last Session: {getCurrentFormattedDate()}</GrayText>
   </pre>,
   <pre key={1}>
-    <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText>{' '}
+    <span className="select-none">
+      <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText>{' '}
+    </span>
     <GrayText>echo "Hello, World!"</GrayText>
   </pre>,
   <pre key={2}>
     <GrayText>Hello, World!</GrayText>
   </pre>,
   <pre key={3}>
-    <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText> <GrayText>cat POEM.md</GrayText>
+    <span className="select-none">
+      <BlueText>mrluisfer@</BlueText> <GreenText>~ $</GreenText>{' '}
+    </span>
+    <Link href={'/poem'} className="hover:underline" target="_blank" rel="noopener noreferrer">
+      <GrayText>curl https://mrluisfer.vercel.app/poem</GrayText>
+    </Link>
   </pre>,
   <pre key={4} className="text-wrap">
     <GrayText>A ship in harbor is safe, but that is not what ships are built for.</GrayText>
