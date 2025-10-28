@@ -1,66 +1,83 @@
 'use client';
 
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
-import homeAnimationData from '@/lotties/home.json';
-import Lottie from 'lottie-react';
-import { motion } from 'motion/react';
-import Link from 'next/link';
+import { ArrowUpIcon } from 'lucide-react';
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+} from 'motion/react';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const navigationItems = Object.values(NAVIGATION_NAMES);
 
 export default function Navigation() {
-  const [reducedMotion, setReducedMotion] = React.useState(false);
   const pathname = usePathname();
 
-  React.useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const update = () => setReducedMotion(mq.matches);
-    update();
-    mq.addEventListener?.('change', update);
-    return () => mq.removeEventListener?.('change', update);
-  }, []);
+  // Respeta preferencias de accesibilidad
+  const prefersReducedMotion = useReducedMotion();
 
-  const handleNavigationClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    const targetId = event.currentTarget.getAttribute('href')?.substring(2); // '/#id' -> 'id'
-    if (!targetId) return;
+  // Mostrar el botón "arriba" cuando haya desplazamiento
+  const { scrollY } = useScroll();
+  const [showToTop, setShowToTop] = React.useState(false);
 
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
-    }
-  };
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    // Threshold razonable para no parpadear
+    setShowToTop(latest > 200);
+  });
+
+  const handleNavigationClick = React.useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement>) => {
+      // Evita que el navegador haga el salto por hash y nosotros controlamos el scroll
+      event.preventDefault();
+      const href = event.currentTarget.getAttribute('href');
+      const targetId = href?.startsWith('/#') ? href.slice(2) : href?.replace('#', '');
+      if (!targetId) return;
+
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        // Opcional: actualizar el hash para accesibilidad / deep-link
+        history.replaceState(null, '', `/#${targetId}`);
+      }
+    },
+    [prefersReducedMotion]
+  );
+
+  const handleScrollTop = React.useCallback(() => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  }, [prefersReducedMotion]);
 
   return (
     <nav
-      className="hidden fixed inset-x-0 bottom-[env(safe-area-inset-bottom,0px)] z-50 mb-4 sm:flex items-center justify-center px-3 pb-[calc(env(safe-area-inset-bottom,0px)/2)]"
+      className="fixed inset-x-0 bottom-[env(safe-area-inset-bottom,0px)] z-50 mb-4 hidden items-center justify-center px-3 pb-[calc(env(safe-area-inset-bottom,0px)/2)] sm:flex"
       aria-label="Primary"
-      role="navigation"
     >
       {/* Wrapper: móvil = full width; sm+ = pill centrado */}
-      <div className="flex w-full max-w-sm items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:max-w-[720px] sm:gap-6 sm:rounded-full sm:px-4 sm:py-2 md:max-w-[800px] lg:max-w-[1000px]">
+      <div className="flex w-full max-w-sm items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900/50 px-3 py-2 shadow-lg backdrop-blur-lg backdrop-saturate-150 sm:w-auto sm:max-w-[720px] sm:rounded-full sm:px-4 sm:py-2 md:max-w-[800px] lg:max-w-[1000px]">
         {/* Home / top */}
-        <div
-          className="hidden ring-offset-background relative lg:flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full transition focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none"
-          title="Go to top"
-          aria-label="Go to top"
-        >
-          {pathname === '/' ? (
-            <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-hidden="true">
-              <Lottie
-                animationData={homeAnimationData}
-                loop
-                aria-hidden="true"
-                className={'size-8'}
-              />
-            </div>
-          ) : (
-            <Link href={'/'}>
-              <Lottie animationData={homeAnimationData} loop aria-hidden="true" />
-            </Link>
+        <AnimatePresence mode="wait">
+          {showToTop && (
+            <motion.button
+              key="goToTop"
+              type="button"
+              onClick={handleScrollTop}
+              className="hidden h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:outline-none lg:flex"
+              title="Ir arriba"
+              aria-label="Ir al comienzo de la página"
+              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.8, y: 6 }}
+              animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+              exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.8, y: 6 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowUpIcon className="h-5 w-5" aria-hidden="true" />
+            </motion.button>
           )}
-        </div>
+        </AnimatePresence>
 
         {/* Items: móvil = scroll-x; sm+ = distribuido */}
         <div className="flex flex-1 items-center">
@@ -75,6 +92,8 @@ export default function Navigation() {
                   onClick={handleNavigationClick}
                   href={`/#${item}`}
                   className="block min-w-[96px] rounded-full px-3 py-2 text-center text-white/90 capitalize transition select-none hover:scale-[1.03] hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none active:scale-[0.98]"
+                  whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+                  whileHover={prefersReducedMotion ? undefined : { scale: 1.03 }}
                 >
                   {item}
                 </motion.a>
