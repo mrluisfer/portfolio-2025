@@ -7,7 +7,6 @@ import { Projects } from '@/app/_components/projects';
 import { Quote } from '@/app/_components/quote';
 import Terminal from '@/app/_components/terminal';
 import Navigation from '@/components/shared/navigation';
-import { SimpleNavigation } from '@/components/shared/navigation/simple-navigation';
 import type { Metadata } from 'next';
 import Skills from './_components/skills';
 
@@ -59,7 +58,6 @@ export default function HomePage() {
       <Profile />
       <Connect />
       <Navigation />
-      <SimpleNavigation className='md:hidden' />
     </main>
   );
 }
