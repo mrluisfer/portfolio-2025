@@ -1,8 +1,3 @@
-'use client';
-
-import '@/styles/general-pattern.scss';
-import '@/styles/technologies-shadow.scss';
-
 import Container from '@/components/container';
 import Title from '@/components/title';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';

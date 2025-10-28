@@ -89,11 +89,13 @@ export default function Technologies() {
       {technologiesDivided.map((row, i) => (
         <Row key={`row-${i}`}>
           <MemoTechnologyCard key={`left-${i}`} />
-          {row.map(({ name, Icon, DarkIcon, customGlowColor }) => (
+          {row.map(({ name, Icon, DarkIcon, customGlowColor, docs }) => (
             <MemoTechnologyCard
               key={name}
               Icon={theme === 'light' ? Icon : (DarkIcon ?? Icon)}
               customGlowColor={customGlowColor}
+              docs={docs}
+              name={name}
             />
           ))}
           <MemoTechnologyCard key={`right-${i}`} />
