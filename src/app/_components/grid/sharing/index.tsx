@@ -76,7 +76,7 @@ export default function Sharing() {
           }}
         >
           <Button
-            className="group relative w-full touch-manipulation overflow-hidden rounded-xl border border-emerald-200 bg-white px-5 py-3 text-sm font-semibold text-emerald-600 shadow-md transition-all hover:shadow-lg hover:shadow-emerald-200/50 active:scale-[0.98] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
+            className="group relative w-full touch-manipulation overflow-hidden rounded-xl bg-white px-5 py-3 text-sm font-semibold text-emerald-600 no-underline shadow-md transition-all hover:shadow-lg hover:shadow-emerald-200/50 active:scale-[0.98] sm:w-auto sm:px-6 sm:py-3 sm:text-base"
             asChild
             variant="link"
           >
