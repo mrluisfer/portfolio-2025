@@ -15,17 +15,39 @@ export default function Skills() {
         <Title>
           <h1 className="absolute -top-[30px] z-20 drop-shadow-2xl">
             Building projects with the most{' '}
-            <span className={'inline-flex items-center gap-1'}>
+            <span
+              className={
+                'inline-flex items-center gap-1 border-b-2 border-transparent transition hover:border-orange-400'
+              }
+            >
               <CpuIcon className={'text-orange-400'} />
               Powerful
             </span>{' '}
             and{' '}
-            <span className={'inline-flex items-center gap-1'}>
+            <span
+              className={
+                'inline-flex items-center gap-1 border-b-2 border-transparent transition hover:border-red-400'
+              }
+            >
               <FlameIcon className={'text-red-400'} />
               Trending
             </span>{' '}
-            <span className={'text-yellow-400'}>Frontend</span> and{' '}
-            <span className={'text-violet-400'}>Backend</span> technologies.
+            <span
+              className={
+                'border-b-2 border-transparent text-yellow-400 transition hover:border-yellow-400'
+              }
+            >
+              Frontend
+            </span>{' '}
+            and{' '}
+            <span
+              className={
+                'border-b-2 border-transparent text-violet-400 transition hover:border-violet-400'
+              }
+            >
+              Backend
+            </span>{' '}
+            technologies.
           </h1>
         </Title>
         <Technologies />
