@@ -1,7 +1,7 @@
 'use client';
 
 import '@/styles/hero-pattern.scss';
-import Header from '../../../components/header';
+import Header from '../header';
 import Technologies from './technologies';
 import Title from './title';
 

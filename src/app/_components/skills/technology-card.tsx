@@ -19,7 +19,7 @@ const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : use
 const HOVER = { scale: 1.1 } as const;
 const TAP = { scale: 0.9 } as const;
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function TechnologyCardBase({ Icon, customGlowColor, docs, name }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
