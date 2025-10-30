@@ -1,10 +1,10 @@
 'use client';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { NAVIGATION_NAMES } from '@/constants/navigation-names';
 import { BookUserIcon, FolderRootIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 
 export const Quote = () => {
   const { theme } = useTheme();
@@ -53,7 +53,7 @@ export const Quote = () => {
               See projects
             </Link>
           </Button>
-          <Button variant={'secondary'} asChild size={'lg'}>
+          <Button variant={'outline'} asChild size={'lg'}>
             <Link href={`#${NAVIGATION_NAMES.CONNECT}`}>
               <BookUserIcon />
               Contact
