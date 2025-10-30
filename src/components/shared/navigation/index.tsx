@@ -74,7 +74,7 @@ export default function Navigation() {
               transition={{ type: 'spring', stiffness: 350, damping: 25 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowUpIcon className="h-5 w-5" aria-hidden="true" />
+              <ArrowUpIcon className="h-5 w-5 text-white" aria-hidden="true" />
             </motion.button>
           )}
         </AnimatePresence>
