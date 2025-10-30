@@ -12,7 +12,11 @@ export default function Projects() {
           Principal Projects
         </h2>
         <Button asChild size={'sm'} className="dark:text-white">
-          <Link href="https://github.com/mrluisfer" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/mrluisfer/repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View all <ExternalLink size={14} />
           </Link>
         </Button>

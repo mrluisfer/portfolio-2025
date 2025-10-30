@@ -9,8 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { getSlugFromString } from '@/utils/get-slug-from-string';
 import clsx from 'clsx';
-import { MoveUpRight } from 'lucide-react';
+import { BookMarkedIcon, MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ProjectType } from './projects-list';
@@ -72,14 +73,22 @@ export const Project = ({ className, project }: { className?: string; project: P
               <span className="hidden text-white sm:inline-block">View source code</span>
             </Link>
           </Button>
-          {project.previewUrl && (
-            <Button asChild variant="secondary">
-              <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
-                <MoveUpRight />
-                <span className="hidden sm:block">Live preview</span>
+          <div className="flex items-center justify-end gap-6">
+            <Button asChild variant="outline">
+              <Link href={`/projects/${getSlugFromString(project.name)}`}>
+                <BookMarkedIcon />
+                <span className="hidden sm:block">Technical story</span>
               </Link>
             </Button>
-          )}
+            {project.previewUrl && (
+              <Button asChild variant="outline">
+                <Link href={project.previewUrl} target="_blank" rel="noopener noreferrer">
+                  <MoveUpRight />
+                  <span className="hidden sm:block">Live preview</span>
+                </Link>
+              </Button>
+            )}
+          </div>
         </div>
 
         {project.imgAuthor && (
@@ -87,7 +96,7 @@ export const Project = ({ className, project }: { className?: string; project: P
             Photo:{' '}
             <a
               className="underline decoration-dotted underline-offset-2"
-              href={`https://unsplash.com/@${project.imgAuthor.toLowerCase().split(' ').join('-')}`}
+              href={`https://unsplash.com/@${getSlugFromString(project.imgAuthor)}`}
               target="_blank"
               rel="noopener noreferrer"
             >

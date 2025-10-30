@@ -5,7 +5,9 @@ import { GithubDark } from '@/assets/icons/allIcons';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ExternalLink } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { getSlugFromString } from '@/utils/get-slug-from-string';
+import { BookMarkedIcon, ExternalLink } from 'lucide-react';
 import { MotionConfig, motion, useReducedMotion, type Variants } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -80,31 +82,54 @@ export function ProjectCard({ project }: { project: ProjectType }) {
                   href={project.previewUrl || project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-neutral-900 decoration-neutral-300 underline-offset-4 transition-colors hover:underline focus-visible:underline dark:text-neutral-300"
+                  className="inline-flex items-center gap-2 text-xl text-neutral-900 decoration-neutral-300 underline-offset-4 transition-colors hover:underline focus-visible:underline dark:text-neutral-300"
                 >
                   {project.name} <ExternalLink size={16} className="text-neutral-500" />
                 </Link>
               </motion.div>
 
-              <motion.div
-                variants={itemVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
-                transition={{ duration: 0.28, ease: EASE }}
-              >
-                <Button size="icon" asChild>
-                  <Link
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Open repository on GitHub"
-                    className="rounded-md focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:outline-none dark:focus-visible:ring-neutral-600"
-                  >
-                    <GithubDark />
-                  </Link>
-                </Button>
-              </motion.div>
+              <div className="flex items-center justify-end gap-6">
+                <Tooltip delayDuration={400}>
+                  <TooltipTrigger>
+                    <motion.div
+                      variants={itemVariants}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+                      transition={{ duration: 0.28, ease: EASE }}
+                    >
+                      <Button size={'icon'} asChild variant={'outline'}>
+                        <Link href={`/projects/${getSlugFromString(project.name)}`}>
+                          <BookMarkedIcon />
+                        </Link>
+                      </Button>
+                    </motion.div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-white">Read technical story about {project.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+
+                <motion.div
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+                  transition={{ duration: 0.28, ease: EASE }}
+                >
+                  <Button size="icon" asChild>
+                    <Link
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open repository on GitHub"
+                      className="rounded-md focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:outline-none dark:focus-visible:ring-neutral-600"
+                    >
+                      <GithubDark />
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
             </CardTitle>
 
             <motion.p
