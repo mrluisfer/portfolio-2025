@@ -1,6 +1,6 @@
 'use client';
 
-import { DevtoDark } from '@/assets/icons/allIcons';
+import { Devto, DevtoDark } from '@/assets/icons/allIcons';
 import { Button } from '@/components/ui/button';
 import { Timeline, TimelineContent, TimelineDate, TimelineItem } from '@/components/ui/timeline';
 import { ExternalLink } from 'lucide-react';
@@ -103,7 +103,7 @@ export default function ProjectPosts() {
           <p>You can read my old posts on</p>
           <Button asChild variant="outline" size="sm" className="gap-2">
             <Link href="https://dev.to/mrluisfer" target="_blank" rel="noopener noreferrer">
-              {theme === 'light' ? <DevtoDark /> : <DevtoDark />}
+              {theme === 'light' ? <Devto /> : <DevtoDark />}
               Dev.to
             </Link>
           </Button>
