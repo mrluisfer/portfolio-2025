@@ -19,6 +19,7 @@ import {
   React,
   Redux,
   Sass,
+  Sentry,
   Socketio,
   StyledComponents,
   TailwindCSS,
@@ -156,5 +157,11 @@ export const technologies: Technology[] = [
     docs: 'https://deno.land/manual',
     customGlowColor: '#70FFAF',
     DarkIcon: DarkDeno,
+  },
+  {
+    Icon: Sentry,
+    name: 'Sentry',
+    docs: 'https://docs.sentry.io/',
+    customGlowColor: '#794888',
   },
 ];

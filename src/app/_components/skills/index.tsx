@@ -13,7 +13,7 @@ export default function Skills() {
         id={NAVIGATION_NAMES.SKILLS}
       >
         <Title>
-          <h1 className="absolute -top-[30px] z-20 drop-shadow-2xl">
+          <h1 className="absolute -top-[20px] z-20 drop-shadow-2xl lg:-top-[50px]">
             Building projects with the most{' '}
             <span
               className={

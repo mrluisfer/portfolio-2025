@@ -19,7 +19,6 @@ function subscribeMql(query: string, callback: () => void) {
   const mql = getMql(query);
   if (!mql) return () => {};
 
-  // Un solo tipo de suscripción (moderno) con fallback legacy sin duplicar
   const handler = () => callback();
 
   if ('addEventListener' in mql) {
@@ -39,7 +38,6 @@ function getSnapshotMql(query: string) {
 }
 
 function getServerSnapshotMql() {
-  // En SSR asumimos false; evita acceso a window
   return false;
 }
 
@@ -51,44 +49,29 @@ function useMediaQuery(query: string) {
   );
 }
 
-// ---------- Presentational ----------
 const Row = memo(function Row({ children }: { children: ReactNode }) {
-  return <div className="mb-6 flex grid-cols-9 justify-center gap-6 lg:grid">{children}</div>;
+  return <div className="mb-6 flex flex-wrap justify-center gap-6">{children}</div>;
 });
 
 import { type Technology, technologies } from './icons';
 import TechnologyCard from './technology-card';
 const MemoTechnologyCard = memo(TechnologyCard);
 
-// ---------- Componente ----------
 export default function Technologies() {
-  // Un hook por breakpoint, pero con suscripción estable y cacheada
   const isLessThan768 = useMediaQuery('(max-width: 768px)');
   const isLessThan450 = useMediaQuery('(max-width: 450px)');
   const { theme } = useTheme();
 
-  const cols = isLessThan768 ? 5 : 7;
+  const cols = isLessThan450 ? 3 : isLessThan768 ? 4 : 6;
 
-  // Evita crear arrays cuando solo necesitas longitud
-  const placeholderCountTop = isLessThan768 ? (isLessThan450 ? 0 : 5) : 9;
-  const placeholderCountBottom = !isLessThan768 ? placeholderCountTop : 0;
-
-  // Divide solo cuando cambia 'cols'
-  const technologiesDivided = useMemo(() => divideArray<Technology>(technologies, cols), [cols]);
+  const technologiesDivided = useMemo(() => {
+    return divideArray<Technology>(technologies, cols);
+  }, [cols]);
 
   return (
-    <div className="mask-fade-x justify-center pt-[100px] sm:py-0">
-      {placeholderCountTop > 0 && (
-        <Row>
-          {Array.from({ length: placeholderCountTop }, (_, i) => (
-            <MemoTechnologyCard key={`ph-top-${i}`} />
-          ))}
-        </Row>
-      )}
-
+    <div className="mask-fade-x justify-center pt-[100px] sm:py-0 lg:py-12">
       {technologiesDivided.map((row, i) => (
         <Row key={`row-${i}`}>
-          <MemoTechnologyCard key={`left-${i}`} />
           {row.map(({ name, Icon, DarkIcon, customGlowColor, docs }) => (
             <MemoTechnologyCard
               key={name}
@@ -98,17 +81,8 @@ export default function Technologies() {
               name={name}
             />
           ))}
-          <MemoTechnologyCard key={`right-${i}`} />
         </Row>
       ))}
-
-      {placeholderCountBottom > 0 && (
-        <Row>
-          {Array.from({ length: placeholderCountBottom }, (_, i) => (
-            <MemoTechnologyCard key={`ph-bottom-${i}`} />
-          ))}
-        </Row>
-      )}
     </div>
   );
 }
